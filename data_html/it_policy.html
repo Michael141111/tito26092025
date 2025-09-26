@@ -1,0 +1,2188 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<link href="favicon.ico" rel="icon"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>IT Policies &amp; Procedures – ADRC</title>
+<style>
+  :root{
+    --brand:#0a66c2;
+    --ink:#1f2937;
+    --muted:#6b7280;
+    --bg:#ffffff;
+    --panel:#f8fafc;
+    --border:#e5e7eb;
+    --accent:#10b981;
+    --header-h:72px;
+  }
+  html,body{height:100%;}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";}
+  header.site{position:sticky;top:0;z-index:50;backdrop-filter:saturate(180%) blur(8px);background:color-mix(in srgb, var(--bg), transparent 10%);border-bottom:1px solid var(--border);height:var(--header-h);cursor:pointer;}
+  .header-wrap{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:16px;padding:12px 16px;height:100%;}
+  .logo{display:flex;align-items:center;gap:12px;min-width:0}
+  .logo img{height:44px;width:auto;object-fit:contain;background:#fff;border-radius:8px;padding:4px;box-shadow:0 0 0 1px var(--border) inset}
+  .meta{display:flex;flex-direction:column;min-width:0}
+  .meta .title{font-weight:700;font-size:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .meta .subtitle{font-size:12px;color:var(--muted)}
+  .actions{margin-left:auto;display:flex;align-items:center;gap:8px}
+  .btn{appearance:none;border:1px solid var(--border);background:#fff;border-radius:10px;padding:8px 12px;cursor:pointer;text-decoration:none;color:inherit;display:inline-block}
+  .btn:hover{box-shadow:0 1px 0 var(--border)}
+  .btn.primary{border-color:color-mix(in srgb, var(--brand), white 60%);background:color-mix(in srgb, var(--brand), white 85%);}
+  /* layout */
+  .shell{height:calc(100vh - var(--header-h));display:grid;grid-template-columns:300px 1fr;border-top:1px solid var(--border)}
+  @media (max-width: 980px){.shell{grid-template-columns:1fr}}
+  aside.toc{border-right:1px solid var(--border);background:var(--panel);min-height:0;}
+  .toc-inner{height:100%;overflow:auto;padding:16px;position:relative}
+  .toc-title{font-weight:700;margin:0 0 8px 0}
+  .toc a{display:block;color:var(--ink);text-decoration:none;font-size:14px;padding:6px 8px;border-radius:8px}
+  .toc a:hover{background:#fff}
+  .toc a.active{background:color-mix(in srgb, var(--brand), white 88%);box-shadow:inset 3px 0 0 var(--brand);}
+  .toc ul{list-style:none;margin:0;padding:0}
+  .toc ul ul{padding-left:12px}
+  main.content{min-height:0;}
+  .content-inner{height:100%;overflow:auto;padding:24px 28px;}
+  .content-inner h1{margin-top:0}
+  h2{margin-top:32px;border-bottom:1px dashed var(--border);padding-bottom:6px}
+  h3{margin-top:20px}
+  h4{margin-top:14px;font-size:1rem;color:#111}
+  p{margin:10px 0}
+  ul{margin:8px 0 12px 24px}
+  table{width:100%;border-collapse:collapse;margin:12px 0}
+  th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
+  thead th{background:var(--panel)}
+  .muted{color:var(--muted)}
+  .toplink{position:fixed;right:16px;bottom:16px;border-radius:999px;padding:10px 12px;background:var(--brand);color:#fff;text-decoration:none;box-shadow:0 6px 20px color-mix(in srgb, var(--brand), transparent 70%)}
+  :where(.content-inner h1,.content-inner h2,.content-inner h3){scroll-margin-top:calc(var(--header-h) + 8px);}
+  @media print{
+    header.site,.toplink{display:none}
+    .shell{grid-template-columns:1fr}
+    aside.toc{display:none}
+    .content-inner{overflow:visible}
+  }
+</style>
+<!-- Highlighting support -->
+<link href="highlight.css" rel="stylesheet"/>
+<script defer="" src="highlight.js"></script>
+</head>
+<body>
+<header class="site" role="banner">
+<div class="header-wrap">
+<div class="logo">
+<a href="index.html" title="Home"><img alt="Company Logo" src="adrc_logo_white.png"/></a>
+</div>
+<div class="meta">
+<div class="title">IT Policies &amp; Procedures – ADRC</div>
+<div class="subtitle">Version v1.0 · Source: ADRC_IT_Policy_V2.pdf</div>
+</div>
+<div class="actions">
+<a class="btn primary" href="it_policy_quick_guide.html?v=99999" title="Open Quick Guide">Quick Guide ↗</a>
+<button class="btn" id="printBtn" title="Print / Save PDF">Print</button>
+</div>
+</div>
+</header>
+<div class="shell" role="application">
+<aside aria-label="Table of contents" class="toc">
+<div class="toc-inner">
+<h3 class="toc-title" id="contents">Contents</h3>
+<nav class="toc" id="toc"></nav>
+</div>
+</aside>
+<main class="content" id="top">
+<div class="content-inner">
+<h1 id="it-policies--procedures">IT Policies &amp; Procedures</h1>
+<h2 id="a-it-governance-policy">a) IT Governance Policy</h2>
+<h3 id="1-purpose">1 Purpose</h3>
+<p>The purpose of this IT Governance Policy is to establish a framework for managing and overseeing the information technology (IT) resources at Abu Dhabi Refreshments Co. LLC. This policy ensures that IT resources are used effectively, securely, and aligned with the company's business goals.</p>
+<h3 id="2-scope">2 Scope</h3>
+<p>This policy applies to all IT systems, services, and resources used within Abu Dhabi Refreshments Co. LLC. It includes hardware, software, networks, data, and all related processes and personnel.</p>
+<h3 id="3-key-guidelines">3 Key Guidelines</h3>
+<h4 id="31-aligning-it-with-business-goals">3.1 Aligning IT with Business Goals</h4>
+<ul>
+<li>Support Business Goals:  All IT activities should help us achieve our business objectives.</li>
+<li>Regular Updates:  Our IT strategy should be updated regularly to match changing business needs and</li>
+</ul>
+<p>technology.</p>
+<h4 id="32-managing-risks">3.2 Managing Risks</h4>
+<ul>
+<li>Identify and Mitigate Risks:  Regularly check for IT-related risks and take steps to reduce them.</li>
+<li>Stay Compliant:  Ensure IT practices follow all relevant laws and regulations.</li>
+</ul>
+<h4 id="33-efficient-use-of-resources">3.3 Efficient Use of Resources</h4>
+<ul>
+<li>Budget Management:  Use the IT budget wisely and review spending to ensure it aligns with priorities.</li>
+<li>Asset Management:  Keep track of all IT assets and manage them properly.</li>
+</ul>
+<h4 id="34-performance-monitoring">3.4 Performance Monitoring</h4>
+<ul>
+<li>Measure Success:  Use indicators to track how well IT supports the business.</li>
+<li>Set Expectations:  Establish service level agreements (SLAs) to ensure high-quality IT services.</li>
+</ul>
+<h4 id="35-security-and-privacy">3.5 Security and Privacy</h4>
+<ul>
+<li>Protect Information:  Implement security measures to keep data safe.</li>
+<li>Respect Privacy : Handle personal data according to legal and company requirements.</li>
+</ul>
+<h4 id="36-governance-structure">3.6 Governance Structure</h4>
+<ul>
+<li>IT Governance Committee:  A committee will oversee IT strategy, risk management, and performance.</li>
+<li>Clear Roles:  Define who is responsible for what in IT governance.</li>
+</ul>
+<h3 id="4-roles-and-responsibilities">4 Roles and Responsibilities</h3>
+<ul>
+<li>IT Leadership:  Develop and implement IT strategies, manage resources, and ensure compliance.</li>
+<li>IT Governance Committee:  Oversee IT operations and align them with business goals.</li>
+<li>Business Units:  Collaborate with IT to ensure services meet business needs.</li>
+</ul>
+<h3 id="5-training-and-awareness">5 Training and Awareness</h3>
+<p>Train employees on IT governance practices. Regularly update employees on IT governance and its importance.</p>
+<h3 id="6-compliance">6 Compliance</h3>
+<p>Everyone must follow this policy. Non-compliance could lead to inefficiencies, increased risks, and possible disciplinary action.</p>
+<h3 id="7-exceptions">7 Exceptions</h3>
+<p>Any exceptions to this policy must be approved and documented.</p>
+<h3 id="8-review-and-update">8 Review and Update</h3>
+<p>This policy will be reviewed annually and updated as needed.</p>
+<p><b>Approved by:</b> </p>
+<p><b>Effective Date:</b> </p>
+<h2 id="b-business-continuity-and-disaster-recovery-policy">b) Business Continuity and Disaster Recovery Policy</h2>
+<h3 id="1-purpose">1 Purpose</h3>
+<p>This policy ensures that Abu Dhabi Refreshments Co. LLC can continue critical business operations and recover quickly in the event of a disruption or disaster.</p>
+<h3 id="2-scope">2 Scope</h3>
+<p>The policy applies to all employees, departments, and business units. It covers all essential business functions, IT systems, and infrastructure.</p>
+<h3 id="3-key-guidelines">3 Key Guidelines</h3>
+<h4 id="31-business-continuity-planning">3.1 Business Continuity Planning</h4>
+<ul>
+<li>Identify Critical Functions:  Identify and prioritize the key business functions that must continue during a</li>
+</ul>
+<p>disruption.</p>
+<ul>
+<li>Impact Analysis:  Assess the potential impact of disruptions on business operations to help prioritize</li>
+</ul>
+<p>recovery efforts.</p>
+<ul>
+<li>Continuity Strategies:  Develop plans to ensure critical functions can continue or be quickly restored.</li>
+</ul>
+<h4 id="32-disaster-recovery-planning">3.2 Disaster Recovery Planning</h4>
+<ul>
+<li>IT Disaster Recovery:  Create a plan focused on restoring IT systems, data, and infrastructure after a disaster.</li>
+<li>Data Backup: Regularly back up all critical data and store it securely offsite or in the cloud.</li>
+<li>Recovery Objectives:  Set goals for how quickly systems must be restored and how much data loss is</li>
+</ul>
+<p>acceptable.</p>
+<h4 id="33-emergency-response-and-communication">3.3 Emergency Response and Communication</h4>
+<ul>
+<li>Emergency Plan:  Develop a plan for immediate actions during a disruption, including evacuation and</li>
+</ul>
+<p>communication procedures.</p>
+<ul>
+<li>Communication Plan:  Ensure clear communication with employees, customers, and stakeholders during</li>
+</ul>
+<p>and after a disruption.</p>
+<h4 id="34-roles-and-responsibilities">3.4 Roles and Responsibilities</h4>
+<ul>
+<li>Business Continuity Team:  Form a team responsible for creating and maintaining the business continuity</li>
+</ul>
+<p>and disaster recovery plans.</p>
+<ul>
+<li>Employee Awareness:  Ensure all employees know their roles and responsibilities in the event of a</li>
+</ul>
+<p>disruption.</p>
+<h3 id="4-training-and-testing">4 Training and Testing</h3>
+<p>Provide training on business continuity and disaster recovery procedures. Regularly test the plans to ensure they work and everyone is prepared.</p>
+<h3 id="5-plan-review-and-maintenance">5 Plan Review and Maintenance</h3>
+<p>Review and update the plans at least once a year or when significant changes occur. Continuous Improvement: Improve the plans based on test results and actual incidents.</p>
+<h3 id="6-compliance">6 Compliance</h3>
+<p>Everyone must follow this policy. Non-compliance could lead to operational disruptions and potential losses.</p>
+<h3 id="7-exceptions">7 Exceptions</h3>
+<p>Any exceptions to this policy must be approved and documented.</p>
+<h3 id="8-review-and-update">8 Review and Update</h3>
+<p>This policy will be reviewed annually and updated as needed.</p>
+<p><b>Approved by:</b> </p>
+<p><b>Effective Date:</b> </p>
+<h2 id="c-information-security-policy">c) Information Security Policy</h2>
+<h3 id="1-purpose">1 Purpose</h3>
+<p>The purpose of this policy is to protect the information assets of Abu Dhabi Refreshments Co. LLC from unauthorized access, use, disclosure, alteration, or destruction. This policy aims to ensure the confidentiality, integrity, and availability of information.</p>
+<h3 id="2-scope">2 Scope</h3>
+<p>This policy applies to all employees, contractors, and anyone else who has access to the company’s information, systems, or data. It covers all types of information, whether it’s stored electronically, on paper, or shared verbally.</p>
+<h3 id="3-key-guidelines">3 Key Guidelines</h3>
+<h4 id="31-protecting-information">3.1 Protecting Information</h4>
+<ul>
+<li>Classifying Information: Information must be classified as public, internal, or confidential. Each</li>
+</ul>
+<p>classification level has specific handling requirements.</p>
+<ul>
+<li>Access Control: Employees should only have access to the information necessary for their job roles. Access</li>
+</ul>
+<p>to confidential information must be strictly controlled.</p>
+<h4 id="32-password-management">3.2 Password Management</h4>
+<ul>
+<li>Strong Passwords: All passwords must be strong and kept confidential. Passwords should include a mix of</li>
+</ul>
+<p>letters, numbers, and special characters.</p>
+<ul>
+<li>Password Updates: Passwords should be changed regularly and immediately if there is any suspicion that</li>
+</ul>
+<p>they have been compromised.</p>
+<h4 id="33-handling-incidents">3.3 Handling Incidents</h4>
+<ul>
+<li>Reporting Security Incidents: Any suspected or actual security incidents, such as data breaches or</li>
+</ul>
+<p>unauthorized access, must be reported to the IT department immediately.</p>
+<ul>
+<li>Incident Response: The IT department will take steps to contain and resolve the incident, investigate its</li>
+</ul>
+<p>cause, and prevent it from happening again.</p>
+<h4 id="34-securing-devices-and-systems">3.4 Securing Devices and Systems</h4>
+<ul>
+<li>Antivirus Protection: All company devices must have up-to-date antivirus software installed to protect</li>
+</ul>
+<p>against malware.</p>
+<ul>
+<li>Software Updates: Software and systems must be kept up to date with the latest security patches to protect</li>
+</ul>
+<p>against vulnerabilities.</p>
+<ul>
+<li>Physical Security: Confidential information and devices should be kept secure, such as by locking computers</li>
+</ul>
+<p>when not in use and keeping sensitive documents in secure locations.</p>
+<h4 id="35-training-and-awareness">3.5 Training and Awareness</h4>
+<ul>
+<li>Employee Training: All employees must be regularly updated on information security best practices and</li>
+</ul>
+<p>how to protect sensitive information.</p>
+<ul>
+<li>Awareness: Employees should be aware of the importance of information security and their role in</li>
+</ul>
+<p>protecting the company’s information.</p>
+<h3 id="4-roles-and-responsibilities">4 Roles and Responsibilities</h3>
+<ul>
+<li>IT Department: Responsible for implementing and maintaining security controls, monitoring systems, and</li>
+</ul>
+<p>responding to security incidents.</p>
+<ul>
+<li>Employees: Must follow the security practices outlined in this policy and report any suspicious activity or</li>
+</ul>
+<p>security incidents.</p>
+<h3 id="5-compliance">5 Compliance</h3>
+<p>Compliance with this policy is mandatory. Failure to follow the information security policy may result in disciplinary action, including termination. It could also lead to legal consequences for the company.</p>
+<h3 id="6-exceptions">6 Exceptions</h3>
+<p>Any exceptions to this policy must be approved by the IT department and documented, including the reason for the exception.</p>
+<h3 id="7-review-and-update">7 Review and Update</h3>
+<p>This policy will be reviewed annually and updated as necessary to ensure it remains effective and relevant.</p>
+<p><b>Approved by:</b> </p>
+<p><b>Effective Date:</b> </p>
+<h2 id="d-it-asset-management-policy">d) IT Asset Management Policy</h2>
+<h3 id="1-purpose">1 Purpose</h3>
+<p>The purpose of this policy is to ensure that all IT assets within Abu Dhabi Refreshments Co. LLC are managed efficiently and effectively throughout their lifecycle. This policy aims to optimize the use of IT assets, ensure accurate inventory management, and minimize risks associated with asset loss or misuse.</p>
+<h3 id="2-scope">2 Scope</h3>
+<p>This policy applies to all IT assets owned, leased, or controlled by Abu Dhabi Refreshments Co. LLC, including but not limited to:</p>
+<ul>
+<li>Hardware (e.g., servers, desktops, laptops, mobile devices, networking equipment)</li>
+<li>Software (e.g., operating systems, applications, licenses)</li>
+<li>Peripheral devices (e.g., printers, scanners)</li>
+<li>Cloud services and subscriptions</li>
+</ul>
+<h3 id="3-asset-lifecycle-management">3 Asset Lifecycle Management</h3>
+<h4 id="31-acquisition">3.1 Acquisition</h4>
+<ul>
+<li>IT assets should only be acquired through authorized channels following the approval of the IT department</li>
+</ul>
+<p>and the management.</p>
+<ul>
+<li>All new IT assets must be recorded in the Asset Management System (AMS) with details such as purchase</li>
+</ul>
+<p>date, vendor, cost, and serial numbers.</p>
+<ul>
+<li>All assets should be labeled with a QR code wherever possible.</li>
+</ul>
+<h4 id="32-deployment">3.2 Deployment</h4>
+<ul>
+<li>Upon receipt, IT assets must be tagged with a unique identifier and assigned to the appropriate user or</li>
+</ul>
+<p>department.</p>
+<ul>
+<li>IT must configure and install necessary software and ensure compliance with company standards.</li>
+</ul>
+<h4 id="33-maintenance">3.3 Maintenance</h4>
+<ul>
+<li>Regular maintenance schedules should be followed to ensure IT assets remain in good working condition.</li>
+</ul>
+<p>The IT department is responsible for coordinating and performing necessary maintenance.</p>
+<ul>
+<li>Periodic physical audits must be conducted to verify the accuracy of the inventory.</li>
+<li>Discrepancies found during audits must be investigated and resolved promptly.</li>
+</ul>
+<h4 id="34-usage">3.4 Usage</h4>
+<ul>
+<li>IT assets are to be used only for business purposes and in accordance with company policies.</li>
+<li>Users are responsible for the care and security of the IT assets assigned to them.</li>
+<li>Any unauthorized or improper use of IT assets is strictly prohibited.</li>
+</ul>
+<h4 id="35-disposal">3.5 Disposal</h4>
+<ul>
+<li>IT assets that are no longer needed, obsolete, or beyond repair must be disposed of securely.</li>
+<li>Disposal procedures must ensure that all data is permanently erased from storage devices.</li>
+<li>Disposals must be recorded in the AMS, including details of the method of disposal and the person</li>
+</ul>
+<p>responsible.</p>
+<h3 id="4-roles-and-responsibilities">4 Roles and Responsibilities</h3>
+<h4 id="41-it-department">4.1 IT Department</h4>
+<ul>
+<li>IT Department: Responsible for maintaining the IT asset inventory, coordinating asset acquisition, ensuring</li>
+</ul>
+<p>compliance with software licensing, and managing the disposal of IT assets.</p>
+<ul>
+<li>Department Heads: Responsible for approving IT asset purchases and ensuring that assets within their</li>
+</ul>
+<p>department are used appropriately.</p>
+<ul>
+<li>Employees: Responsible for the proper use and care of IT assets assigned to them, and for reporting any</li>
+</ul>
+<p>loss, theft, or damage to the IT department immediately.</p>
+<h3 id="5-compliance-and-enforcement">5 Compliance and Enforcement</h3>
+<ul>
+<li>Compliance with this policy is mandatory for all employees.</li>
+<li>The IT department is responsible for monitoring compliance and reporting non-compliance to senior</li>
+</ul>
+<p>management.</p>
+<h3 id="6-exceptions">6 Exceptions</h3>
+<p>Any changes to this policy must be approved by senior management</p>
+<h3 id="7-policy-review">7 Policy Review</h3>
+<p>This policy must be reviewed annually by the IT department and updated as necessary to ensure continued relevance and effectiveness.</p>
+<p><b>Approved by:</b> </p>
+<p><b>Effective Date:</b> </p>
+<h2 id="e-data-privacy-and-data-protection-policy">e) Data Privacy and Data Protection Policy</h2>
+<h3 id="1-purpose">1 Purpose</h3>
+<p>The purpose of this policy is to ensure that Abu Dhabi Refreshments Co. LLC handles personal data responsibly, protects it from unauthorized access or disclosure, and complies with relevant data protection laws and regulations.</p>
+<h3 id="2-scope">2 Scope</h3>
+<p>This policy applies to all employees, contractors, and third-party vendors who handle or have access to personal data processed by the company. It covers all personal data collected, stored, processed, or shared by the company.</p>
+<h3 id="3-key-guidelines">3 Key Guidelines</h3>
+<ul>
+<li>Collect What’s Needed : Only collect the personal data you need for specific, legitimate reasons.</li>
+<li>Stick to the Purpose : Use personal data only for the reason it was collected. If you need to use it for</li>
+</ul>
+<p>something else, get new consent.</p>
+<ul>
+<li>Minimize Data : Use and store only the minimum amount of personal data necessary.</li>
+<li>Limit Access : Only allow access to personal data for people who need it to do their job.</li>
+<li>Careful Sharing : Only share personal data with third parties if necessary for business, and make sure they</li>
+</ul>
+<p>follow our data protection standards.</p>
+<ul>
+<li>Report Breaches : If there’s a data breach, report it immediately so we can notify affected individuals and</li>
+</ul>
+<p>authorities as required by law.</p>
+<ul>
+<li>Keep It Only As Long As Needed : Retain personal data only as long as necessary, then securely delete or</li>
+</ul>
+<p>anonymize it.</p>
+<ul>
+<li>Dispose of Data Securely : When data is no longer needed, make sure it is securely destroyed or erased.</li>
+</ul>
+<h3 id="4-roles-and-responsibilities">4 Roles and Responsibilities</h3>
+<ul>
+<li>IT Department: Implements and manages technical security to protect data.</li>
+<li>Employees: Must follow this policy and report any data privacy concerns to the DPO.</li>
+</ul>
+<h3 id="5-compliance">5 Compliance</h3>
+<p>Everyone must follow this policy. Not following it could result in disciplinary action or legal consequences.</p>
+<h3 id="6-exceptions">6 Exceptions</h3>
+<p>Any exceptions to this policy must be approved by the Data Protection Officer and documented.</p>
+<h3 id="7-review-and-update">7 Review and Update</h3>
+<p>This policy will be reviewed and updated annually or as needed to stay current with laws and business needs.</p>
+<p><b>Approved by:</b> </p>
+<p><b>Effective Date:</b> </p>
+<h2 id="f-information-security-event-and-incident-management-policy">f) Information Security Event and Incident Management Policy</h2>
+<h3 id="1-purpose">1 Purpose</h3>
+<p>The purpose of this Information Security Event and Incident Management Policy is to ensure that Abu Dhabi Refreshments Co. LLC can effectively detect, report, respond to, and manage information security events and incidents. This policy aims to minimize the impact of security incidents on the company’s operations, reputation, and data integrity.</p>
+<h3 id="2-scope">2 Scope</h3>
+<p>This policy applies to all employees, contractors, and third-party vendors who use, manage, or access the company’s information systems and data. It covers all types of information security events and incidents, including data breaches, cyberattacks, unauthorized access, and other security threats.</p>
+<h3 id="3-key-guidelines">3 Key Guidelines</h3>
+<h4 id="31-event-detection-and-reporting">3.1 Event Detection and Reporting</h4>
+<ul>
+<li>Monitoring:  The IT department must continuously monitor the company’s information systems for any</li>
+</ul>
+<p>signs of security events, such as unauthorized access attempts, unusual activity, or system failures.</p>
+<ul>
+<li>Reporting Events:  Employees must report any suspicious activity, unusual behavior, or security concerns to</li>
+</ul>
+<p>the IT department immediately, even if they are unsure whether it qualifies as a security event.</p>
+<h4 id="32-incident-classification">3.2 Incident Classification</h4>
+<ul>
+<li>Defining Incidents:  An incident is any security event that could compromise the confidentiality, integrity,</li>
+</ul>
+<p>or availability of the company’s information or systems.</p>
+<ul>
+<li>Incident Severity Levels:  Incidents must be classified based on their severity, such as minor, moderate, or</li>
+</ul>
+<p>critical. This classification helps determine the appropriate response and priority.</p>
+<h4 id="33-incident-response">3.3 Incident Response</h4>
+<ul>
+<li>Initial Response:  Upon identifying a security incident, the IT department must take immediate steps to</li>
+</ul>
+<p>contain the incident and prevent further damage, such as isolating affected systems or blocking unauthorized access.</p>
+<ul>
+<li>Investigation:  The IT department must investigate the incident to determine its cause, scope, and impact.</li>
+</ul>
+<p>This may involve analyzing logs, interviewing involved parties, and reviewing system configurations.</p>
+<ul>
+<li>Communication:  Key stakeholders, including senior management, affected departments, and, if necessary,</li>
+</ul>
+<p>external partners or authorities, must be informed about the incident as soon as possible.</p>
+<h4 id="34-incident-resolution">3.4 Incident Resolution</h4>
+<ul>
+<li>Remediation:  The IT department must implement measures to resolve the incident, restore normal</li>
+</ul>
+<p>operations, and ensure that similar incidents do not recur. This may involve applying patches, changing configurations, or updating security controls.</p>
+<ul>
+<li>Recovery:  Affected systems and data must be restored to normal operation as quickly as possible. This</li>
+</ul>
+<p>includes ensuring that backups are used if necessary and that systems are fully operational.</p>
+<h4 id="35-post-incident-review">3.5 Post-Incident Review</h4>
+<ul>
+<li>Lessons Learned:  After resolving an incident, the IT department must conduct a post-incident review to</li>
+</ul>
+<p>identify lessons learned and areas for improvement. This review should result in updates to security policies, procedures, and controls.</p>
+<ul>
+<li>Documentation:  All incidents must be documented, including details of the event, response actions, and</li>
+</ul>
+<p>outcomes. This documentation is important for future reference, compliance, and audits.</p>
+<h4 id="36-roles-and-responsibilities">3.6 Roles and Responsibilities</h4>
+<ul>
+<li>Employees:  Report any suspicious activities or security concerns immediately.</li>
+<li>IT Department:  Monitor, detect, respond to, and manage security incidents; investigate and document all</li>
+</ul>
+<p>incidents; conduct post-incident reviews.</p>
+<ul>
+<li>Senior Management:  Provide oversight, ensure resources are available for incident management, and</li>
+</ul>
+<p>make key decisions during major incidents.</p>
+<h3 id="4-training-and-awareness">4 Training and Awareness</h3>
+<ul>
+<li>Employee Training:  Employees must be trained on how to identify and report security events and incidents.</li>
+<li>Awareness Programs:  Regular awareness campaigns should be held to ensure all staff understand the</li>
+</ul>
+<p>importance of prompt reporting and how to recognize potential security threats.</p>
+<h3 id="5-compliance">5 Compliance</h3>
+<p>Compliance with this policy is mandatory. Failure to comply with the incident management procedures may result in disciplinary action, including termination. Non-compliance could also lead to significant operational, financial, or reputational damage.</p>
+<h3 id="6-exceptions">6 Exceptions</h3>
+<p>Any exceptions to this policy must be approved by the IT department and documented, including the reasons for the exception.</p>
+<h3 id="7-review-and-update">7 Review and Update</h3>
+<p>This policy will be reviewed annually and updated as necessary to ensure it remains effective and relevant in managing security events and incidents.</p>
+<p><b>Approved by:</b> </p>
+<p><b>Effective Date:</b> </p>
+<h2 id="g-database-management-policy">g) Database Management Policy</h2>
+<h3 id="1-purpose">1 Purpose</h3>
+<p>The purpose of this Database Management Policy is to ensure that Abu Dhabi Refreshments Co. LLC’s databases are managed and maintained securely, efficiently, and in compliance with relevant regulations. This policy aims to protect the integrity, availability, and confidentiality of data stored in our databases.</p>
+<h3 id="2-scope">2 Scope</h3>
+<p>This policy applies to all employees, contractors, and third-party vendors who access, manage, or support the company’s databases. It covers all database systems, including production, development, and test environments.</p>
+<h3 id="3-key-guidelines">3 Key Guidelines</h3>
+<h4 id="31-database-access-control">3.1 Database Access Control</h4>
+<ul>
+<li>Access Management:  Database access should be granted based on job roles and responsibilities. Only</li>
+</ul>
+<p>authorized personnel should have access to the database, and access rights should be reviewed regularly.</p>
+<ul>
+<li>Authentication and Authorization:  Ensure that users are only given the permissions necessary for their job</li>
+</ul>
+<p>functions.</p>
+<h4 id="32-data-security">3.2 Data Security</h4>
+<ul>
+<li>Data Encryption:  Encrypt sensitive databases to protect them from unauthorized access.</li>
+<li>Backup and Recovery:  Regular backups of databases must be performed and securely stored. Backup</li>
+</ul>
+<p>procedures should be tested periodically to ensure data can be restored effectively.</p>
+<h4 id="33-database-maintenance">3.3 Database Maintenance</h4>
+<ul>
+<li>Patching and Updates:  Apply security patches and updates to database systems promptly to protect against</li>
+</ul>
+<p>known vulnerabilities.</p>
+<ul>
+<li>Performance Monitoring:  Regularly monitor database performance to ensure it operates efficiently and to</li>
+</ul>
+<p>identify potential issues before they impact operations.</p>
+<h4 id="34-data-integrity">3.4 Data Integrity</h4>
+<ul>
+<li>Data Validation:  Implement validation checks to ensure data entered into databases is accurate and</li>
+</ul>
+<p>consistent.</p>
+<ul>
+<li>Auditing: Maintain logs of database access and changes. Regularly review these logs to detect any</li>
+</ul>
+<p>unauthorized access or changes.</p>
+<h4 id="35-incident-management">3.5 Incident Management</h4>
+<ul>
+<li>Incident Reporting:  Any issues or incidents related to database security, such as breaches or data</li>
+</ul>
+<p>corruption, must be reported to the IT department immediately.</p>
+<ul>
+<li>Incident Response:  Follow the established incident response procedures to address and resolve database</li>
+</ul>
+<p>related issues promptly.</p>
+<h4 id="36-database-development-and-testing">3.6 Database Development and Testing</h4>
+<ul>
+<li>Development Environment:  Use separate environments for database development, testing, and</li>
+</ul>
+<p>production to avoid unintended impacts on live data.</p>
+<ul>
+<li>Change Management:  Implement a formal change management process for database modifications,</li>
+</ul>
+<p>including testing and approval before changes are applied to the production environment.</p>
+<h3 id="4-roles-and-responsibilities">4 Roles and Responsibilities</h3>
+<ul>
+<li>Database Administrators (DBAs):  Responsible for managing and maintaining databases, including security,</li>
+</ul>
+<p>performance, and backups. DBAs must ensure compliance with this policy.</p>
+<ul>
+<li>IT Department:  Oversees the implementation and enforcement of this policy. Provides support for</li>
+</ul>
+<p>database-related issues and ensures proper training for staff.</p>
+<ul>
+<li>Developers: Ensure that database development and testing adhere to this policy and that changes are</li>
+</ul>
+<p>properly tested and approved before deployment.</p>
+<h3 id="5-training-and-awareness">5 Training and Awareness</h3>
+<ul>
+<li>Employee Training:  All employees with access to databases must receive training on database security best</li>
+</ul>
+<p>practices, access controls, and incident reporting procedures.</p>
+<ul>
+<li>Ongoing Awareness: Regularly update staff on new threats, vulnerabilities, and best practices related to</li>
+</ul>
+<p>database management.</p>
+<h3 id="6-compliance">6 Compliance</h3>
+<p>Compliance with this policy is mandatory. Non-compliance can lead to disciplinary action, including termination, and may result in legal or financial repercussions for the company.</p>
+<h3 id="7-exceptions">7 Exceptions</h3>
+<p>Any exceptions to this policy must be approved by the IT department and documented, including the reasons for the exception.</p>
+<h3 id="8-review-and-update">8 Review and Update</h3>
+<p>This policy will be reviewed annually and updated as needed to reflect changes in technology, business requirements, or regulatory requirements.</p>
+<p><b>Approved by:</b> </p>
+<p><b>Effective Date:</b> </p>
+<h2 id="h-backup-management-and-recovery-policy">h) Backup Management and Recovery Policy</h2>
+<h3 id="1-purpose">1 Purpose</h3>
+<p>The purpose of this Backup Management and Recovery Policy is to ensure that Abu Dhabi Refreshments Co. LLC’s data is properly backed up and can be efficiently restored in the event of data loss, corruption, or disaster. This policy outlines the procedures for backing up critical data and recovering it to maintain business continuity.</p>
+<h3 id="2-scope">2 Scope</h3>
+<p>This policy applies to all employees, contractors, and third-party vendors who manage or access the company’s data. It covers all types of data, including databases, files, and application data, across all environments (production, development, and testing).</p>
+<h3 id="3-key-guidelines">3 Key Guidelines</h3>
+<h4 id="31-backup-procedures">3.1 Backup Procedures</h4>
+<ul>
+<li>Backup Frequency:  Data backups must be performed regularly, with critical data backed up daily and less</li>
+</ul>
+<p>critical data backed up weekly or monthly, depending on its importance.</p>
+<ul>
+<li>Backup Types:  Implement a combination of full backups (entire data sets) and incremental or differential</li>
+</ul>
+<p>backups (changes since the last backup) to optimize backup processes and storage.</p>
+<ul>
+<li>Backup Storage:  Backups must be securely stored in multiple locations, such as offsite storage or cloud</li>
+</ul>
+<p>services, to protect against physical damage or localized disasters.</p>
+<ul>
+<li>Access Control:  Access to backup data and systems must be restricted to authorized personnel only.</li>
+</ul>
+<h4 id="32-backup-testing">3.2 Backup Testing</h4>
+<ul>
+<li>Regular Testing:  Conduct regular tests of backup systems and processes to ensure data can be successfully</li>
+</ul>
+<p>restored. Testing should be performed at least quarterly.</p>
+<ul>
+<li>Perform periodic restoration drills to verify that backup data can be restored quickly and accurately in a</li>
+</ul>
+<p>real- Restoration Drills:  world scenario.</p>
+<h4 id="33-data-recovery">3.3 Data Recovery</h4>
+<ul>
+<li>Documented Plan: Have a clear and documented recovery plan that outlines the steps to restore data from</li>
+</ul>
+<p>backups in case of data loss or a system failure.</p>
+<ul>
+<li>Priority Systems: Identify and prioritize critical systems and data that need to be restored first to minimize</li>
+</ul>
+<p>downtime.</p>
+<h4 id="34-backup-and-recovery-roles">3.4 Backup and Recovery Roles</h4>
+<ul>
+<li>Backup Administrators:  Responsible for managing backup operations, including scheduling, monitoring,</li>
+</ul>
+<p>and maintaining backup systems. Ensure backups are completed as planned and address any issues promptly.</p>
+<ul>
+<li>IT Department:  Oversees the backup and recovery process, ensures compliance with this policy, and</li>
+</ul>
+<p>supports recovery efforts during data loss incidents.</p>
+<ul>
+<li>Data Owners:  Responsible for identifying critical data, ensuring proper backup procedures are followed,</li>
+</ul>
+<p>and participating in recovery testing.</p>
+<h4 id="35-incident-response">3.5 Incident Response</h4>
+<ul>
+<li>Immediate Action : In case of data loss, follow the recovery plan immediately to restore data and resume</li>
+</ul>
+<p>normal operations.</p>
+<ul>
+<li>Communication : Inform relevant stakeholders about the data loss and the steps being taken to recover it.</li>
+</ul>
+<h3 id="4-training-and-awareness">4 Training and Awareness</h3>
+<ul>
+<li>Employee Training:  Train employees involved in backup and recovery processes on best practices,</li>
+</ul>
+<p>procedures, and their roles in ensuring data protection and recovery.</p>
+<ul>
+<li>Ongoing Awareness:  Regularly update staff on changes to backup and recovery procedures and the</li>
+</ul>
+<p>importance of data protection.</p>
+<h3 id="5-compliance">5 Compliance</h3>
+<p>Compliance with this policy is mandatory. Failure to adhere to backup and recovery procedures may result in disciplinary action, including termination, and could lead to significant operational disruptions and financial losses.</p>
+<h3 id="6-exceptions">6 Exceptions</h3>
+<p>Any exceptions to this policy must be approved by the IT department and documented, including the rationale for the exception.</p>
+<h3 id="7-review-and-update">7 Review and Update</h3>
+<p>This policy will be reviewed annually and updated as needed to ensure it remains effective and aligned with technological, business, and regulatory changes.</p>
+<p><b>Approved by:</b> </p>
+<p><b>Effective Date:</b> </p>
+<h2 id="i-acceptable-usage-policy">i) Acceptable Usage Policy</h2>
+<h3 id="1-purpose">1 Purpose</h3>
+<p>The purpose of this Acceptable Usage Policy is to define the acceptable use of Abu Dhabi Refreshments Co. LLC’s information systems, technology resources, and network services. This policy aims to protect the company’s assets, ensure productive use of technology, and maintain a secure and efficient working environment.</p>
+<h3 id="2-scope">2 Scope</h3>
+<p>This policy applies to all employees, contractors, and third-party vendors who use or have access to the company’s technology resources, including computers, networks, software, and data.</p>
+<h3 id="3-key-guidelines">3 Key Guidelines</h3>
+<h4 id="31-general-usage">3.1 General Usage</h4>
+<ul>
+<li>Authorized Use:  Technology resources should only be used for legitimate business purposes related to your</li>
+</ul>
+<p>job role. Personal use should be minimal and not interfere with work duties or violate company policies.</p>
+<ul>
+<li>Compliance:  Users must comply with all applicable laws, regulations, and company policies when using</li>
+</ul>
+<p>technology resources.</p>
+<h4 id="32-network-and-internet-usage">3.2 Network and Internet Usage</h4>
+<ul>
+<li>Internet Access:  Access to the Internet should be used primarily for business purposes. Accessing</li>
+</ul>
+<p>inappropriate or illegal websites, including adult content, gambling, and pirated software, is prohibited.</p>
+<ul>
+<li>Email and Communication:  Email and other communication tools should be professional and appropriate.</li>
+</ul>
+<p>Do not use company resources to send spam or offensive content.</p>
+<h4 id="33-data-protection-and-security">3.3 Data Protection and Security</h4>
+<ul>
+<li>Confidentiality:  Protect confidential and sensitive information from unauthorized access. Do not share or</li>
+</ul>
+<p>disclose company data without proper authorization.</p>
+<ul>
+<li>Data Storage:  Store company data in approved locations and ensure it is backed up regularly. Avoid storing</li>
+</ul>
+<p>sensitive data on personal devices or cloud services not approved by the company.</p>
+<h4 id="34-software-and-hardware">3.4 Software and Hardware</h4>
+<ul>
+<li>Approved Software:  Only install and use software that is approved by the IT department. Unauthorized</li>
+</ul>
+<p>software or applications should not be installed on company devices.</p>
+<ul>
+<li>Hardware Use:  Use company hardware, such as computers, printers, and mobile devices, responsibly.</li>
+</ul>
+<p>Report any malfunctions or damage immediately.</p>
+<h4 id="35-security-measures">3.5 Security Measures</h4>
+<ul>
+<li>Password Management:  Use strong, unique passwords for accessing company systems and change them</li>
+</ul>
+<p>regularly. Do not share your passwords with anyone.</p>
+<ul>
+<li>Device Security:  Lock your computer or mobile device when not in use and use encryption where</li>
+</ul>
+<p>applicable. Report lost or stolen devices immediately.</p>
+<h3 id="4-monitoring-and-enforcement">4 Monitoring and Enforcement</h3>
+<ul>
+<li>Monitoring:  The company reserves the right to monitor and audit the use of its technology resources to</li>
+</ul>
+<p>ensure compliance with this policy.</p>
+<ul>
+<li>Enforcement:  Violations of this policy may result in disciplinary action, including termination of</li>
+</ul>
+<p>employment. Legal action may be taken for serious breaches.</p>
+<h3 id="5-training-and-awareness">5 Training and Awareness</h3>
+<ul>
+<li>Employee Training:  All employees must be updated on this policy and acknowledge their understanding.</li>
+</ul>
+<p>Training should be provided during onboarding and keep updated periodically thereafter.</p>
+<ul>
+<li>Ongoing Awareness:  Regular reminders and updates on acceptable usage practices should be</li>
+</ul>
+<p>communicated to staff.</p>
+<h3 id="6-exceptions">6 Exceptions</h3>
+<p>Any exceptions to this policy must be approved by the IT department and documented, including the reasons for the exception.</p>
+<h3 id="7-review-and-update">7 Review and Update</h3>
+<p>This policy will be reviewed annually and updated as necessary to ensure it remains relevant and effective.</p>
+<p><b>Approved by:</b> </p>
+<p><b>Effective Date:</b> </p>
+<h2 id="j-e-mail--communication-policy">j) E-Mail &amp; Communication Policy</h2>
+<h3 id="1-purpose">1 Purpose</h3>
+<p>The purpose of this E-Mail &amp; Communication Policy is to establish guidelines for the appropriate use of e-mail and other communication tools at Abu Dhabi Refreshments Co. LLC. This policy aims to ensure effective, professional, and secure communication while protecting the company’s information and reputation.</p>
+<h3 id="2-scope">2 Scope</h3>
+<p>This policy applies to all employees, contractors, and third-party vendors who use company-provided e-mail and communication tools, including e-mail systems, messaging apps, and other digital communication platforms.</p>
+<h3 id="3-key-guidelines">3 Key Guidelines</h3>
+<h4 id="31-e-mail-usage">3.1 E-Mail Usage</h4>
+<ul>
+<li>Professional Content:  E-mails should be professional and relevant to work. Avoid using company e-mail for</li>
+</ul>
+<p>personal matters or sending non-business-related content.</p>
+<ul>
+<li>Confidential Information: Do not send confidential or sensitive information via e-mail unless it is encrypted</li>
+</ul>
+<p>and appropriately protected. Use secure methods for transmitting such information.</p>
+<ul>
+<li>Appropriate Tone:  Maintain a respectful and professional tone in all e-mail communications. Avoid using</li>
+</ul>
+<p>offensive language, aggressive tones, or inappropriate content.</p>
+<h4 id="32-e-mail-security">3.2 E-Mail Security</h4>
+<ul>
+<li>Strong Passwords:  Use strong, unique passwords for accessing e-mail accounts and change them regularly.</li>
+<li>Phishing and Spam:  Be cautious of phishing attempts and spam. Do not click on suspicious links or</li>
+</ul>
+<p>download attachments from unknown sources. Report any suspicious e-mails to the IT department.</p>
+<ul>
+<li>E-Mail Encryption:  Use encryption for sending sensitive or confidential information.</li>
+</ul>
+<h4 id="33-messaging-and-communication-tools">3.3 Messaging and Communication Tools</h4>
+<ul>
+<li>Authorized Use:  Use company-approved messaging and communication tools for business purposes only.</li>
+</ul>
+<p>Personal use should be limited and should not interfere with work responsibilities.</p>
+<ul>
+<li>Confidentiality:  Do not share sensitive or confidential information through messaging apps unless they are</li>
+</ul>
+<p>secure and approved by the company.</p>
+<ul>
+<li>Professional Conduct:  Maintain a professional demeanor in all communications, including instant</li>
+</ul>
+<p>messaging, video calls, and other digital interactions.</p>
+<h4 id="34-data-retention-and-management">3.4 Data Retention and Management</h4>
+<ul>
+<li>Archiving:  Follow company guidelines for archiving e-mails and communication records. Ensure that</li>
+</ul>
+<p>important communications are stored in a manner that allows for easy retrieval if needed.</p>
+<ul>
+<li>Deleting E-Mails:  Delete e-mails and messages that are no longer needed for business purposes, in</li>
+</ul>
+<p>accordance with data retention policies.</p>
+<h4 id="35-monitoring-and-compliance">3.5 Monitoring and Compliance</h4>
+<ul>
+<li>Monitoring:  The company reserves the right to monitor e-mail and communication tool usage to ensure</li>
+</ul>
+<p>compliance with this policy and to protect its information and systems.</p>
+<ul>
+<li>Compliance:  Ensure that all communication complies with relevant laws, regulations, and company policies.</li>
+</ul>
+<p>Unauthorized or inappropriate use of communication tools may result in disciplinary action.</p>
+<h3 id="4-roles-and-responsibilities">4 Roles and Responsibilities</h3>
+<ul>
+<li>Employees:  Adhere to this policy when using e-mail and communication tools. Report any security</li>
+</ul>
+<p>incidents, suspicious communications, or policy violations to the IT department.</p>
+<ul>
+<li>IT Department:  Monitor and manage e-mail and communication tool security, provide support for secure</li>
+</ul>
+<p>communication practices, and handle reported incidents.</p>
+<ul>
+<li>Management:  Ensure that staff are aware of and comply with this policy. Address any breaches or non</li>
+</ul>
+<p>compliance issues promptly.</p>
+<h3 id="5-training-and-awareness">5 Training and Awareness</h3>
+<ul>
+<li>Employee Training:  All employees must be updated on this policy and acknowledge their understanding.</li>
+</ul>
+<p>Training should be provided during onboarding and keep updated periodically thereafter.</p>
+<ul>
+<li>Ongoing Awareness:  Regularly update staff on best practices for e-mail and communication tool use and</li>
+</ul>
+<p>any changes to the policy.</p>
+<h3 id="6-exceptions">6 Exceptions</h3>
+<p>Any exceptions to this policy must be approved by the IT department and documented, including the reasons for the exception.</p>
+<h3 id="7-review-and-update">7 Review and Update</h3>
+<p>This policy will be reviewed annually and updated as necessary to ensure it remains effective and relevant.</p>
+<p><b>Approved by:</b> </p>
+<p><b>Effective Date:</b> </p>
+<h2 id="k-usage-of-cryptographic-controls-policy">k) Usage of Cryptographic Controls Policy</h2>
+<h3 id="1-purpose">1 Purpose</h3>
+<p>The purpose of this Usage of Cryptographic Controls Policy is to define the requirements for implementing and managing cryptographic controls to protect the confidentiality, integrity, and authenticity of Abu Dhabi Refreshments Co. LLC’s data and communications. This policy ensures that cryptographic methods are used appropriately to safeguard sensitive information.</p>
+<h3 id="2-scope">2 Scope</h3>
+<p>This policy applies to all employees, contractors, and third-party vendors who handle or have access to the company’s sensitive information, including data stored electronically, transmitted across networks, or processed by systems.</p>
+<h3 id="3-key-guidelines">3 Key Guidelines</h3>
+<h4 id="31-when-to-use-encryption">3.1 When to Use Encryption</h4>
+<ul>
+<li>Sensitive Data : Encrypt any sensitive data (like personal information, financial data, or confidential business</li>
+</ul>
+<p>information) when storing it or transmitting it over networks.</p>
+<ul>
+<li>Communication : Use encrypted communication channels (like VPNs or secure email) when sharing</li>
+</ul>
+<p>sensitive information.</p>
+<h4 id="32-approved-encryption-tools">3.2 Approved Encryption Tools</h4>
+<ul>
+<li>Use Company Tools : Only use the encryption tools and methods approved by the IT department. Do not</li>
+</ul>
+<p>use unauthorized software or methods for encrypting data.</p>
+<ul>
+<li>Regular Updates : Ensure that encryption tools are regularly updated to maintain security.</li>
+</ul>
+<h4 id="33-key-management">3.3 Key Management</h4>
+<ul>
+<li>Secure Keys : Encryption keys (the codes used to encrypt and decrypt data) must be stored securely and</li>
+</ul>
+<p>accessed only by authorized personnel.</p>
+<ul>
+<li>Key Rotation : Regularly change encryption keys to reduce the risk of them being compromised.</li>
+</ul>
+<h4 id="34-access-control">3.4 Access Control</h4>
+<ul>
+<li>Limit Access : Only authorized individuals should have access to encrypted data. Ensure proper access</li>
+</ul>
+<p>controls are in place.</p>
+<ul>
+<li>Password Protection : Use strong passwords and two-factor authentication where possible to protect</li>
+</ul>
+<p>access to encrypted systems and data.</p>
+<h4 id="35-data-transmission">3.5 Data Transmission</h4>
+<ul>
+<li>Secure Channels : Always use secure channels (like SSL/TLS) for transmitting encrypted data over the</li>
+</ul>
+<p>internet or other networks.</p>
+<ul>
+<li>Avoid Unencrypted Transmission : Do not send sensitive data over unencrypted channels like standard</li>
+</ul>
+<p>email or public Wi-Fi without using a VPN.</p>
+<h3 id="4-monitoring-and-compliance">4 Monitoring and Compliance</h3>
+<ul>
+<li>Regular Audits : The IT department will regularly check that encryption practices are followed and that all</li>
+</ul>
+<p>tools are up to date.</p>
+<ul>
+<li>Policy Compliance : Employees must comply with this policy. Non-compliance may lead to disciplinary</li>
+</ul>
+<p>action.</p>
+<h3 id="5-training">5 Training</h3>
+<p>Employees who handle sensitive data will receive training on how to use encryption tools and follow this policy.</p>
+<h3 id="6-reporting-issues">6 Reporting Issues</h3>
+<p>If you encounter any issues with encryption tools or suspect that encrypted data has been compromised, report it to the IT department immediately.</p>
+<h3 id="7-exceptions">7 Exceptions</h3>
+<p>Any exceptions to this policy must be approved by the IT department and documented, including the reasons for the exception.</p>
+<h3 id="8-review-and-update">8 Review and Update</h3>
+<p>This policy will be reviewed annually and updated as necessary to ensure it remains effective and aligned with technological advancements and regulatory requirements.</p>
+<p><b>Approved by:</b> </p>
+<p><b>Effective Date:</b> </p>
+<h2 id="l-third-party-management-policy">l) Third-Party Management Policy</h2>
+<h3 id="1-purpose">1 Purpose</h3>
+<p>This policy ensures that all third-party vendors, contractors, and service providers who work with Abu Dhabi Refreshments Co. LLC are managed properly to protect the company’s data, resources, and reputation.</p>
+<h3 id="2-scope">2 Scope</h3>
+<p>This policy applies to all employees who engage with third-party vendors, contractors, and service providers on behalf of the company.</p>
+<h3 id="3-key-guidelines">3 Key Guidelines</h3>
+<h4 id="31-vendor-selection">3.1 Vendor Selection</h4>
+<ul>
+<li>Due Diligence : Before engaging with any third-party, perform due diligence to assess their ability to meet</li>
+</ul>
+<p>the company’s security, legal, and operational requirements.</p>
+<ul>
+<li>Risk Assessment : Conduct a risk assessment to identify any potential risks associated with the third-party.</li>
+</ul>
+<p>Consider factors like data security, financial stability, and compliance with laws.</p>
+<h4 id="32-contractual-agreements">3.2 Contractual Agreements</h4>
+<ul>
+<li>Clear Contracts : Ensure all third-party engagements are governed by clear contracts that define the scope</li>
+</ul>
+<p>of work, responsibilities, and expectations.</p>
+<ul>
+<li>Security Clauses : Include clauses in contracts that require third-parties to comply with the company’s</li>
+</ul>
+<p>security policies and applicable laws. This includes data protection, confidentiality, and incident reporting.</p>
+<ul>
+<li>Right to Audit : Contracts should include the right for the company to audit the third-party’s compliance</li>
+</ul>
+<p>with agreed terms and security practices.</p>
+<h4 id="33-data-protection">3.3 Data Protection</h4>
+<ul>
+<li>Data Handling : Ensure third-parties only access, process, or store data that is necessary for their work. Data</li>
+</ul>
+<p>should be handled according to the company’s data protection policies.</p>
+<ul>
+<li>Encryption : Require third-parties to use encryption and other security measures to protect sensitive data.</li>
+</ul>
+<h4 id="34-ongoing-monitoring">3.4 Ongoing Monitoring</h4>
+<ul>
+<li>Performance Reviews : Regularly review the performance of third-parties to ensure they are meeting their</li>
+</ul>
+<p>contractual obligations and maintaining the required security standards.</p>
+<h4 id="35-incident-management">3.5 Incident Management</h4>
+<ul>
+<li>Incident Reporting : Require third parties to report any security incidents or data breaches immediately.</li>
+</ul>
+<p>They must cooperate with the company in managing and resolving the incident.</p>
+<h4 id="36-termination-of-relationship">3.6 Termination of Relationship</h4>
+<ul>
+<li>Secure Termination : When a contract with a third-party ends, ensure that all company data is securely</li>
+</ul>
+<p>returned or destroyed. Remove any access rights the third-party had to company systems.</p>
+<h3 id="4-roles-and-responsibilities">4 Roles and Responsibilities</h3>
+<ul>
+<li>Vendor Managers : Employees responsible for managing third-party relationships must ensure compliance</li>
+</ul>
+<p>with this policy and maintain good communication with vendors.</p>
+<ul>
+<li>IT Department : The IT department oversees the technical security aspects of third-party management,</li>
+</ul>
+<p>including access control and data protection.</p>
+<h3 id="5-compliance">5 Compliance</h3>
+<p>Adherence to this policy is mandatory. Non-compliance by employees or third parties may result in the termination of contracts or other disciplinary actions.</p>
+<h3 id="6-exceptions">6 Exceptions</h3>
+<p>Any exceptions to this policy must be approved by the appropriate authority within the company and documented.</p>
+<h3 id="7-review-and-update">7 Review and Update</h3>
+<p>This policy will be reviewed annually and updated as necessary to reflect changes in business practices, legal requirements, or risks.</p>
+<p><b>Approved by:</b> </p>
+<p><b>Effective Date:</b> </p>
+<h2 id="m-software-license-compliance-policy">m) Software License Compliance Policy</h2>
+<h3 id="1-purpose">1 Purpose</h3>
+<p>The purpose of this Software License Compliance Policy is to ensure that Abu Dhabi Refreshments Co. LLC adheres to all software licensing agreements and legal requirements. This policy aims to prevent unauthorized use of software, minimize legal risks, and promote ethical practices in software management.</p>
+<h3 id="2-scope">2 Scope</h3>
+<p>This policy applies to all employees, contractors, and third-party vendors who use or manage software within the company’s IT environment. It covers all software, including operating systems, applications, and utilities, regardless of whether they are purchased, licensed, or open-source.</p>
+<h3 id="3-key-guidelines">3 Key Guidelines</h3>
+<h4 id="31-software-acquisition">3.1 Software Acquisition</h4>
+<ul>
+<li>Authorized Purchase:  Ensure that all software is acquired through authorized channels. Avoid using pirated</li>
+</ul>
+<p>or unauthorized software.</p>
+<ul>
+<li>License Agreements:  Review and understand the terms and conditions of software license agreements</li>
+</ul>
+<p>before acquisition. Ensure that the license allows for the intended use and distribution.</p>
+<h4 id="32-license-management">3.2 License Management</h4>
+<ul>
+<li>Inventory Management:  Maintain an accurate inventory of all software licenses. Document details such as</li>
+</ul>
+<p>license type, quantity, expiration dates, and installation locations.</p>
+<ul>
+<li>Compliance Monitoring:  Regularly review software usage to ensure compliance with license agreements.</li>
+</ul>
+<p>Verify that the number of software installations does not exceed the number of licenses purchased.</p>
+<ul>
+<li>License Renewal:  Track license expiration dates and ensure timely renewal of licenses to avoid lapses in</li>
+</ul>
+<p>compliance.</p>
+<h4 id="33-software-usage">3.3 Software Usage</h4>
+<ul>
+<li>Permitted Use:  Use software only in accordance with the terms of the license agreement. Avoid using</li>
+</ul>
+<p>software for purposes not covered by the license.</p>
+<ul>
+<li>Transfer and Sharing:  Do not transfer or share software licenses or copies without proper authorization</li>
+</ul>
+<p>and adherence to license terms.</p>
+<h4 id="34-software-audits">3.4 Software Audits</h4>
+<ul>
+<li>Internal Audits:  Conduct periodic internal audits to verify compliance with software licenses. Address any</li>
+</ul>
+<p>discrepancies or non-compliance issues promptly.</p>
+<ul>
+<li>Vendor Audits:  Cooperate with software vendors during audits and provide requested documentation and</li>
+</ul>
+<p>information related to software usage.</p>
+<h4 id="35-reporting-and-compliance">3.5 Reporting and Compliance</h4>
+<ul>
+<li>Incident Reporting:  Report any suspected violations of software licensing agreements or unauthorized</li>
+</ul>
+<p>software use to the IT department immediately.</p>
+<ul>
+<li>Compliance Responsibilities:  All employees are responsible for adhering to this policy and ensuring that</li>
+</ul>
+<p>software is used in compliance with licensing agreements.</p>
+<h3 id="4-roles-and-responsibilities">4 Roles and Responsibilities</h3>
+<ul>
+<li>IT Department:  Oversees software license management, conducts audits, and provides guidance on</li>
+</ul>
+<p>licensing issues. Ensures compliance with this policy.</p>
+<ul>
+<li>Procurement Team:  Manages the acquisition of software and ensures that all purchases are documented</li>
+</ul>
+<p>and compliant with licensing agreements.</p>
+<ul>
+<li>Employees: Follow the guidelines of this policy and use software in accordance with license terms. Report</li>
+</ul>
+<p>any issues or concerns related to software licensing.</p>
+<h3 id="5-training-and-awareness">5 Training and Awareness</h3>
+<ul>
+<li>Employee Training: Provide training on software license compliance to employees who use or manage</li>
+</ul>
+<p>software. Ensure that training covers the importance of compliance and the procedures for reporting issues.</p>
+<ul>
+<li>Ongoing Awareness:  Regularly communicate updates and reminders about software license compliance to</li>
+</ul>
+<p>staff.</p>
+<h3 id="6-compliance">6 Compliance</h3>
+<p>Compliance with this policy is mandatory. Non-compliance may result in disciplinary action.</p>
+<h3 id="7-exceptions">7 Exceptions</h3>
+<p>Any exceptions to this policy must be approved by the IT department and documented, including the reasons for the exception.</p>
+<h3 id="8-review-and-update">8 Review and Update</h3>
+<p>This policy will be reviewed annually and updated as necessary to ensure it remains effective and aligned with changes in licensing requirements, industry standards, and company practices.</p>
+<p><b>Approved by:</b> </p>
+<p><b>Effective Date:</b> </p>
+<h2 id="n-logical-access-control-policy">n) Logical Access Control Policy</h2>
+<h3 id="1-purpose">1 Purpose</h3>
+<p>The purpose of this Logical Access Control Policy is to establish guidelines for managing and securing access to Abu Dhabi Refreshments Co. LLC’s information systems and resources. This policy ensures that access is granted based on job roles and responsibilities and that unauthorized access is prevented.</p>
+<h3 id="2-scope">2 Scope</h3>
+<p>This policy applies to all employees, contractors, and third-party vendors who access or manage the company’s information systems, including hardware, software, and data. It covers all systems and applications used within the company’s IT environment.</p>
+<h3 id="3-key-guidelines">3 Key Guidelines</h3>
+<h4 id="31-access-control-principles">3.1 Access Control Principles</h4>
+<ul>
+<li>Least Privilege:  Grant users the minimum level of access necessary to perform their job functions. Access</li>
+</ul>
+<p>rights should be based on job roles and responsibilities.</p>
+<ul>
+<li>Need-to-Know:  Provide access to information only if it is necessary for the user to perform their duties.</li>
+</ul>
+<p>Avoid granting access to data that is not relevant to the user’s role.</p>
+<h4 id="32-user-authentication">3.2 User Authentication</h4>
+<ul>
+<li>Strong Passwords:  Require strong, unique passwords for all user accounts. Passwords should meet</li>
+</ul>
+<p>complexity requirements and be changed regularly.</p>
+<ul>
+<li>Account Management:  Ensure that user accounts are created, modified, and deactivated in accordance</li>
+</ul>
+<p>with company procedures. Terminate access promptly when an employee leaves or changes roles.</p>
+<h4 id="33-access-request-and-approval">3.3 Access Request and Approval</h4>
+<ul>
+<li>Access Requests:  Users must submit formal access requests for new access or changes to existing access.</li>
+</ul>
+<p>Requests should be reviewed and approved by appropriate authorities before access is granted.</p>
+<ul>
+<li>Authorization: Access approvals should be documented and include details of the requested access, the</li>
+</ul>
+<p>purpose, and the approval from relevant managers or system owners.</p>
+<h4 id="34-access-reviews-and-audits">3.4 Access Reviews and Audits</h4>
+<ul>
+<li>Periodic Reviews:  Conduct regular reviews of user access rights to ensure they remain appropriate for job</li>
+</ul>
+<p>functions. Review access rights at least annually or when there are significant changes in job roles.</p>
+<ul>
+<li>Audits: Perform periodic audits of access controls to verify compliance with this policy and identify any</li>
+</ul>
+<p>unauthorized access or security gaps.</p>
+<h4 id="35-access-monitoring-and-logging">3.5 Access Monitoring and Logging</h4>
+<ul>
+<li>Access Logs:  Maintain logs of access to critical systems and sensitive data. Logs should capture details such</li>
+</ul>
+<p>as user identity, access times, and actions performed.</p>
+<ul>
+<li>Monitoring: Regularly monitor access logs for unusual or unauthorized activities. Investigate any anomalies</li>
+</ul>
+<p>or security incidents promptly.</p>
+<h4 id="36-data-protection">3.6 Data Protection</h4>
+<ul>
+<li>Data Encryption:  Protect sensitive data with encryption to ensure its confidentiality and integrity.</li>
+<li>Secure Remote Access:  Use secure methods for remote access, such as VPNs or secure tunneling, to protect</li>
+</ul>
+<p>data transmitted over public or untrusted networks.</p>
+<h3 id="4-roles-and-responsibilities">4 Roles and Responsibilities</h3>
+<ul>
+<li>IT Department:  Responsible for implementing and managing access controls, including authentication</li>
+</ul>
+<p>mechanisms and access management systems. Conducts access reviews and audits.</p>
+<ul>
+<li>System Owners:  Approve access requests and ensure that users have appropriate access levels based on</li>
+</ul>
+<p>their job roles. Monitor system access and address any issues.</p>
+<ul>
+<li>Employees:  Follow access control guidelines, use accounts responsibly, and report any issues or security</li>
+</ul>
+<p>incidents related to access.</p>
+<h3 id="5-training-and-awareness">5 Training and Awareness</h3>
+<ul>
+<li>Employee Training:  Provide training on access control procedures, including password management and</li>
+</ul>
+<p>secure access practices. Ensure training is part of the onboarding process and refreshed periodically.</p>
+<ul>
+<li>Ongoing Awareness:  Regularly communicate updates and best practices related to access control to all</li>
+</ul>
+<p>staff.</p>
+<h3 id="6-compliance">6 Compliance</h3>
+<p>Compliance with this policy is mandatory. Failure to adhere to access control procedures may result in disciplinary action.</p>
+<h3 id="7-exceptions">7 Exceptions</h3>
+<p>Any exceptions to this policy must be approved by the IT department and documented, including the reasons for the exception.</p>
+<h3 id="8-review-and-update">8 Review and Update</h3>
+<p>This policy will be reviewed annually and updated as necessary to ensure it remains effective and aligned with changes in technology, business requirements, and regulatory standards.</p>
+<p><b>Approved by:</b> </p>
+<p><b>Effective Date:</b> </p>
+<h2 id="o-physical-and-environmental-security-policy">o) Physical and Environmental Security Policy</h2>
+<h3 id="1-purpose">1 Purpose</h3>
+<p>This policy ensures that Abu Dhabi Refreshments Co. LLC protects its physical facilities, equipment, and personnel from unauthorized access, damage, or disruption due to environmental factors.</p>
+<h3 id="2-scope">2 Scope</h3>
+<p>This policy applies to all company-owned or leased facilities, as well as all employees, contractors, and visitors who access these locations.</p>
+<h3 id="3-key-guidelines">3 Key Guidelines</h3>
+<h4 id="31-access-control">3.1 Access Control</h4>
+<ul>
+<li>Authorized Access : Limit access to facilities and sensitive areas to authorized personnel only. Use ID badges,</li>
+</ul>
+<p>key cards, or biometric systems to control entry.</p>
+<ul>
+<li>Visitor Management : Require visitors to sign in, be escorted by authorized personnel, and wear visitor</li>
+</ul>
+<p>badges at all times while on company premises.</p>
+<ul>
+<li>Secure Areas : Implement additional controls for high-security areas (e.g., server rooms) such as multi-factor</li>
+</ul>
+<p>authentication or video surveillance.</p>
+<h4 id="32-physical-security-measures">3.2 Physical Security Measures</h4>
+<ul>
+<li>Perimeter Security : Secure the perimeter of all facilities with fences, gates, and controlled access points.</li>
+</ul>
+<p>Ensure that entry and exit points are monitored.</p>
+<ul>
+<li>Surveillance : Install CCTV cameras in key locations such as entrances, exits, and high-security areas.</li>
+</ul>
+<p>Regularly monitor and review footage.</p>
+<ul>
+<li>Lighting: Ensure that all exterior and critical interior areas are well-lit to deter unauthorized access and</li>
+</ul>
+<p>provide visibility.</p>
+<h4 id="33-equipment-security">3.3 Equipment Security</h4>
+<ul>
+<li>Securing Devices : Secure computers, servers, and other critical equipment with physical locks, especially in</li>
+</ul>
+<p>public or shared spaces.</p>
+<ul>
+<li>Regular Checks : Conduct regular checks of equipment to ensure that it is secure and functioning correctly.</li>
+</ul>
+<p>Report any missing or damaged equipment immediately.</p>
+<ul>
+<li>Disposal of Equipment : Dispose of old or unused equipment securely, ensuring that all data is erased or</li>
+</ul>
+<p>destroyed.</p>
+<h4 id="34-environmental-controls">3.4 Environmental Controls</h4>
+<ul>
+<li>Climate Control : Maintain appropriate temperature and humidity levels in areas housing sensitive</li>
+</ul>
+<p>equipment, such as server rooms, to prevent overheating or damage.</p>
+<ul>
+<li>Fire Protection : Equip facilities with fire detection and suppression systems (e.g., smoke detectors,</li>
+</ul>
+<p>sprinklers) and conduct regular drills.</p>
+<ul>
+<li>Power Supply : Ensure an uninterruptible power supply (UPS) is available for critical systems to prevent data</li>
+</ul>
+<p>loss during power outages. Backup generators should be tested regularly.</p>
+<h4 id="35-incident-management">3.5 Incident Management</h4>
+<ul>
+<li>Incident Reporting : Report any physical security incidents (e.g., unauthorized access, theft, environmental</li>
+</ul>
+<p>damage) immediately to the security team or facility manager.</p>
+<ul>
+<li>Response Plan : Have a documented response plan for physical and environmental incidents, including</li>
+</ul>
+<p>evacuation procedures and emergency contacts.</p>
+<h4 id="36-training-and-awareness">3.6 Training and Awareness</h4>
+<ul>
+<li>Employee Training : Provide regular training to employees on physical security practices, including how to</li>
+</ul>
+<p>recognize and report suspicious activity.</p>
+<ul>
+<li>Emergency Drills : Conduct regular emergency drills (e.g., fire, evacuation) to ensure that employees know</li>
+</ul>
+<p>how to respond in case of an incident.</p>
+<h3 id="4-roles-and-responsibilities">4 Roles and Responsibilities</h3>
+<ul>
+<li>Security Team : Responsible for implementing and monitoring physical security measures, including access</li>
+</ul>
+<p>control, surveillance, and incident response.</p>
+<ul>
+<li>Facility Managers : Ensure that environmental controls are in place and functioning properly. They are also</li>
+</ul>
+<p>responsible for maintaining the physical infrastructure.</p>
+<ul>
+<li>Employees : Must follow security protocols, report any issues or incidents, and participate in training and</li>
+</ul>
+<p>drills.</p>
+<h3 id="5-compliance">5 Compliance</h3>
+<p>Compliance with this policy is mandatory. Non-compliance may result in disciplinary action or other corrective measures.</p>
+<h3 id="6-exceptions">6 Exceptions</h3>
+<p>Any exceptions to this policy must be approved by senior management and documented.</p>
+<h3 id="7-review-and-update">7 Review and Update</h3>
+<p>This policy will be reviewed annually and updated as necessary to address new security challenges or changes in the company’s operations.</p>
+<p><b>Approved by:</b> </p>
+<p><b>Effective Date:</b> </p>
+<h2 id="p-patch-management-policy">p) Patch Management Policy</h2>
+<h3 id="1-purpose">1 Purpose</h3>
+<p>The purpose of this Patch Management Policy is to establish a structured approach for managing and applying patches and updates to Abu Dhabi Refreshments Co. LLC’s software and systems. This policy aims to ensure that patches are applied promptly to address security vulnerabilities, fix bugs, and improve system performance.</p>
+<h3 id="2-scope">2 Scope</h3>
+<p>This policy applies to all software, applications, operating systems, and firmware used within the company’s IT environment. It covers all devices and systems, including servers, workstations, and network equipment.</p>
+<h3 id="3-key-guidelines">3 Key Guidelines</h3>
+<h4 id="31-patch-identification">3.1 Patch Identification</h4>
+<ul>
+<li>Source of Patches:  Obtain patches and updates from authorized and trusted sources, such as software</li>
+</ul>
+<p>vendors or official repositories.</p>
+<ul>
+<li>Patch Monitoring:  Regularly monitor for new patches, updates, and security advisories from software</li>
+</ul>
+<p>vendors and relevant security organizations.</p>
+<h4 id="32-patch-assessment">3.2 Patch Assessment</h4>
+<ul>
+<li>Risk Assessment:  Evaluate the potential impact and risk associated with each patch. Consider factors such</li>
+</ul>
+<p>as security vulnerability, compatibility, and the potential effect on system performance.</p>
+<ul>
+<li>Testing: Test patches in a controlled environment before deployment to ensure compatibility with existing</li>
+</ul>
+<p>systems and applications. Verify that the patch does not introduce new issues or conflicts.</p>
+<h4 id="33-patch-deployment">3.3 Patch Deployment</h4>
+<ul>
+<li>Deployment Schedule:  Develop and follow a patch deployment schedule. Prioritize patches based on their</li>
+</ul>
+<p>criticality and impact on security and system functionality.</p>
+<ul>
+<li>Deployment Procedures:  Apply patches following established procedures. Ensure that deployment is</li>
+</ul>
+<p>conducted during planned maintenance windows to minimize disruption to business operations.</p>
+<ul>
+<li>Backup: Perform backups of systems and data before applying patches. Ensure that backups are tested and</li>
+</ul>
+<p>can be restored if needed.</p>
+<h4 id="34-patch-documentation">3.4 Patch Documentation</h4>
+<ul>
+<li>Record Keeping:  Maintain records of all applied patches, including details such as the patch name, version,</li>
+</ul>
+<p>deployment date, and any issues encountered. Document the testing and validation results.</p>
+<ul>
+<li>Change Management:  Document patch management activities as part of the change management process.</li>
+</ul>
+<p>Ensure that all changes are reviewed and approved according to company procedures.</p>
+<h4 id="35-patch-verification">3.5 Patch Verification</h4>
+<ul>
+<li>Post-Deployment Testing:  Verify the successful application of patches and conduct testing to ensure that</li>
+</ul>
+<p>systems are functioning as expected. Monitor for any issues or anomalies following patch deployment.</p>
+<ul>
+<li>Monitoring:  Continuously monitor systems for any signs of instability or performance issues after patches</li>
+</ul>
+<p>are applied. Address any problems promptly.</p>
+<h4 id="36-patch-management-tools">3.6 Patch Management Tools</h4>
+<ul>
+<li>Automation:  Utilize patch management tools and automation solutions to streamline the patching process</li>
+</ul>
+<p>and ensure timely application of patches.</p>
+<ul>
+<li>Configuration: Configure patch management tools to alert administrators about new patches and facilitate</li>
+</ul>
+<p>automated deployment where appropriate.</p>
+<h3 id="4-roles-and-responsibilities">4 Roles and Responsibilities</h3>
+<ul>
+<li>IT Department:  Responsible for managing the patch management process, including monitoring for</li>
+</ul>
+<p>patches, assessing risks, testing, deploying, and documenting patches. Ensure that patching activities are conducted in accordance with this policy.</p>
+<ul>
+<li>System Administrators:  Implement and manage patches on systems and applications. Perform testing,</li>
+</ul>
+<p>backups, and post-deployment verification.</p>
+<ul>
+<li>Employees:  Report any issues or anomalies related to system performance or security following patch</li>
+</ul>
+<p>application. Adhere to IT guidelines and procedures for system maintenance.</p>
+<h3 id="5-training-and-awareness">5 Training and Awareness</h3>
+<ul>
+<li>Employee Training:  Provide training on the importance of patch management and the procedures for</li>
+</ul>
+<p>reporting issues related to patches and updates.</p>
+<ul>
+<li>Ongoing Awareness:  Regularly update staff on patch management practices and any changes to the policy</li>
+</ul>
+<p>or procedures.</p>
+<h3 id="6-compliance">6 Compliance</h3>
+<p>Compliance with this policy is mandatory. Non-compliance may result in security vulnerabilities, operational disruptions, and disciplinary action.</p>
+<h3 id="7-exceptions">7 Exceptions</h3>
+<p>Any exceptions to this policy must be approved by the IT department and documented, including the reasons for the exception and any mitigating controls in place.</p>
+<h3 id="8-review-and-update">8 Review and Update</h3>
+<p>This policy will be reviewed annually and updated as necessary to ensure it remains effective and aligned with changes in technology, business requirements, and regulatory standards.</p>
+<p><b>Approved by:</b> </p>
+<p><b>Effective Date:</b> </p>
+<h2 id="q-system-development-and-acquisition-policy">q) System Development and Acquisition Policy</h2>
+<h3 id="1-purpose">1 Purpose</h3>
+<p>The purpose of this System Development and Acquisition Policy is to ensure that all systems and software developed or acquired by Abu Dhabi Refreshments Co. LLC meet the company’s requirements for security, functionality, and compliance. This policy aims to establish guidelines for the development, acquisition, and deployment of systems to support the company’s business objectives.</p>
+<h3 id="2-scope">2 Scope</h3>
+<p>This policy applies to all employees, contractors, and third-party vendors involved in the development, acquisition, and deployment of systems and software used within the company’s IT environment.</p>
+<h3 id="3-key-guidelines">3 Key Guidelines</h3>
+<h4 id="31-system-development">3.1 System Development</h4>
+<ul>
+<li>Requirements Definition:  Clearly define system requirements and objectives before development begins.</li>
+</ul>
+<p>Ensure that requirements align with business needs, security standards, and regulatory compliance.</p>
+<ul>
+<li>Development Standards:  Follow industry best practices and company standards for system development,</li>
+</ul>
+<p>including secure coding practices and documentation requirements.</p>
+<ul>
+<li>Testing and Validation:  Conduct thorough testing and validation of systems during development. Include</li>
+</ul>
+<p>functional testing, security testing, and user acceptance testing to ensure that the system meets all requirements and performs as expected.</p>
+<ul>
+<li>Change Management:  Implement a change management process for tracking and managing changes to</li>
+</ul>
+<p>system development projects. Ensure that changes are reviewed, approved, and documented.</p>
+<h4 id="32-system-acquisition">3.2 System Acquisition</h4>
+<ul>
+<li>Vendor Selection:  Evaluate potential vendors based on their ability to meet system requirements, security</li>
+</ul>
+<p>standards, and compliance needs. Consider factors such as vendor reputation, experience, and support capabilities.</p>
+<ul>
+<li>Contractual Agreements:  Establish clear contractual agreements with vendors that outline system</li>
+</ul>
+<p>requirements, deliverables, security obligations, and support terms. Ensure that contracts include provisions for ongoing support and maintenance.</p>
+<ul>
+<li>Due Diligence:  Perform due diligence to assess the security and compliance of acquired systems. Review</li>
+</ul>
+<p>vendor security practices, data protection measures, and compliance with relevant regulations.</p>
+<h4 id="33-system-integration">3.3 System Integration</h4>
+<ul>
+<li>Compatibility:  Ensure that new systems and software are compatible with existing IT infrastructure and</li>
+</ul>
+<p>systems. Assess potential impacts on performance, security, and integration with other systems.</p>
+<ul>
+<li>Integration Testing:  Conduct integration testing to verify that new systems work correctly with existing</li>
+</ul>
+<p>systems and do not introduce vulnerabilities or conflicts.</p>
+<h4 id="34-deployment-and-maintenance">3.4 Deployment and Maintenance</h4>
+<ul>
+<li>Deployment Planning:  Develop a deployment plan that includes timelines, resource requirements, and</li>
+</ul>
+<p>potential impacts on business operations. Ensure that deployment is carried out in a controlled and secure manner.</p>
+<ul>
+<li>Documentation:  Maintain comprehensive documentation for developed or acquired systems, including</li>
+</ul>
+<p>system design, configuration, and user manuals. Ensure that documentation is kept up-to-date and accessible.</p>
+<ul>
+<li>Ongoing Maintenance:  Implement procedures for ongoing maintenance and support of systems. Regularly</li>
+</ul>
+<p>update and patch systems to address security vulnerabilities and improve functionality.</p>
+<h3 id="4-roles-and-responsibilities">4 Roles and Responsibilities</h3>
+<ul>
+<li>IT Department:  Oversees the system development and acquisition processes, including vendor evaluations,</li>
+</ul>
+<p>system testing, and integration. Ensures compliance with this policy and manages system deployments and maintenance.</p>
+<ul>
+<li>Procurement Team:  Manages the acquisition process, including vendor selection and contract</li>
+</ul>
+<p>negotiations. Ensures that acquisition processes align with company policies and requirements.</p>
+<ul>
+<li>Employees:  Adhere to guidelines for system use and report any issues or concerns related to new systems</li>
+</ul>
+<p>or software.</p>
+<h3 id="5-training-and-awareness">5 Training and Awareness</h3>
+<p>Ensure that training is part of the onboarding process and updated as needed. Regularly communicate updates and best practices related to system development and acquisition to relevant staff.</p>
+<h3 id="6-compliance">6 Compliance</h3>
+<p>Compliance with this policy is mandatory. Non-compliance may result in operational disruptions, security vulnerabilities, and disciplinary action.</p>
+<h3 id="7-exceptions">7 Exceptions</h3>
+<p>Any exceptions to this policy must be approved by the IT department and documented, including the reasons for the exception and any mitigating controls in place.</p>
+<h3 id="8-review-and-update">8 Review and Update</h3>
+<p>This policy will be reviewed annually and updated as necessary to ensure it remains effective and aligned with changes in technology, business requirements, and regulatory standards.</p>
+<p><b>Approved by:</b> </p>
+<p><b>Effective Date:</b> </p>
+<h2 id="r-antivirus-management-policy">r) Antivirus Management Policy</h2>
+<h3 id="1-purpose">1 Purpose</h3>
+<p>The purpose of this Antivirus Management Policy is to establish guidelines for the deployment, configuration, and management of antivirus software to protect Abu Dhabi Refreshments Co. LLC’s information systems and data from malware and other malicious threats. This policy aims to ensure the effectiveness of antivirus solutions and minimize the risk of infections.</p>
+<h3 id="2-scope">2 Scope</h3>
+<p>This policy applies to all employees, contractors, and third-party vendors who use or manage the company’s information systems, including servers, workstations, and mobile devices.</p>
+<h3 id="3-key-guidelines">3 Key Guidelines</h3>
+<h4 id="31-antivirus-software-deployment">3.1 Antivirus Software Deployment</h4>
+<ul>
+<li>Approved Solutions:  Use antivirus solutions that have been approved by the IT department. Ensure that</li>
+</ul>
+<p>the selected antivirus software meets company security requirements and industry standards.</p>
+<ul>
+<li>Installation:  Ensure that antivirus software is installed on all company devices, including desktops, laptops,</li>
+</ul>
+<p>servers, and mobile devices. Install antivirus software as part of the standard device setup process.</p>
+<h4 id="32-configuration-and-updates">3.2 Configuration and Updates</h4>
+<ul>
+<li>Automatic Updates:  Configure antivirus software to automatically receive and install updates for virus</li>
+</ul>
+<p>definitions and software patches. Ensure that updates are applied promptly to protect against the latest threats.</p>
+<ul>
+<li>Scheduled Scans:  Schedule regular full system scans to detect and remove malware. Ensure that scans are</li>
+</ul>
+<p>performed during off-peak hours to minimize impact on system performance.</p>
+<h4 id="33-monitoring-and-reporting">3.3 Monitoring and Reporting</h4>
+<ul>
+<li>Real-Time Protection:  Enable real-time protection features to monitor and block malicious activities as they</li>
+</ul>
+<p>occur. Ensure that real-time protection is active on all devices.</p>
+<ul>
+<li>Alert Management:  Monitor antivirus alerts and notifications. Investigate any detected threats or security</li>
+</ul>
+<p>incidents promptly and take appropriate action to address them.</p>
+<ul>
+<li>Incident Reporting: Report any antivirus-related issues or incidents, such as infections or software</li>
+</ul>
+<p>malfunctions, to the IT department immediately.</p>
+<h4 id="34-management-and-maintenance">3.4 Management and Maintenance</h4>
+<ul>
+<li>Software Management:  Regularly review and update antivirus software configurations to ensure they align</li>
+</ul>
+<p>with current security policies and threat landscapes. Manage licensing and subscriptions to ensure continuous protection.</p>
+<ul>
+<li>System Compatibility:  Verify that antivirus software is compatible with other security solutions and system</li>
+</ul>
+<p>configurations. Avoid conflicts between antivirus programs and other security tools.</p>
+<h4 id="35-user-responsibilities">3.5 User Responsibilities</h4>
+<ul>
+<li>Compliance:  Follow guidelines for the use of antivirus software, including not disabling or modifying</li>
+</ul>
+<p>antivirus settings. Ensure that antivirus software is not tampered with or bypassed.</p>
+<ul>
+<li>Awareness:  Be aware of potential threats and practices for safe computing. Report suspicious activities or</li>
+</ul>
+<p>potential infections to the IT department.</p>
+<h3 id="4-roles-and-responsibilities">4 Roles and Responsibilities</h3>
+<ul>
+<li>IT Department:  Responsible for selecting, deploying, configuring, and managing antivirus software.</li>
+</ul>
+<p>Monitors antivirus alerts, performs incident investigations, and ensures software updates and patches are applied.</p>
+<ul>
+<li>System Administrators:  Manage antivirus installations and configurations on devices. Conduct regular</li>
+</ul>
+<p>scans and respond to alerts.</p>
+<ul>
+<li>Employees: Use company devices in accordance with this policy and report any antivirus-related issues or</li>
+</ul>
+<p>incidents.</p>
+<h3 id="5-training-and-awareness">5 Training and Awareness</h3>
+<p>Provide training on antivirus management, including safe computing practices and the importance of antivirus protection. Ensure training is part of the onboarding process and refreshed periodically. Regularly communicate updates and best practices related to antivirus management to all staff.</p>
+<h3 id="6-compliance">6 Compliance</h3>
+<p>Compliance with this policy is mandatory. Non-compliance may result in disciplinary action and could lead to security breaches and operational disruptions.</p>
+<h3 id="7-exceptions">7 Exceptions</h3>
+<p>Any exceptions to this policy must be approved by the IT department and documented, including the reasons for the exception and any mitigating controls in place.</p>
+<h3 id="8-review-and-update">8 Review and Update</h3>
+<p>This policy will be reviewed annually and updated as necessary to ensure it remains effective and aligned with changes in technology, business requirements, and regulatory standards.</p>
+<p><b>Approved by:</b> </p>
+<p><b>Effective Date:</b> </p>
+<h2 id="s-change-management-policy">s) Change Management Policy</h2>
+<h3 id="1-purpose">1 Purpose</h3>
+<p>The purpose of this Change Management Policy is to establish a structured approach for managing changes to Abu Dhabi Refreshments Co. LLC’s IT systems, applications, and infrastructure. This policy aims to ensure that changes are made in a controlled and predictable manner, minimizing risk and disruption to business operations.</p>
+<h3 id="2-scope">2 Scope</h3>
+<p>This policy applies to all employees, contractors, and third-party vendors involved in the planning, implementation, and management of changes to IT systems and infrastructure. It covers all types of changes, including hardware, software, network configurations, and system updates.</p>
+<h3 id="3-key-guidelines">3 Key Guidelines</h3>
+<h4 id="31-change-request-and-approval">3.1 Change Request and Approval</h4>
+<ul>
+<li>Change Request:  All changes must be initiated through a formal Change Request (CR) or by email. The CR</li>
+</ul>
+<p>should include details such as the nature of the change, reasons, potential impacts, and implementation plans.</p>
+<ul>
+<li>Approval Process:  Obtain approval for changes from the relevant stakeholders before implementation.</li>
+</ul>
+<p>Evaluate the potential impact, risk, and benefits of each proposed change.</p>
+<h4 id="32-change-planning-and-assessment">3.2 Change Planning and Assessment</h4>
+<ul>
+<li>Impact Assessment:  Conduct an impact assessment to identify potential effects on business operations,</li>
+</ul>
+<p>system performance, and security. Assess the risk associated with the change and identify any necessary mitigation measures.</p>
+<ul>
+<li>Change Plan:  Develop a detailed change plan that includes implementation steps, timelines, resource</li>
+</ul>
+<p>requirements, and rollback procedures. Ensure that the plan addresses potential issues and provides contingency measures.</p>
+<h4 id="33-change-implementation">3.3 Change Implementation</h4>
+<ul>
+<li>Scheduled Changes:  Implement changes according to the approved plan and schedule. Perform changes</li>
+</ul>
+<p>during planned maintenance windows or periods of low activity to minimize disruption.</p>
+<ul>
+<li>Testing: Conduct testing in a controlled environment before deploying changes to production systems.</li>
+</ul>
+<p>Verify that the change meets requirements and does not introduce new issues.</p>
+<h4 id="34-change-monitoring-and-documentation">3.4 Change Monitoring and Documentation</h4>
+<ul>
+<li>Monitoring: Monitor the implementation of changes to ensure that they are executed as planned. Track</li>
+</ul>
+<p>progress and address any issues that arise promptly.</p>
+<ul>
+<li>Documentation:  Document all changes, including details of the request, approval, implementation, and any</li>
+</ul>
+<p>issues encountered. Maintain records of change activities for future reference and compliance purposes.</p>
+<h4 id="35-change-review-and-closure">3.5 Change Review and Closure</h4>
+<ul>
+<li>Post-Implementation Review:  Conduct a post-implementation review to evaluate the success of the</li>
+</ul>
+<p>change. Assess whether the change achieved its objectives and identify any lessons learned.</p>
+<ul>
+<li>Change Closure:  Close the change request once the change has been successfully implemented and</li>
+</ul>
+<p>reviewed. Update records and communicate the completion to relevant stakeholders.</p>
+<h3 id="4-roles-and-responsibilities">4 Roles and Responsibilities</h3>
+<ul>
+<li>IT Department:  Manages the change management process, including planning, implementing, and</li>
+</ul>
+<p>monitoring changes. Coordinates with relevant teams to ensure successful change execution.</p>
+<ul>
+<li>System Owners:  Provide input on change requests, assess impact on their systems, and approve changes</li>
+</ul>
+<p>related to their areas of responsibility.</p>
+<ul>
+<li>Employees:  Submit change requests as needed and follow the change management procedures. Report</li>
+</ul>
+<p>any issues related to changes.</p>
+<h3 id="5-training-and-awareness">5 Training and Awareness</h3>
+<p>Provide training on the change management process, including how to submit change requests and follow procedures. Ensure training is part of the onboarding process and refreshed periodically. Regularly communicate updates and best practices related to change management to all staff.</p>
+<h3 id="6-compliance">6 Compliance</h3>
+<p>Compliance with this policy is mandatory. Non-compliance may result in operational disruptions, security vulnerabilities, and disciplinary action.</p>
+<h3 id="7-exceptions">7 Exceptions</h3>
+<p>Any exceptions to this policy must be approved by the Change Advisory Board or relevant authority and documented, including the reasons for the exception and any mitigating controls in place.</p>
+<h3 id="8-review-and-update">8 Review and Update</h3>
+<p>This policy will be reviewed annually and updated as necessary to ensure it remains effective and aligned with changes in technology, business requirements, and regulatory standards.</p>
+<p><b>Approved by:</b> </p>
+<p><b>Effective Date:</b> </p>
+<h2 id="t-firewall-management-policy">t) Firewall Management Policy</h2>
+<h3 id="1-purpose">1 Purpose</h3>
+<p>The purpose of this Firewall Management Policy is to establish guidelines for the configuration, management, and monitoring of firewall systems at Abu Dhabi Refreshments Co. LLC. This policy aims to ensure that firewalls effectively protect the company’s network and information systems from unauthorized access and cyber threats.</p>
+<h3 id="2-scope">2 Scope</h3>
+<p>This policy applies to all employees, contractors, and third-party vendors who manage, configure, or monitor firewall systems used within the company’s IT environment. It covers all physical and virtual firewalls deployed across the organization.</p>
+<h3 id="3-key-guidelines">3 Key Guidelines</h3>
+<h4 id="31-firewall-configuration">3.1 Firewall Configuration</h4>
+<ul>
+<li>Default Deny:  Configure firewalls to deny all traffic by default and only allow traffic that is explicitly</li>
+</ul>
+<p>permitted. Use the principle of least privilege to restrict access to only necessary services and ports.</p>
+<ul>
+<li>Rule Management: Develop and maintain a formal process for creating, reviewing, and approving firewall</li>
+</ul>
+<p>rules. Ensure that rules are documented, regularly reviewed, and updated as needed.</p>
+<ul>
+<li>Segmentation: Implement network segmentation and create firewall rules that enforce segmentation</li>
+</ul>
+<p>policies to limit the spread of potential threats and protect sensitive data.</p>
+<h4 id="32-access-controls">3.2 Access Controls</h4>
+<ul>
+<li>Administrative Access: Restrict administrative access to firewall systems to authorized personnel only. Use</li>
+</ul>
+<p>strong authentication methods and enforce the principle of least privilege for administrative roles.</p>
+<ul>
+<li>Remote Access: Secure remote access to firewalls using encrypted connections such as VPNs. Monitor and</li>
+</ul>
+<p>log remote access activities to detect and respond to unauthorized attempts.</p>
+<h4 id="33-monitoring-and-logging">3.3 Monitoring and Logging</h4>
+<ul>
+<li>Traffic Monitoring:  Continuously monitor network traffic through firewall logs and alerts to detect potential</li>
+</ul>
+<p>security incidents and unauthorized access attempts.</p>
+<ul>
+<li>Logging: Enable comprehensive logging for firewall activities, including accepted and denied traffic, rule</li>
+</ul>
+<p>changes, and administrative access. Ensure logs are securely stored and regularly reviewed.</p>
+<ul>
+<li>Incident Response:  Develop and implement procedures for responding to firewall alerts and incidents.</li>
+</ul>
+<p>Investigate and address any identified security issues promptly.</p>
+<h4 id="34-firewall-maintenance">3.4 Firewall Maintenance</h4>
+<ul>
+<li>Patch Management:  Regularly update and patch firewall systems to address security vulnerabilities and</li>
+</ul>
+<p>ensure compatibility with the latest security standards. Apply patches following established change management procedures.</p>
+<ul>
+<li>Configuration Reviews:  Perform periodic reviews of firewall configurations to ensure they align with</li>
+</ul>
+<p>current security policies and business needs. Adjust configurations as necessary to address changes in the threat landscape.</p>
+<ul>
+<li>Documentation:  Maintain detailed documentation of firewall configurations, rules, and management</li>
+</ul>
+<p>procedures. Ensure that documentation is kept up-to-date and accessible for reference.</p>
+<h3 id="4-roles-and-responsibilities">4 Roles and Responsibilities</h3>
+<ul>
+<li>IT Security Team:  Responsible for configuring, managing, and monitoring firewall systems. Conducts regular</li>
+</ul>
+<p>reviews and updates to firewall policies and configurations.</p>
+<ul>
+<li>Network Administrators:  Implement and maintain firewall rules and configurations according to approved</li>
+</ul>
+<p>policies. Monitor network traffic and respond to firewall alerts.</p>
+<ul>
+<li>Employees:  Follow company policies regarding network security and report any issues or concerns related</li>
+</ul>
+<p>to firewall operations.</p>
+<h3 id="5-training-and-awareness">5 Training and Awareness</h3>
+<p>Provide training on firewall management practices, including understanding firewall policies and procedures. Ensure that training is part of the onboarding process and refreshed periodically. Regularly communicate updates and best practices related to firewall management to all relevant staff.</p>
+<h3 id="6-compliance">6 Compliance</h3>
+<p>Compliance with this policy is mandatory. Non-compliance may result in security vulnerabilities, operational disruptions, and disciplinary action.</p>
+<h3 id="7-exceptions">7 Exceptions</h3>
+<p>Any exceptions to this policy must be approved by the IT Security Team or relevant authority and documented, including the reasons for the exception and any mitigating controls in place.</p>
+<h3 id="8-review-and-update">8 Review and Update</h3>
+<p>This policy will be reviewed annually and updated as necessary to ensure it remains effective and aligned with changes in technology, business requirements, and regulatory standards.</p>
+<p><b>Approved by:</b> </p>
+<p><b>Effective Date:</b> </p>
+<h2 id="u-data-classification-policy">u) Data Classification Policy</h2>
+<h3 id="1-purpose">1 Purpose</h3>
+<p>The purpose of this Data Classification Policy is to establish a framework for classifying and handling data based on its sensitivity and importance to Abu Dhabi Refreshments Co. LLC. This policy aims to ensure that data is protected appropriately according to its classification level and to support compliance with regulatory and security requirements.</p>
+<h3 id="2-scope">2 Scope</h3>
+<p>This policy applies to all employees, contractors, and third-party vendors who handle or manage data within the company. It covers all types of data, including but not limited to, customer information, financial records, intellectual property, and operational data.</p>
+<h3 id="3-data-classification-levels">3 Data Classification Levels</h3>
+<p>Data will be classified into the following levels based on sensitivity and importance:</p>
+<h4 id="31-public">3.1 Public</h4>
+<ul>
+<li>Definition:  Data that is intended for public access and poses minimal risk if disclosed. Examples include</li>
+</ul>
+<p>marketing materials, company press releases, and publicly available reports.</p>
+<ul>
+<li>Handling:  Public data can be freely shared and does not require special security controls. However, ensure</li>
+</ul>
+<p>that it is accurate and up-to-date.</p>
+<h4 id="32-internal-use-only">3.2 Internal Use Only</h4>
+<ul>
+<li>Definition:  Data that is used within the company but is not intended for public release. This data is not</li>
+</ul>
+<p>highly sensitive but should be protected to prevent unauthorized access. Examples include internal memos, non-sensitive business documents, and internal reports.</p>
+<ul>
+<li>Handling:  Internal Use Only data should be stored securely and accessed only by authorized personnel.</li>
+</ul>
+<p>Avoid sharing this data with external parties unless necessary and approved.</p>
+<h4 id="33-confidential">3.3 Confidential</h4>
+<ul>
+<li>Definition:  Sensitive data that requires protection due to its potential impact on the company or individuals</li>
+</ul>
+<p>if disclosed. Examples include employee records, financial statements, and client contracts.</p>
+<ul>
+<li>Handling:  Confidential data should be encrypted during transmission and storage. Access should be</li>
+</ul>
+<p>restricted to authorized personnel only. Use secure methods for sharing and handling this data.</p>
+<h4 id="34-restricted">3.4 Restricted</h4>
+<ul>
+<li>Definition:  Highly sensitive data that requires stringent protection measures due to its critical nature or</li>
+</ul>
+<p>regulatory requirements. Examples include trade secrets, personal identifiable information (PII), and sensitive financial data.</p>
+<ul>
+<li>Handling:  Restricted data must be encrypted at all times, both in transit and at rest. Implement strict access</li>
+</ul>
+<p>controls and monitoring. Data should be shared only on a need-to-know basis and with explicit authorization.</p>
+<h3 id="4-data-handling-procedures">4 Data Handling Procedures</h3>
+<ul>
+<li>Labeling: Clearly label data according to its classification level. Ensure that labels are visible and accurate to</li>
+</ul>
+<p>guide proper handling and access controls.</p>
+<ul>
+<li>Access Control:  Implement access controls based on data classification levels. Ensure that data access is</li>
+</ul>
+<p>restricted to authorized individuals and that access rights are reviewed regularly.</p>
+<ul>
+<li>Data Storage:  Store data in secure environments appropriate to its classification level. Use encryption and</li>
+</ul>
+<p>other security measures to protect sensitive data.</p>
+<ul>
+<li>Data Disposal:  Follow procedures for secure data disposal based on the classification level. Ensure that data</li>
+</ul>
+<p>is fully removed and cannot be recovered after disposal.</p>
+<h3 id="5-roles-and-responsibilities">5 Roles and Responsibilities</h3>
+<ul>
+<li>Data Owners:  Responsible for classifying data, defining access controls, and ensuring proper handling</li>
+</ul>
+<p>according to the classification level.</p>
+<ul>
+<li>IT Department:  Supports the implementation of data protection measures, including encryption and access</li>
+</ul>
+<p>controls. Assists in monitoring and managing data security.</p>
+<ul>
+<li>Employees:  Follow data handling procedures as outlined in this policy. Report any data breaches or security</li>
+</ul>
+<p>incidents to the IT department immediately.</p>
+<h3 id="6-training-and-awareness">6 Training and Awareness</h3>
+<p>Provide training on data classification and handling procedures. Ensure that employees understand the importance of data protection and how to comply with the policy. Regularly communicate updates and best practices related to data classification and handling to all relevant staff.</p>
+<h3 id="7-compliance">7 Compliance</h3>
+<p>Compliance with this policy is mandatory. Non-compliance may result in security breaches, regulatory violations, and disciplinary action.</p>
+<h3 id="8-exceptions">8 Exceptions</h3>
+<p>Any exceptions to this policy must be approved by the Data Governance Team or relevant authority and documented, including the reasons for the exception and any mitigating controls in place.</p>
+<h3 id="9-review-and-update">9 Review and Update</h3>
+<p>This policy will be reviewed annually and updated as necessary to ensure it remains effective and aligned with changes in technology, business requirements, and regulatory standards.</p>
+<p><b>Approved by:</b> </p>
+<p><b>Effective Date:</b> </p>
+<h2 id="v-clear-screen-and-clear-desk-policy">v) Clear Screen and Clear Desk Policy</h2>
+<h3 id="1-purpose">1 Purpose</h3>
+<p>The purpose of this Clear Screen and Clear Desk Policy is to reduce the risk of unauthorized access to sensitive information and to protect company data from theft or loss. This policy aims to ensure that all employees maintain a secure and organized workspace, both physically and digitally.</p>
+<h3 id="2-scope">2 Scope</h3>
+<p>This policy applies to all employees, contractors, and third-party vendors who have access to company facilities and information systems. It covers all workspaces, including offices, meeting rooms, and any other areas where company data is handled.</p>
+<h3 id="3-key-guidelines">3 Key Guidelines</h3>
+<h4 id="31-clear-screen">3.1 Clear Screen</h4>
+<ul>
+<li>Logout: Ensure that all computer systems are logged out or locked when left unattended. Use screen savers</li>
+</ul>
+<p>with passwords or other secure locking mechanisms to prevent unauthorized access.</p>
+<ul>
+<li>Sensitive Information:  Close or minimize all open applications and documents containing sensitive or</li>
+</ul>
+<p>confidential information when not in use. Avoid leaving sensitive information visible on screens when away from your desk.</p>
+<h4 id="32-clear-desk">3.2 Clear Desk</h4>
+<ul>
+<li>Document Storage:  Store all physical documents and sensitive information securely in locked drawers or</li>
+</ul>
+<p>filing cabinets when not in use. Avoid leaving sensitive documents or materials on desks or other work surfaces.</p>
+<ul>
+<li>Personal Items:  Keep personal items to a minimum on work surfaces to maintain a tidy and secure</li>
+</ul>
+<p>workspace. Avoid leaving personal belongings, such as notebooks or mobile devices, unattended in the office.</p>
+<ul>
+<li>Clean-Up Routine:  At the end of each workday, ensure that all sensitive materials are securely stored, and</li>
+</ul>
+<p>that workspaces are clear of any confidential documents or data.</p>
+<h4 id="33-handling-sensitive-information">3.3 Handling Sensitive Information</h4>
+<ul>
+<li>Shredding: Shred any physical documents containing sensitive or confidential information before disposal.</li>
+</ul>
+<p>Do not throw such documents in general waste bins.</p>
+<ul>
+<li>Secure Disposal:  Use secure disposal methods for electronic media and storage devices that contain</li>
+</ul>
+<p>sensitive information. Follow company procedures for data destruction and disposal.</p>
+<h3 id="4-roles-and-responsibilities">4 Roles and Responsibilities</h3>
+<ul>
+<li>Employees:  Adhere to the clear screen and clear desk guidelines to ensure a secure and organized</li>
+</ul>
+<p>workspace. Report any security concerns or breaches related to physical or digital information.</p>
+<ul>
+<li>Managers: Ensure that employees are aware of and comply with this policy. Conduct regular reviews to</li>
+</ul>
+<p>ensure adherence and address any issues related to workspace security.</p>
+<ul>
+<li>Facilities Team:  Provide and maintain secure storage solutions, such as lockable filing cabinets. Assist with</li>
+</ul>
+<p>the disposal of sensitive information and electronic media.</p>
+<h3 id="5-training-and-awareness">5 Training and Awareness</h3>
+<p>Provide training on the importance of maintaining a clear screen and clear desk. Ensure that employees understand the procedures for securing sensitive information both physically and digitally. Regularly communicate updates and best practices related to workspace security. Reinforce the importance of this policy through periodic reminders and training sessions.</p>
+<h3 id="6-compliance">6 Compliance</h3>
+<p>Compliance with this policy is mandatory. Non-compliance may result in security vulnerabilities, data breaches, and disciplinary action.</p>
+<h3 id="7-exceptions">7 Exceptions</h3>
+<p>Any exceptions to this policy must be approved by the IT Security Team or relevant authority and documented, including the reasons for the exception and any mitigating controls in place.</p>
+<h3 id="8-review-and-update">8 Review and Update</h3>
+<p>This policy will be reviewed annually and updated as necessary to ensure it remains effective and aligned with changes in technology, business requirements, and regulatory standards.</p>
+<p><b>Approved by:</b> </p>
+<p><b>Effective Date:</b> </p>
+<h2 id="w-disciplinary-action-policy">w) Disciplinary Action Policy</h2>
+<h3 id="1-purpose">1 Purpose</h3>
+<p>The purpose of this Disciplinary Action Policy is to establish a fair and consistent approach for addressing employee misconduct and performance issues at Abu Dhabi Refreshments Co. LLC. This policy aims to promote a positive work environment and ensure that disciplinary actions are handled in a manner that is clear, transparent, and respectful.</p>
+<h3 id="2-scope">2 Scope</h3>
+<p>This policy applies to all employees, contractors, and third-party vendors associated with the IT department. It covers all types of misconduct and performance issues, including but not limited to, violations of company policies, procedures, and ethical standards.</p>
+<h3 id="3-key-guidelines">3 Key Guidelines</h3>
+<h4 id="31-types-of-misconduct">3.1 Types of Misconduct</h4>
+<ul>
+<li>Minor Misconduct:  Includes minor infractions such as tardiness, minor policy violations, and unprofessional</li>
+</ul>
+<p>behavior.</p>
+<ul>
+<li>Major Misconduct:  Includes serious infractions such as theft, harassment, gross negligence, and deliberate</li>
+</ul>
+<p>violations of company policies or legal requirements.</p>
+<ul>
+<li>Performance Issues:  Includes ongoing performance problems that affect job duties, productivity, or quality</li>
+</ul>
+<p>of work.</p>
+<h4 id="32-disciplinary-actions">3.2 Disciplinary Actions</h4>
+<ul>
+<li>Verbal Warning:  For minor misconduct or first-time performance issues, a verbal warning will be issued to</li>
+</ul>
+<p>address the behavior and provide guidance on improvement.</p>
+<ul>
+<li>Written Warning:  If misconduct or performance issues persist, a written warning will be issued detailing</li>
+</ul>
+<p>the nature of the issue, required improvements, and potential consequences of continued non-compliance.</p>
+<ul>
+<li>Suspension:  For severe misconduct or failure to improve after warnings, a suspension may be imposed. The</li>
+</ul>
+<p>duration and conditions of the suspension will be specified.</p>
+<ul>
+<li>Termination:  For serious misconduct or failure to improve after all other disciplinary measures, termination</li>
+</ul>
+<p>of employment may be implemented.</p>
+<h4 id="33-disciplinary-procedure">3.3 Disciplinary Procedure</h4>
+<ul>
+<li>Investigation: Conduct a fair and thorough investigation of alleged misconduct or performance issues.</li>
+</ul>
+<p>Gather relevant information, witness statements, and documentation.</p>
+<ul>
+<li>Documentation:  Maintain accurate and detailed records of all disciplinary actions, including the nature of</li>
+</ul>
+<p>the issue, investigation findings, and the actions taken.</p>
+<ul>
+<li>Meeting: Schedule a meeting with the employee to discuss the issue, provide an opportunity for the</li>
+</ul>
+<p>employee to respond, and outline the disciplinary action to be taken.</p>
+<ul>
+<li>Appeal: Provide employees with the opportunity to appeal disciplinary decisions. The appeal process should</li>
+</ul>
+<p>be documented, and decisions should be communicated clearly.</p>
+<h4 id="34-employee-rights">3.4 Employee Rights</h4>
+<ul>
+<li>Fair Treatment:  Ensure that all employees are treated fairly and equitably during the disciplinary process.</li>
+</ul>
+<p>Avoid discrimination or bias.</p>
+<ul>
+<li>Confidentiality:  Handle disciplinary matters with confidentiality to protect the privacy of all parties</li>
+</ul>
+<p>involved.</p>
+<h3 id="4-roles-and-responsibilities">4 Roles and Responsibilities</h3>
+<ul>
+<li>Managers and Supervisors:  Responsible for identifying and addressing misconduct or performance issues.</li>
+</ul>
+<p>Implement disciplinary actions in accordance with this policy and ensure that proper documentation is maintained.</p>
+<ul>
+<li>Human Resources:  Provides guidance on the disciplinary process, ensures compliance with this policy, and</li>
+</ul>
+<p>assists in the investigation and documentation of disciplinary actions.</p>
+<ul>
+<li>Employees:  Adhere to company policies and procedures. Cooperate with the disciplinary process and take</li>
+</ul>
+<p>corrective actions as required.</p>
+<h3 id="5-training-and-awareness">5 Training and Awareness</h3>
+<p>Provide training on company policies, expected behavior, and the disciplinary process. Ensure that employees understand their responsibilities and the consequences of misconduct. Train managers and supervisors on handling disciplinary issues, conducting investigations, and implementing disciplinary actions in a fair and consistent manner.</p>
+<h3 id="6-compliance">6 Compliance</h3>
+<p>Compliance with this policy is mandatory. Non-compliance may result in inconsistent disciplinary actions and potential legal issues.</p>
+<h3 id="7-exceptions">7 Exceptions</h3>
+<p>Any exceptions to this policy must be approved by the Human Resources Department or relevant authority and documented, including the reasons for the exception and any mitigating controls in place.</p>
+<h3 id="8-review-and-update">8 Review and Update</h3>
+<p>This policy will be reviewed annually and updated as necessary to ensure it remains effective and aligned with changes in employment laws, company requirements, and industry standards.</p>
+<p><b>Approved by:</b> </p>
+<p><b>Effective Date:</b> </p>
+<h2 id="x-information-exchange-policy">x) Information Exchange Policy</h2>
+<h3 id="1-purpose">1 Purpose</h3>
+<p>The purpose of this Information Exchange Policy is to establish guidelines for the secure and effective exchange of information within Abu Dhabi Refreshments Co. LLC and with external parties. This policy aims to ensure that information is shared appropriately, protecting the confidentiality, integrity, and availability of company data.</p>
+<h3 id="2-scope">2 Scope</h3>
+<p>This policy applies to all employees, contractors, and third-party vendors involved in the exchange of information, including both internal and external communications. It covers all forms of information exchange, including email, physical documents, and electronic data transfers.</p>
+<h3 id="3-key-guidelines">3 Key Guidelines</h3>
+<h4 id="31-information-classification">3.1 Information Classification</h4>
+<ul>
+<li>Classify Information: Classify information according to its sensitivity and importance (e.g., Public, Internal</li>
+</ul>
+<p>Use Only, Confidential, Restricted). Ensure that appropriate handling procedures are followed based on the classification level.</p>
+<h4 id="32-secure-communication-channels">3.2 Secure Communication Channels</h4>
+<ul>
+<li>Email: Use secure email platforms for exchanging sensitive or confidential information. Avoid sending</li>
+</ul>
+<p>sensitive information through unsecured or personal email accounts.</p>
+<ul>
+<li>File Transfers:  Use secure file transfer methods (e.g., encrypted attachments, secure file-sharing services)</li>
+</ul>
+<p>for exchanging large files or sensitive data. Avoid using unsecured methods such as public cloud storage without appropriate security controls.</p>
+<h4 id="33-data-handling-and-protection">3.3 Data Handling and Protection</h4>
+<ul>
+<li>Access Controls:  Restrict access to information based on the principle of least privilege. Ensure that only</li>
+</ul>
+<p>authorized individuals can view or handle sensitive data.</p>
+<ul>
+<li>Data Encryption:  Encrypt sensitive data during transmission and storage to protect it from unauthorized</li>
+</ul>
+<p>access and interception.</p>
+<ul>
+<li>Physical Documents:  When exchanging physical documents, ensure they are securely packaged and</li>
+</ul>
+<p>transported. Use secure disposal methods for sensitive documents that are no longer needed.</p>
+<h4 id="34-external-information-exchange">3.4 External Information Exchange</h4>
+<ul>
+<li>Third-Party Agreements:  Establish formal agreements (e.g., Non-Disclosure Agreements, Data Processing</li>
+</ul>
+<p>Agreements) with third parties involved in the exchange of sensitive information. Ensure that third parties comply with company security standards.</p>
+<ul>
+<li>Vendor Security:  Assess the security practices of external vendors and partners before exchanging sensitive</li>
+</ul>
+<p>information. Ensure they adhere to appropriate security and privacy controls.</p>
+<h4 id="35-training-and-awareness">3.5 Training and Awareness</h4>
+<ul>
+<li>Provide training on secure information exchange practices, including how to handle and protect sensitive</li>
+</ul>
+<p>data.</p>
+<ul>
+<li>Ensure that employees understand the risks and procedures related to information exchange.</li>
+<li>Regularly communicate updates and best practices related to secure information exchange.</li>
+<li>Reinforce the importance of protecting sensitive information in all forms of communication.</li>
+</ul>
+<h3 id="4-roles-and-responsibilities">4 Roles and Responsibilities</h3>
+<ul>
+<li>Employees:  Follow the guidelines for secure information exchange as outlined in this policy. Ensure that</li>
+</ul>
+<p>information is handled and shared appropriately according to its classification level.</p>
+<ul>
+<li>Managers and Supervisors: Ensure that team members are aware of and comply with this policy. Provide</li>
+</ul>
+<p>guidance and support for secure information exchange practices.</p>
+<ul>
+<li>IT Department:  Implement and maintain secure communication and file transfer systems. Support</li>
+</ul>
+<p>employees in adhering to information exchange policies and procedures.</p>
+<h3 id="5-compliance">5 Compliance</h3>
+<p>Compliance with this policy is mandatory. Non-compliance may result in data breaches, security incidents, and disciplinary action.</p>
+<h3 id="6-exceptions">6 Exceptions</h3>
+<p>Any exceptions to this policy must be approved by the IT Department or relevant authority and documented, including the reasons for the exception and any mitigating controls in place.</p>
+<h3 id="7-review-and-update">7 Review and Update</h3>
+<p>This policy will be reviewed annually and updated as necessary to ensure it remains effective and aligned with changes in technology, business requirements, and regulatory standards.</p>
+<p><b>Approved by:</b> </p>
+<p><b>Effective Date:</b> </p>
+<h2 id="y-password-management-policy">y) Password Management Policy</h2>
+<h3 id="1-purpose">1 Purpose</h3>
+<p>The purpose of this Password Management Policy is to establish guidelines for the creation, maintenance, and protection of passwords used to access the information systems and resources of Abu Dhabi Refreshments Co. LLC. Ensuring strong password practices is vital to safeguarding the company’s digital assets and sensitive information.</p>
+<h3 id="2-scope">2 Scope</h3>
+<p>This policy applies to all employees, contractors, and any other individuals with access to Abu Dhabi Refreshments Co. LLC’s systems, networks, and data. This includes all forms of electronic communication and access to systems, whether onsite or remote.</p>
+<h3 id="3-policy-statements">3 Policy Statements</h3>
+<h4 id="31-password-creation">3.1 Password Creation</h4>
+<ul>
+<li>Complexity Requirements: Passwords must be at least 8 characters long and contain a mix of uppercase</li>
+</ul>
+<p>letters, lowercase letters, numbers, and special characters (e.g., !, @, , $).</p>
+<ul>
+<li>Prohibited Passwords: Avoid common passwords (e.g., "password123," "admin") and dictionary words. Do</li>
+</ul>
+<p>not use passwords that are easily associated with you (e.g., your name, birthdate).</p>
+<ul>
+<li>Unique Passwords: Users must create a unique password for each system or application. Passwords used</li>
+</ul>
+<p>for corporate accounts should not be reused for personal accounts.</p>
+<h4 id="32-password-management">3.2 Password Management</h4>
+<ul>
+<li>Password Storage: Passwords must not be written down or stored in plain text. Users are encouraged to</li>
+</ul>
+<p>use an approved password manager for storing passwords securely.</p>
+<ul>
+<li>Password Sharing: Passwords must never be shared with others, including supervisors, coworkers, or IT</li>
+</ul>
+<p>staff. If a shared account is required, a temporary password should be used and changed immediately after use.</p>
+<ul>
+<li>Password Changes: Passwords must be changed at least every 90 days. Additionally, passwords should be</li>
+</ul>
+<p>changed immediately if there is any suspicion that they have been compromised.</p>
+<ul>
+<li>Temporary Passwords:  Temporary passwords (e.g., those issued by IT for initial login) must be changed</li>
+</ul>
+<p>immediately upon first use.</p>
+<h4 id="33-account-lockout">3.3 Account Lockout</h4>
+<ul>
+<li>Failed Login Attempts: Accounts will be locked after 5 consecutive failed login attempts. Locked accounts</li>
+</ul>
+<p>will require IT intervention to unlock.</p>
+<ul>
+<li>Unlocking Accounts: Users must contact IT to have their accounts unlocked. IT will verify the user's identity</li>
+</ul>
+<p>before unlocking the account.</p>
+<h3 id="4-user-responsibilities">4 User Responsibilities</h3>
+<ul>
+<li>Secure Password Practices: Users must follow the above guidelines for password creation, storage, and</li>
+</ul>
+<p>management.</p>
+<ul>
+<li>Incident Reporting: Users must immediately report any suspected password compromise to the IT</li>
+</ul>
+<p>department.</p>
+<ul>
+<li>Awareness: Users must stay informed about and adhere to the company's password policy and any</li>
+</ul>
+<p>updates.</p>
+<h3 id="5-it-responsibilities">5 IT Responsibilities</h3>
+<ul>
+<li>Policy Enforcement: IT is responsible for enforcing this policy and monitoring compliance.</li>
+<li>Assistance: IT must provide assistance to users in creating strong passwords and securely managing them.</li>
+<li>Audit and Review: IT will periodically audit password practices and policy adherence and review the policy</li>
+</ul>
+<p>annually to ensure its effectiveness.</p>
+<h3 id="6-compliance">6 Compliance</h3>
+<p>Non-compliance with this policy may result in disciplinary action, up to and including termination of employment or contract. Additionally, failure to adhere to this policy may result in loss of access to company systems and resources.</p>
+<h3 id="7-exceptions">7 Exceptions</h3>
+<p>Any exceptions to this policy must be approved by the IT department and documented, including the justification for the exception.</p>
+<h3 id="8-review-and-update">8 Review and Update</h3>
+<p>This policy will be reviewed and updated annually, or as required, to accommodate changes in security best practices and technological advancements.</p>
+<p><b>Approved by:</b> </p>
+<p><b>Effective Date:</b> </p>
+<h2 id="z-cyber-security-policy">z) Cyber Security Policy</h2>
+<h3 id="1-purpose">1 Purpose</h3>
+<p>This Cyber Security Policy is designed to protect the information, systems, and data of Abu Dhabi Refreshments Co. LLC from cyber threats. The policy outlines the steps everyone must take to keep our company’s information safe.</p>
+<h3 id="2-scope">2 Scope</h3>
+<p>This policy applies to all employees, contractors, and anyone else who has access to the company’s systems, networks, and data. It covers all devices, applications, and systems used for work, whether at the office or remotely.</p>
+<h3 id="3-key-guidelines">3 Key Guidelines</h3>
+<h4 id="31-whos-responsible">3.1 Who’s Responsible</h4>
+<ul>
+<li>IT Department: The IT team is in charge of implementing, monitoring, and making sure everyone follows</li>
+</ul>
+<p>this policy.</p>
+<ul>
+<li>Employees: Everyone must participate in cybersecurity training when they join and once a year afterward.</li>
+</ul>
+<h4 id="32-controlling-access">3.2 Controlling Access</h4>
+<ul>
+<li>Access Based on Job Role: Employees will only have access to the information needed for their specific job.</li>
+<li>Strong Passwords: Everyone must use strong passwords and, where required to log in to sensitive systems.</li>
+<li>Account Monitoring: IT will regularly review user accounts to ensure access rights are appropriate. Inactive</li>
+</ul>
+<p>accounts will be disabled after a set period.</p>
+<h4 id="33-protecting-data">3.3 Protecting Data</h4>
+<ul>
+<li>Classifying Data: Data will be classified as public, internal, or confidential, and protected accordingly.</li>
+<li>Backing Up Data: Critical data and systems will be regularly backed up and stored securely.</li>
+</ul>
+<h4 id="34-securing-the-network">3.4 Securing the Network</h4>
+<ul>
+<li>Firewalls and Monitoring: Firewalls and monitoring tools will be used to block unauthorized access to our</li>
+</ul>
+<p>network.</p>
+<ul>
+<li>Secure Remote Access: Accessing the company network remotely must be done through secure methods</li>
+</ul>
+<p>like VPNs and MFA.</p>
+<h4 id="35-securing-devices">3.5 Securing Devices</h4>
+<ul>
+<li>Antivirus Software: All company devices must have up-to-date antivirus software installed.</li>
+<li>Software Updates: All devices and software must be regularly updated to protect against vulnerabilities.</li>
+<li>Lost Devices: If a device is lost or stolen, it must be reported to IT immediately.</li>
+</ul>
+<h4 id="36-handling-security-incidents">3.6 Handling Security Incidents</h4>
+<ul>
+<li>Reporting Incidents: Any cybersecurity incidents, like data breaches, must be reported to IT right away.</li>
+<li>Managing Incidents: IT will follow a plan to manage, contain, and recover from security incidents.</li>
+<li>Review After Incidents: After an incident, IT will review what happened and take steps to prevent it from</li>
+</ul>
+<p>happening again.</p>
+<h4 id="37-dealing-with-third-parties">3.7 Dealing with Third Parties</h4>
+<ul>
+<li>Vendor Security: Third-party vendors with access to our systems or data must meet our security standards.</li>
+<li>Monitoring Vendors: The security practices of third-party vendors will be regularly checked to ensure they</li>
+</ul>
+<p>comply with our requirements.</p>
+<h4 id="38-regular-checks-and-compliance">3.8 Regular Checks and Compliance</h4>
+<ul>
+<li>Security Audits: Regular checks and audits will be conducted to ensure compliance with this policy.</li>
+<li>Following the Law:  The company will comply with all relevant cybersecurity laws and regulations.</li>
+</ul>
+<h3 id="4-what-you-need-to-do">4 What You Need to Do</h3>
+<ul>
+<li>Stay Aware: Follow best practices for cybersecurity, like recognizing phishing emails and keeping your login</li>
+</ul>
+<p>credentials safe.</p>
+<ul>
+<li>Report Issues: If you notice any suspicious activity or potential security issues, report them to IT</li>
+</ul>
+<p>immediately.</p>
+<h3 id="5-its-role">5 IT’s Role</h3>
+<ul>
+<li>Enforcing the Policy: IT is responsible for making sure this policy is followed and for providing support when</li>
+</ul>
+<p>needed.</p>
+<ul>
+<li>Keeping Up to Date: IT will stay informed about new cyber threats and update our security measures as</li>
+</ul>
+<p>necessary.</p>
+<h3 id="6-compliance">6 Compliance</h3>
+<p>Not following this policy could lead to disciplinary action, including termination. It could also lead to legal consequences for the company.</p>
+<h3 id="7-exceptions">7 Exceptions</h3>
+<p>Any exceptions to this policy must be approved by IT and documented.</p>
+<h3 id="8-review-and-updates">8 Review and Updates</h3>
+<p>This policy will be reviewed and updated annually, or as needed, to ensure it stays relevant.</p>
+<p><b>Approved by:</b> </p>
+<p><b>Effective Date:</b> </p>
+<p class="muted">This page mirrors the full text from ADRC_IT_Policy_V2.pdf. The in‑page list/TOC (1.1) has been removed from the body and is reflected in the side Contents only.</p>
+</div>
+</main>
+</div>
+<a class="toplink" href="#top" title="Back to top">↑</a>
+<script>
+(function(){
+  // Print
+  var printBtn = document.getElementById('printBtn');
+  if (printBtn) printBtn.addEventListener('click', function(){ window.print(); });
+
+  // Header click -> Home, unless clicking buttons/links
+  var siteHeader = document.querySelector('header.site');
+  if(siteHeader){
+    siteHeader.addEventListener('click', function(e){
+      var t = e.target;
+      if(t.closest('a') || t.closest('button')) return;
+      window.location.href = './index.html';
+    });
+  }
+
+  // Header height CSS var
+  function headerH(){ var h=document.querySelector('header.site'); return (h && h.offsetHeight) ? h.offsetHeight : 72; }
+  function applyHeaderVar(){ document.documentElement.style.setProperty('--header-h', headerH() + 'px'); }
+  window.addEventListener('load', applyHeaderVar);
+  window.addEventListener('resize', applyHeaderVar);
+
+  // Build TOC from h1..h3
+  var contentRoot = document.querySelector('.content-inner');
+  var headings = Array.from(contentRoot.querySelectorAll('h1, h2, h3'));
+  var tocEl = document.getElementById('toc');
+  var rootUl = document.createElement('ul');
+  var currentUl = rootUl;
+  var stack = [rootUl];
+  var lastLi = null;
+  function lvl(tag){ return tag === 'H1' ? 1 : (tag === 'H2' ? 2 : 3); }
+  var lastLevel = 1;
+  headings.forEach(function(h){
+    if(!h.id){ h.id = h.textContent.trim().toLowerCase().replace(/[^a-z0-9]+/g,'-'); }
+    var L = lvl(h.tagName);
+    while(L > lastLevel){
+      var ul = document.createElement('ul');
+      if (lastLi) { lastLi.appendChild(ul); } else { currentUl.appendChild(ul); }
+      stack.push(ul); currentUl = ul; lastLevel++;
+    }
+    while(L < lastLevel){
+      stack.pop(); currentUl = stack[stack.length-1] || rootUl; lastLevel--;
+    }
+    var li = document.createElement('li');
+    var a = document.createElement('a');
+    a.href = '#' + h.id; a.textContent = h.textContent;
+    li.appendChild(a); currentUl.appendChild(li);
+    lastLi = li;
+  });
+  tocEl.textContent = ''; tocEl.appendChild(rootUl);
+
+  // Active highlight sync with scroll
+  var tocLinks = Array.from(tocEl.querySelectorAll('a'));
+  function setActiveByIndex(idx){
+    tocLinks.forEach(function(l){ l.classList.remove('active'); });
+    var link = tocLinks[idx];
+    if(link){ link.classList.add('active'); link.scrollIntoView({block:'nearest', inline:'nearest'}); }
+  }
+  function computeActiveIndex(){
+    var st = contentRoot.scrollTop;
+    var offset = headerH() + 12;
+    var idx = 0;
+    for (var i = 0; i < headings.length; i++){
+      if (headings[i].offsetTop <= st + offset){ idx = i; } else { break; }
+    }
+    return idx;
+  }
+  function syncActive(){
+    if (contentRoot.__clickLock) return;
+    setActiveByIndex(computeActiveIndex());
+  }
+  contentRoot.addEventListener('scroll', function(){
+    if (contentRoot.__raf) cancelAnimationFrame(contentRoot.__raf);
+    contentRoot.__raf = requestAnimationFrame(syncActive);
+  });
+
+  // Smooth scroll within content pane
+  Array.from(tocEl.querySelectorAll('a')).forEach(function(a, idx){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      contentRoot.__clickLock = true;
+      var id = a.getAttribute('href').slice(1);
+      var el = document.getElementById(id);
+      if(!el) return;
+      var offset = headerH() + 8;
+      var targetTop = el.offsetTop - offset;
+      contentRoot.scrollTo({ top: targetTop, behavior: 'smooth' });
+      setActiveByIndex(idx);
+      setTimeout(function(){ contentRoot.__clickLock = false; }, 600);
+      history.pushState(null,'','#'+id);
+    });
+  });
+
+  // Initial
+  setTimeout(syncActive, 0);
+})();
+</script>
+<link href="bot.css" rel="stylesheet"/>
+<script>window.RAGBOT_API_BASE = "http://127.0.0.1:8000";</script>
+<script defer="" src="bot.js"></script>
+<script src="highlight_fallback.js"></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+  if (window.TitoBot && typeof window.TitoBot.init === 'function') {
+    window.TitoBot.init({
+      apiBase: '',
+      askEndpoint: '/api/ask',
+      sourceBase: 'https://adrc-policies.pages.dev',
+      sitemapHint: 'https://adrc-policies.pages.dev/sitemap.xml',
+      defaultLang: 'auto'
+    });
+  }
+});</script></body>
+</html>

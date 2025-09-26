@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<link href="favicon.ico" rel="icon"/>
+<!-- Highlighting support -->
+<link href="highlight.css" rel="stylesheet"/>
+<script defer="" src="highlight.js"></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Plant Maintenance SOPs</title>
+<style>
+    :root{
+      --brand:#0a66c2; /* company color */
+      --ink:#1f2937;  /* slate-800 */
+      --muted:#6b7280;/* slate-500 */
+      --bg:#ffffff;
+      --panel:#f8fafc;/* slate-50 */
+      --border:#e5e7eb;/* slate-200 */
+      --accent:#10b981;/* emerald */
+      --warning:#f59e0b;/* amber */
+      --danger:#ef4444;/* red */
+      --header-h:72px;
+    }
+    html,body{height:100%;}
+    body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";}
+    /* ----- Header (matches bad_debts_control.html?v=99999 style) ----- */
+    header.site{position:sticky;top:0;z-index:50;backdrop-filter:saturate(180%) blur(8px);background:color-mix(in srgb, var(--bg), transparent 10%);border-bottom:1px solid var(--border);height:var(--header-h);cursor:pointer;}    
+    .header-wrap{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:16px;padding:12px 16px;height:100%;}
+    .logo{display:flex;align-items:center;gap:12px;min-width:0}
+    .logo img{height:44px;width:auto;object-fit:contain;background:#fff;border-radius:8px;padding:4px;box-shadow:0 0 0 1px var(--border) inset}
+    .meta{display:flex;flex-direction:column;min-width:0}
+    .meta .title{font-weight:700;font-size:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .meta .subtitle{font-size:12px;color:var(--muted)}
+    .actions{margin-left:auto;display:flex;align-items:center;gap:8px}
+    .btn{appearance:none;border:1px solid var(--border);background:#fff;border-radius:10px;padding:8px 12px;cursor:pointer;text-decoration:none;color:inherit;display:inline-block}
+    .btn:hover{box-shadow:0 1px 0 var(--border)}
+    .btn.primary{border-color:color-mix(in srgb, var(--brand), white 60%);background:color-mix(in srgb, var(--brand), white 85%);}
+    /* ----- Layout with independent scroll areas ----- */
+    .shell{height:calc(100vh - var(--header-h));display:grid;grid-template-columns:300px 1fr;border-top:1px solid var(--border)}
+    @media (max-width: 980px){.shell{grid-template-columns:1fr}}
+    aside.toc{border-right:1px solid var(--border);background:var(--panel);min-height:0;}
+    .toc-inner{height:100%;overflow:auto;padding:16px;position:relative}
+    .toc-title{font-weight:700;margin:0 0 8px 0}
+    .toc a{display:block;color:var(--ink);text-decoration:none;font-size:14px;padding:6px 8px;border-radius:8px}
+    .toc a:hover{background:#fff}
+    .toc a.active{background:color-mix(in srgb, var(--brand), white 88%);box-shadow:inset 3px 0 0 var(--brand);}
+    .toc ul{list-style:none;margin:0;padding:0}
+    .toc ul ul{padding-left:12px}
+    main.content{min-height:0;}
+    .content-inner{height:100%;overflow:auto;padding:24px 28px;}
+    .content-inner h1{margin-top:0}
+    h2{margin-top:32px;border-bottom:1px dashed var(--border);padding-bottom:6px}
+    h3{margin-top:20px}
+    table{width:100%;border-collapse:collapse;margin:12px 0}
+    th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
+    thead th{background:var(--panel)}
+    .muted{color:var(--muted)}
+    .toplink{position:fixed;right:16px;bottom:16px;border-radius:999px;padding:10px 12px;background:var(--brand);color:#fff;text-decoration:none;box-shadow:0 6px 20px color-mix(in srgb, var(--brand), transparent 70%)}
+    /* Offset anchors for sticky header when deep-linking */
+    :where(.content-inner h1,.content-inner h2,.content-inner h3){scroll-margin-top:calc(var(--header-h) + 8px);} 
+    /* Print */
+    @media print{
+      header.site,.toplink{display:none}
+      .shell{grid-template-columns:1fr}
+      aside.toc{display:none}
+      .content-inner{overflow:visible}
+    }
+  </style>
+</head>
+<body>
+<header class="site" role="banner">
+<div class="header-wrap">
+<div class="logo">
+<a href="index.html?v=99999" title="Home"><img alt="Company Logo" src="adrc_logo_white.png"/></a>
+</div>
+<div class="meta">
+<div class="title">Plant Maintenance SOPs</div>
+<div class="subtitle">SOP — Auto-generated from internal slides · Review and approve</div>
+</div>
+<div class="actions">
+<a class="btn primary" href="plant_maintenance_sops_quick_guide.html?v=99999" title="Open Quick Guide">Quick Guide ↗</a>
+<button class="btn" id="printBtn" title="Print / Save PDF">Print</button>
+</div>
+</div>
+</header>
+<div class="shell" role="application">
+<aside aria-label="Table of contents" class="toc">
+<div class="toc-inner">
+<h3 class="toc-title" id="contents">Contents</h3>
+<nav class="toc" id="toc"></nav>
+</div>
+</aside>
+<main class="content" id="top">
+<div class="content-inner">
+<h1 id="plant-maintenance-sops">Plant Maintenance SOPs</h1>
+<h2 id="maintenance-summary-sopsplant-maintenance-department">Maintenance Summary SOPsPlant Maintenance Department</h2>
+<h2 id="1-breakdown-maintenance--detailed-steps">1. Breakdown Maintenance 🔧 Detailed Steps:</h2>
+<ul><li>1. Technician logs the breakdown in the daily report during production.</li><li>2. If repair or replacement is needed, a Material Request Form (MR) is prepared.</li><li>3. Supervisor reviews the MR to confirm actual requirement.</li><li>4. MR is sent to (Maintenance Manager) for approval.</li><li>5. Storekeeper verifies item availability and issues the spare, if unavailable storekeeper inform Maintenance Manager.</li><li>6. Technician performs the repair or installation and records everything in the Job Record.</li><li>7. Supervisor and QC review and verify the work.</li><li>8. Maintenance Manager gives final approval after reviewing all documentation.</li><li>9. If breakdown exceeds 30 minutes, an RCA report is prepared.</li><li>📑 Documents:</li><li>Daily Breakdown Report, Material Request Form, Maintenance Job Record, RCA Report</li><li>👥 Roles:</li><li>Technician, Supervisor, Storekeeper, Quality Checker, Maintenance Manager</li><li>💼 Accounting Impact:</li><li>Spare issuance is recorded as consumption expense in ERP.</li><li>🗂️ Source: Plant Maintenance SOP 210325</li></ul>
+<h2 id="2-preventive-maintenance--detailed-steps">2. Preventive Maintenance 🔧 Detailed Steps:</h2>
+<ul><li>1. Technician and operator perform daily checks using designated checklists.</li><li>2. CLTI Form (Cleaning, Lubrication, Tightening, Inspection) is filled.</li><li>3. If fault found, process continues as Breakdown or External Repair.</li><li>4. Monthly preventive maintenance is scheduled alongside weekly production plan.</li><li>5. Detailed Monthly Checklist used for each machine.</li><li>6. If same equipment receives repeated service &gt;40 days, escalate to Maintenance Manager and Product Manager to take a decision.</li><li>7. After service, supervisor reviews and signs off.</li><li>8. QC verifies quality before final closure.</li><li>📑 Documents:</li><li>Daily Checklist, Monthly Preventive Checklist, CLTI Form, Job/Site Report</li><li>👥 Roles:</li><li>Technician &amp; Operator, Supervisor, Maintenance Manager, Quality Checker</li><li>💼 Accounting Impact:</li><li>Spare usage is recorded as expense in ERP upon issuance. Overhauling Details in Point No. 6</li><li>🗂️ Source: Plant Maintenance_Final SOP 210325 External Repair in Point No. 7</li></ul>
+<h2 id="3-spares-management--detailed-steps">3. Spares Management 🔧 Detailed Steps:</h2>
+<ul><li>Storekeeper prepares monthly inventory report.</li><li>Good Receipt Note (GRN) entries, consumption, and adjustments are verified in ERP.</li><li>Safe stock limits are reviewed.</li><li>If breached, Purchase Requisition (PR) is raised.</li><li>If not breached, report shared with Supervisor for review.</li><li>Supervisor evaluates and escalates to Maintenance Manager.</li><li>Maintenance Manager approves or suggests revision.</li><li>Upon approval, initiate either:</li><li>Regular Purchase</li><li>Non-PO urgent procurement</li><li>Safe stock limits updated in ERP as required.</li><li>📑 Documents:</li><li>Inventory Report, GRN Records, Purchase Requisition</li><li>👥 Roles:</li><li>Storekeeper, Supervisor, Maintenance Manager</li><li>💼 Accounting Impact:</li><li>No accounting impact unless spares are issued.</li><li>🗂️ Source: Plant Maintenance SOP</li></ul>
+<h2 id="4-vendor-service-management--detailed-steps">4. Vendor Service Management 🔧 Detailed Steps:</h2>
+<ul><li>Supervisor maintains an Annual Maintenance Contract (AMC) Tracker with contract/service schedule data.</li><li>Start of each month: upcoming services are reviewed and vendor notified.</li><li>Vendor is reminded 1 week in advance with equipment and service details.</li><li>On arrival: vendor logs in at security and complies with safety protocols.</li><li>Service is executed as per AMC terms and monitored by maintenance team.</li><li>Issues or notes are logged and followed up.</li><li>After service: Service Report is signed by vendor, Supervisor, and QC (if needed).</li><li>AMC Tracker updated and shared with Accounts for processing.</li><li>📑 Documents:</li><li>AMC Tracker, Service Confirmation Report</li><li>👥 Roles:</li><li>Supervisor, Vendor, QC (if applicable), Security, Accounts</li><li>💼 Accounting Impact:</li><li>Service expense recorded upon invoice receipt or provision.</li><li>🗂️ Source: Plant Maintenance SOP</li></ul>
+<h2 id="5-employee-training-program--detailed-steps">5. Employee Training Program 🔧 Detailed Steps:</h2>
+<ul><li>Maintenance Manager prepares an annual training plan based on skill gaps, new tech, and safety practices.</li><li>Trainings scheduled for the year.</li><li>Topics include CLTI, breakdown handling, spare management, safety.</li><li>Event-based trainings conducted for new equipment or changes.</li><li>New technicians are trained before operational deployment.</li><li>Training includes theory, practice, and workshops.</li><li>Attendance is logged, performance evaluated, and records maintained.</li><li>📑 Documents:</li><li>Training Agenda, Attendance Log, Feedback Forms</li><li>👥 Roles:</li><li>Maintenance Manager, Supervisor, HR, Maintenance Staff</li><li>💼 Accounting Impact:</li><li>Internal administrative cost; not booked as direct expense.</li><li>🗂️ Source: Plant Maintenance SOP</li></ul>
+<h2 id="6-overhauling--detailed-steps">6. Overhauling 🔧 Detailed Steps:</h2>
+<ul><li>Annual overhaul schedule created for off-season.</li><li>Includes critical equipment needing cleaning, replacement, or alignment.</li><li>List shared with Plant Manager for review.</li><li>If cost exceeds budget, requires PM + Accounts approval.</li><li>Maintenance executed and QC inspected before restart.</li><li>📑 Documents:</li><li>Overhaul Plan, Approval Notes, QC Checklist</li><li>👥 Roles:</li><li>Maintenance Head, Plant Manager, Quality Checker</li><li>💼 Accounting Impact:</li><li>Capitalized if cost &gt;40% of asset value; else expensed.</li><li>🗂️ Source: Plant Maintenance SOP</li></ul>
+<h2 id="7-external-repairs--detailed-steps">7. External Repairs 🔧 Detailed Steps:</h2>
+<ul><li>If in-house repair is not possible, part is dismantled.</li><li>Repair Request raised and ERP Gate Pass issued.</li><li>Security stamps Gate Pass before part leaves.</li><li>Vendor performs repair externally.</li><li>On return, part is reinstalled and QC verifies.</li><li>Invoice is booked as expense.</li><li>📑 Documents:</li><li>Repair Request, Gate Pass, Vendor Invoice, QC Form</li><li>👥 Roles:</li><li>Technician, Supervisor, Storekeeper, QC, Vendor</li><li>💼 Accounting Impact:</li><li>Repair expense recorded upon invoice.</li><li>🗂️ Source: Plant Maintenance SOP</li></ul>
+</div>
+</main>
+</div>
+<script>
+
+  (function(){
+    // Print
+    var printBtn = document.getElementById('printBtn');
+    if (printBtn) printBtn.addEventListener('click', function(){ window.print(); });
+
+    // Header click → Home (except on actionable elements)
+    var siteHeader = document.querySelector('header.site');
+    if(siteHeader){
+      siteHeader.addEventListener('click', function(e){
+        var t = e.target;
+        if(t.closest('a') || t.closest('button')) return; 
+        window.location.href = './index.html?v=99999';
+      });
+    }
+
+    // Header height -> CSS var (for anchor offset math)
+    function headerH(){ var h = document.querySelector('header.site'); return (h && h.offsetHeight) ? h.offsetHeight : 72; }
+    function applyHeaderVar(){ document.documentElement.style.setProperty('--header-h', headerH() + 'px'); }
+    window.addEventListener('load', applyHeaderVar);
+    window.addEventListener('resize', applyHeaderVar);
+
+    // Build TOC with nesting (h1 + h2 + h3)
+    var contentRoot = document.querySelector('.content-inner');
+    var headings = Array.from(contentRoot.querySelectorAll('h1, h2, h3'));
+    var tocEl = document.getElementById('toc');
+    var rootUl = document.createElement('ul');
+    var currentUl = rootUl;
+    var stack = [rootUl];
+    var lastLi = null;
+    function lvl(tag){ return tag === 'H1' ? 1 : (tag === 'H2' ? 2 : 3); }
+    var lastLevel = 1;
+    headings.forEach(function(h){
+      if(!h.id){ h.id = h.textContent.trim().toLowerCase().replace(/[^a-z0-9]+/g,'-'); }
+      var L = lvl(h.tagName);
+      while(L > lastLevel){
+        var ul = document.createElement('ul');
+        if (lastLi) { lastLi.appendChild(ul); } else { currentUl.appendChild(ul); }
+        stack.push(ul); currentUl = ul; lastLevel++;
+      }
+      while(L < lastLevel){
+        stack.pop(); currentUl = stack[stack.length-1] || rootUl; lastLevel--;
+      }
+      var li = document.createElement('li');
+      var a = document.createElement('a');
+      a.href = '#' + h.id; a.textContent = h.textContent;
+      li.appendChild(a); currentUl.appendChild(li);
+      lastLi = li;
+    });
+    tocEl.textContent = ''; tocEl.appendChild(rootUl);
+
+    // Cache tocLinks in same order as headings
+    var tocLinks = Array.from(tocEl.querySelectorAll('a'));
+
+    // Active state + ensure TOC item visible
+    function setActiveByIndex(idx){
+      tocLinks.forEach(function(l){ l.classList.remove('active'); });
+      var link = tocLinks[idx];
+      if(link){ link.classList.add('active'); link.scrollIntoView({block:'nearest', inline:'nearest'}); }
+    }
+
+    // Smooth scroll to a heading inside the content scroll container
+    function scrollToHeadingByIndex(idx){
+      var el = headings[idx];
+      if(!el) return;
+      var offset = headerH() + 8;
+      var targetTop = el.offsetTop - offset;
+      contentRoot.scrollTo({ top: targetTop, behavior: 'smooth' });
+      history.pushState(null,'','#'+el.id);
+    }
+
+    // Click handler: set active immediately, then smooth scroll. Pause auto-sync briefly.
+    var clickSyncLock = false;
+    tocLinks.forEach(function(a,idx){
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        clickSyncLock = true;
+        setActiveByIndex(idx);
+        scrollToHeadingByIndex(idx);
+        setTimeout(function(){ clickSyncLock = false; }, 600);
+      });
+    });
+
+    // Compute active index on scroll (deterministic): pick last heading whose top <= scrollTop + header
+    function computeActiveIndex(){
+      var st = contentRoot.scrollTop;
+      var offset = headerH() + 12;
+      var idx = 0;
+      for (var i = 0; i < headings.length; i++){
+        if (headings[i].offsetTop <= st + offset){ idx = i; } else { break; }
+      }
+      return idx;
+    }
+
+    function syncActive(){
+      if (clickSyncLock) return;
+      var idx = computeActiveIndex();
+      setActiveByIndex(idx);
+    }
+
+    contentRoot.addEventListener('scroll', function(){
+      if (contentRoot.__raf) cancelAnimationFrame(contentRoot.__raf);
+      contentRoot.__raf = requestAnimationFrame(syncActive);
+    });
+
+    // Initial highlight
+    setTimeout(syncActive, 0);
+
+    // 'Back to top' should scroll the content area
+    var topLink = document.querySelector('a.toplink');
+    if(topLink){
+      topLink.addEventListener('click', function(e){
+        e.preventDefault();
+        contentRoot.scrollTo({ top: 0, behavior: 'smooth' });
+        setActiveByIndex(0);
+      });
+    }
+  })();
+  
+</script>
+<link href="bot.css" rel="stylesheet"/>
+<script>window.RAGBOT_API_BASE = "http://127.0.0.1:8000";</script>
+<script defer="" src="bot.js"></script>
+<script src="highlight_fallback.js"></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+  if (window.TitoBot && typeof window.TitoBot.init === 'function') {
+    window.TitoBot.init({
+      apiBase: '',
+      askEndpoint: '/api/ask',
+      sourceBase: 'https://adrc-policies.pages.dev',
+      sitemapHint: 'https://adrc-policies.pages.dev/sitemap.xml',
+      defaultLang: 'auto'
+    });
+  }
+});</script></body>
+</html>

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<link href="favicon.ico" rel="icon"/>
+<!-- Highlighting support -->
+<link href="/public/highlight.css" rel="stylesheet"/>
+<script defer="" src="/public/highlight.js"></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Production Management – SOP (Unified)</title>
+<style>
+    :root{
+      --brand:#0a66c2; /* company color */
+      --ink:#1f2937;  /* slate-800 */
+      --muted:#6b7280;/* slate-500 */
+      --bg:#ffffff;
+      --panel:#f8fafc;/* slate-50 */
+      --border:#e5e7eb;/* slate-200 */
+      --accent:#10b981;/* emerald */
+      --warning:#f59e0b;/* amber */
+      --danger:#ef4444;/* red */
+      --header-h:72px;
+    }
+    html,body{height:100%;}
+    body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";}
+    /* ----- Header (matches unified SOP style) ----- */
+    header.site{position:sticky;top:0;z-index:50;backdrop-filter:saturate(180%) blur(8px);background:color-mix(in srgb, var(--bg), transparent 10%);border-bottom:1px solid var(--border);height:var(--header-h);cursor:pointer;}
+    .header-wrap{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:16px;padding:12px 16px;height:100%;}
+    .logo{display:flex;align-items:center;gap:12px;min-width:0}
+    .logo img{height:44px;width:auto;object-fit:contain;background:#fff;border-radius:8px;padding:4px;box-shadow:0 0 0 1px var(--border) inset}
+    .meta{display:flex;flex-direction:column;min-width:0}
+    .meta .title{font-weight:700;font-size:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .meta .subtitle{font-size:12px;color:var(--muted)}
+    .actions{margin-left:auto;display:flex;align-items:center;gap:8px}
+    .btn{appearance:none;border:1px solid var(--border);background:#fff;border-radius:10px;padding:8px 12px;cursor:pointer;text-decoration:none;color:inherit;display:inline-block}
+    .btn:hover{box-shadow:0 1px 0 var(--border)}
+    .btn.primary{border-color:color-mix(in srgb, var(--brand), white 60%);background:color-mix(in srgb, var(--brand), white 85%);}
+    /* ----- Layout with independent scroll areas ----- */
+    .shell{height:calc(100vh - var(--header-h));display:grid;grid-template-columns:300px 1fr;border-top:1px solid var(--border)}
+    @media (max-width: 980px){.shell{grid-template-columns:1fr}}
+    aside.toc{border-right:1px solid var(--border);background:var(--panel);min-height:0;}
+    .toc-inner{height:100%;overflow:auto;padding:16px;position:relative}
+    .toc-title{font-weight:700;margin:0 0 8px 0}
+    .toc a{display:block;color:var(--ink);text-decoration:none;font-size:14px;padding:6px 8px;border-radius:8px}
+    .toc a:hover{background:#fff}
+    .toc a.active{background:color-mix(in srgb, var(--brand), white 88%);box-shadow:inset 3px 0 0 var(--brand);}
+    .toc ul{list-style:none;margin:0;padding:0}
+    .toc ul ul{padding-left:12px}
+    main.content{min-height:0;}
+    .content-inner{height:100%;overflow:auto;padding:24px 28px;}
+    .content-inner h1{margin-top:0}
+    h2{margin-top:32px;border-bottom:1px dashed var(--border);padding-bottom:6px}
+    h3{margin-top:20px}
+    table{width:100%;border-collapse:collapse;margin:12px 0}
+    th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
+    thead th{background:var(--panel)}
+    .muted{color:var(--muted)}
+    .toplink{position:fixed;right:16px;bottom:16px;border-radius:999px;padding:10px 12px;background:var(--brand);color:#fff;text-decoration:none;box-shadow:0 6px 20px color-mix(in srgb, var(--brand), transparent 70%)}
+    /* Offset anchors for sticky header when deep-linking */
+    :where(.content-inner h1,.content-inner h2,.content-inner h3){scroll-margin-top:calc(var(--header-h) + 8px);} 
+    /* Print */
+    @media print{
+      header.site,.toplink{display:none}
+      .shell{grid-template-columns:1fr}
+      aside.toc{display:none}
+      .content-inner{overflow:visible}
+    }
+  </style>
+</head>
+<body>
+<header class="site" role="banner">
+<div class="header-wrap">
+<div class="logo">
+<a href="index.html" title="Home"><img alt="Company Logo" src="adrc_logo_white.png"/></a>
+</div>
+<div class="meta">
+<div class="title">Production Management – SOP (Unified)</div>
+<div class="subtitle">Document Code: PROD-SOP-001 · Version: v1.0 · Effective: To be Insert</div>
+</div>
+<div class="actions">
+<a class="btn primary" href="production_sops_quick_guide.html?v=99999" title="Open Quick Guide">Quick Guide ↗</a>
+<button class="btn" id="printBtn" title="Print / Save PDF">Print</button>
+</div>
+</div>
+</header>
+<div class="shell" role="application">
+<aside aria-label="Table of contents" class="toc">
+<div class="toc-inner">
+<h3 class="toc-title" id="contents">Contents</h3>
+<nav class="toc" id="toc"></nav>
+</div>
+</aside>
+<main class="content" id="top">
+<div class="content-inner">
+<h1 id="sec-overview">Production SOPs – Overview</h1>
+<h2 id="sec-doc-control">0. Document Control</h2>
+<table>
+<thead>
+<tr><th>Version</th><th>Date</th><th>Change Description</th><th>Author</th><th>Approvers</th></tr>
+</thead>
+<tbody>
+<tr><td>v1.0</td><td>[Insert]</td><td>Initial release (comprehensive Production SOP)</td><td>Production Manager</td><td>Production Manager, Procurement Manager, Finance Manager, General Manager</td></tr>
+</tbody>
+</table>
+<p><strong>Document Owner:</strong> Production Department. Updates to this SOP require Production Manager review and approval by the General Manager.</p>
+<h2 id="sec-purpose">1. Purpose</h2>
+<p>This Standard Operating Procedure (SOP) establishes the framework for planning, scheduling, executing and controlling production activities within the organization. It ensures that manufacturing output aligns with sales forecasts, that resources are optimally utilized, and that processes are executed in a consistent and controlled manner. The SOP provides guidelines for annual planning, monthly and weekly scheduling, daily operations, bill of material (BOM) management and introduction of new products.</p>
+<h2 id="sec-scope">2. Scope</h2>
+<p>This SOP applies to all production-related activities across the company’s manufacturing facilities. It encompasses annual and monthly production planning, weekly and daily scheduling, material requisitions, production execution, consumption and variance reporting, handover of finished goods to warehouses, maintenance of BOM records and the creation of BOMs for new stock keeping units (SKUs). The SOP is binding on personnel in Production, Planning, Warehouse, Quality Control, Maintenance, Procurement, Finance and Sales departments.</p>
+<h2 id="sec-definitions">3. Definitions &amp; Abbreviations</h2>
+<ul><li><strong>SAP / RBS (ERP System):</strong> The company’s ERP used for material requests, process orders, BOM management, and other production transactions.</li>
+<li><strong>BOM (Bill of Materials):</strong> A detailed list of raw materials, components, packaging and quantities required to produce a finished product.</li>
+<li><strong>SKU (Stock Keeping Unit):</strong> A distinct product identifier used to track inventory, production and sales.</li>
+<li><strong>CIP (Clean‑in‑Place):</strong> Procedures for cleaning machinery and piping without disassembling equipment.</li>
+<li><strong>FG (Finished Goods):</strong> Completed products ready for warehousing or shipment.</li>
+<li><strong>RM (Raw Materials):</strong> Basic materials and ingredients used in the manufacturing process.</li>
+<li><strong>Process Order:</strong> ERP transaction used to plan, execute and record production batches.</li>
+<li><strong>Roles:</strong>
+<ul>
+<li><strong>Sales Director:</strong> Provides sales forecasts and market insights.</li>
+<li><strong>Production Manager:</strong> Oversees all production activities, planning and resource allocation.</li>
+<li><strong>Production Supervisor:</strong> Executes weekly and daily schedules, manages shop floor resources.</li>
+<li><strong>Warehouse In‑Charge:</strong> Manages raw material and finished goods warehousing operations.</li>
+<li><strong>Maintenance In‑Charge:</strong> Ensures production equipment readiness and coordinates repairs.</li>
+<li><strong>Quality Control (QC) In‑Charge:</strong> Oversees product quality, implements CIP procedures.</li>
+<li><strong>Procurement Manager:</strong> Coordinates sourcing of raw materials and packaging.</li>
+<li><strong>Finance Manager:</strong> Oversees budgeting, cost control and financial approvals.</li>
+<li><strong>General Manager (GM):</strong> Provides executive oversight and final approvals.</li>
+</ul>
+</li>
+</ul>
+<h2 id="sec-raci">4. Roles &amp; Responsibilities (RACI)</h2>
+<p>The table below identifies responsibility (R), accountability (A), consultation (C) and information (I) assignments for each key activity.</p>
+<table>
+<thead>
+<tr>
+<th>Activity</th>
+<th>Sales Dir.</th>
+<th>Prod. Mgr</th>
+<th>Prod. Sup.</th>
+<th>Warehouse IC</th>
+<th>Maint. IC</th>
+<th>QC IC</th>
+<th>Procure. Mgr</th>
+<th>Finance Mgr</th>
+<th>GM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Annual Production Plan</td><td>C</td><td>A/R</td><td>I</td><td>I</td><td>I</td><td>I</td><td>C</td><td>C</td><td>I</td>
+</tr>
+<tr>
+<td>Monthly Production Plan</td><td>I</td><td>A/R</td><td>I</td><td>I</td><td>I</td><td>I</td><td>C</td><td>C</td><td>I</td>
+</tr>
+<tr>
+<td>Weekly Production Schedule</td><td>I</td><td>A</td><td>R</td><td>C</td><td>C</td><td>C</td><td>I</td><td>I</td><td>I</td>
+</tr>
+<tr>
+<td>Daily Production</td><td>I</td><td>A</td><td>R</td><td>C</td><td>C</td><td>C</td><td>I</td><td>I</td><td>I</td>
+</tr>
+<tr>
+<td>BOM Consumption Report</td><td>I</td><td>A</td><td>R</td><td>I</td><td>I</td><td>C</td><td>I</td><td>C</td><td>I</td>
+</tr>
+<tr>
+<td>Finished Goods Handover</td><td>I</td><td>A</td><td>R</td><td>R/A</td><td>I</td><td>I</td><td>I</td><td>I</td><td>I</td>
+</tr>
+<tr>
+<td>BOM Definition &amp; Maintenance</td><td>I</td><td>A</td><td>R</td><td>I</td><td>I</td><td>C</td><td>C</td><td>C</td><td>I</td>
+</tr>
+<tr>
+<td>New SKU BOM</td><td>C</td><td>A</td><td>I</td><td>I</td><td>I</td><td>C</td><td>R</td><td>C</td><td>A</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sec-kpi">5. KPIs &amp; Control Points</h2>
+<ul>
+<li><strong>Plan Adherence:</strong> Production output versus plan on a monthly and weekly basis (target ≥ 95%).</li>
+<li><strong>BOM Variance:</strong> Difference between standard BOM quantities and actual consumption (variance ≤ 3%).</li>
+<li><strong>Production Efficiency:</strong> Units produced per machine hour or man‑hour compared to standard capacity.</li>
+<li><strong>Waste &amp; Scrap Rate:</strong> Percentage of materials lost during production (target ≤ 2%).</li>
+<li><strong>On‑time Handover:</strong> Percentage of finished goods handed over to warehouse within 24 hours of completion.</li>
+</ul>
+<p>Controls include weekly schedule reviews, daily production reports, approval of material requests, variance analysis meetings and periodic audits of BOM master data.</p>
+<h2 id="sec-evidence">6. Evidence &amp; Documentation Standards</h2>
+<ul>
+<li>All planning documents (annual, monthly, weekly schedules) should be prepared using the prescribed templates and saved in the centralized document repository.</li>
+<li>File naming convention: <code>PROD_[Process]_[YYYYMMDD].pdf</code> (e.g., <code>PROD_Plan_20250101.pdf</code>).</li>
+<li>Physical forms (e.g., daily production reports, handover forms) must be scanned and uploaded within two working days.</li>
+<li>Original paper records should be retained for at least one year; digital copies should be retained for at least three years.</li>
+<li>All documents and system transactions must be authorized using electronic signatures where applicable.</li>
+</ul>
+<h2 id="sec-systems">7. Systems &amp; Data</h2>
+<ul><li><strong>ERP:</strong> Use the ERP production module (e.g., Process Order and BOM management) to create, release, and close process orders, record BOM consumption, and maintain master BOM data. All material requests must also be raised and processed in ERP. Manual requests are not permitted except in emergencies; any manual issue must be documented as an exception.</li>
+<li><strong>Spreadsheets:</strong> Temporary planning tools (e.g., Excel) may be used for calculations and forecasting; however, final plans must be stored in the central repository and data should be synchronized to ERP.</li>
+<li><strong>Repository:</strong> All templates and completed documents must be saved in the company’s designated file system or drive (e.g., shared drive or ECM) with appropriate access controls.</li>
+</ul>
+<h2 id="sec-procedures">8. Operating Procedures</h2>
+<h3 id="proc-annual">8.1 Annual Production Plan</h3>
+<ul>
+<li><strong>Trigger:</strong> Receipt of the Annual Sales Forecast from the Sales Director at year‑end.</li>
+<li><strong>Output:</strong> Annual Production Plan and Annual Raw Material Plan approved by management.</li>
+<li><strong>Steps:</strong>
+<ul>
+<li>The Sales Director submits a detailed sales forecast for the next year, broken down by month and SKU.</li>
+<li>The Production Manager evaluates forecasted demand and calculates required raw materials, packaging and manpower.</li>
+<li>The Production Manager prepares the Annual Production Plan, aligning production capacity and resources to the forecast; monthly production is scheduled one month in advance of the forecast month.</li>
+<li>The Procurement Manager reviews the raw material requirements for sourcing feasibility and budget.</li>
+<li>The Finance Manager reviews cost implications and confirms budget availability.</li>
+<li>The completed plan is submitted to the General Manager for final approval.</li>
+</ul>
+</li>
+</ul>
+<h3 id="proc-monthly">8.2 Monthly Production Plan</h3>
+<ul>
+<li><strong>Trigger:</strong> Approved Annual Production Plan and start of a new month.</li>
+<li><strong>Output:</strong> Monthly Production Plan aligned with updated demand and inventory levels.</li>
+<li><strong>Steps:</strong>
+<ul>
+<li>The Production Manager breaks down the Annual Production Plan into a detailed plan for the upcoming month, adjusting for actual sales, inventory and capacity constraints.</li>
+<li>Any deviations from the annual plan are justified and recorded.</li>
+<li>The Monthly Production Plan is reviewed and approved by the Production Manager and shared with Warehouse, QC, Maintenance and Procurement.</li>
+</ul>
+</li>
+</ul>
+<h3 id="proc-weekly">8.3 Weekly Production Schedule</h3>
+<ul>
+<li><strong>Trigger:</strong> Start of a new week.</li>
+<li><strong>Output:</strong> Weekly Production Schedule disseminated to all stakeholders.</li>
+<li><strong>Steps:</strong>
+<ul>
+<li>The Production Supervisor drafts the Weekly Production Schedule based on the approved Monthly Plan and available resources.</li>
+<li>The Supervisor consults with QC, Maintenance and Warehouse to align equipment availability, CIP schedules and raw material readiness.</li>
+<li>The Production Manager reviews and approves the schedule.</li>
+<li>The final schedule is communicated to the production team, QC, Maintenance and Warehouse.</li>
+</ul>
+</li>
+</ul>
+<h3 id="proc-daily">8.4 Daily Production</h3>
+<ul>
+<li><strong>Trigger:</strong> Each production day under the Weekly Schedule.</li>
+<li><strong>Output:</strong> Completed process orders and Daily Production Report.</li>
+<li><strong>Steps:</strong>
+<ul>
+<li>The Production Supervisor confirms daily production orders based on the Weekly Schedule and inventory levels.</li>
+<li>A Material Request is raised in the ERP system at least two days before production to ensure raw materials availability.</li>
+<li>The Maintenance In‑Charge verifies that equipment is ready; the QC In‑Charge ensures that CIP procedures are completed.</li>
+<li>The Production Supervisor allocates manpower based on the weekly duty roster.</li>
+<li>Production is executed; start and stop times, quantities produced, breakdowns and wastage are recorded.</li>
+<li>At end of day, the Shift‑In‑Charge compiles the Daily Production Report and submits it to the Production Manager.</li>
+<li>Any deviations or breakdowns are summarized in the Breakdown Report and reviewed for corrective actions.</li>
+</ul>
+</li>
+</ul>
+<h3 id="proc-bom-report">8.5 BOM Consumption Report</h3>
+<ul>
+<li><strong>Trigger:</strong> Completion of daily production.</li>
+<li><strong>Output:</strong> BOM Consumption Report and variance analysis.</li>
+<li><strong>Steps:</strong>
+<ul>
+<li>The Production Supervisor collects batch‑wise consumption data (raw materials, utilities, labour) from the Daily Production Report.</li>
+<li>The actual consumption is compared against the standard BOM to identify variances.</li>
+<li>Significant variances (&gt; 3%) are investigated; root causes such as quality issues, machine calibration or waste are documented.</li>
+<li>The BOM Consumption Report is reviewed by the Production Manager and Finance Manager.</li>
+<li>Corrective actions are initiated to control consumption variances.</li>
+</ul>
+</li>
+</ul>
+<h3 id="proc-fg-handover">8.6 Finished Goods Handover to Warehouse</h3>
+<ul>
+<li><strong>Trigger:</strong> Completion of packaging and palletizing of finished goods.</li>
+<li><strong>Output:</strong> Signed Daily Production Handover Report and transfer of FG inventory to Warehouse.</li>
+<li><strong>Steps:</strong>
+<ul>
+<li>Finished goods are arranged on pallets and moved to the designated staging area.</li>
+<li>The Production Supervisor counts the products, verifies labels and prepares the Daily Production Handover Report.</li>
+<li>The Warehouse In‑Charge verifies the count and signs the Handover Report; a copy is given to Production.</li>
+<li>The Warehouse team transfers the goods to storage and updates ERP inventory records.</li>
+<li>Any discrepancies or quality issues are reported to the Production Manager and QC In‑Charge.</li>
+</ul>
+</li>
+</ul>
+<h3 id="proc-bom-maint">8.7 BOM Definition &amp; Maintenance</h3>
+<ul>
+<li><strong>Trigger:</strong> Creation or revision of a BOM for an existing product.</li>
+<li><strong>Output:</strong> Approved BOM record in ERP.</li>
+<li><strong>Steps:</strong>
+<ul>
+<li>The Production Supervisor drafts or updates the BOM based on formulation and ingredient specifications.</li>
+<li>The Production Manager reviews the BOM for accuracy and completeness.</li>
+<li>The Procurement Manager validates supplier and material availability; Finance reviews cost implications.</li>
+<li>After necessary revisions, the Production Manager approves the BOM.</li>
+<li>The approved BOM is entered into ERP by the designated master data specialist.</li>
+<li>The Production Manager releases the BOM for use; any changes thereafter must follow change control procedures.</li>
+</ul>
+</li>
+</ul>
+<h3 id="proc-new-sku">8.8 New SKU BOM</h3>
+<ul>
+<li><strong>Trigger:</strong> Decision to launch a new product or change packaging.</li>
+<li><strong>Output:</strong> Approved BOM, artwork and production readiness for the new SKU.</li>
+<li><strong>Steps:</strong>
+<ul>
+<li>Sales and Marketing submit a New Product Request detailing the rationale, target launch date and forecast volumes.</li>
+<li>The Production Manager assesses manufacturing feasibility and raw material requirements; a provisional timeline (six months for new products, one month for packaging changes) is set for sourcing.</li>
+<li>A third‑party design company, approved by PCI, develops artwork under the coordination of the Production and Procurement teams; artwork must be approved within the same timeline.</li>
+<li>The Procurement Manager obtains quotes for new materials and submits a cost analysis.</li>
+<li>The Sales Director, Procurement Manager, Revenue Manager, Production Manager, Finance Manager and General Manager review and approve the new SKU proposal.</li>
+<li>Once approved, the Production Supervisor prepares the new BOM and submits it for review; after approval, the master data specialist creates the BOM in ERP.</li>
+<li>Pilot production runs are conducted to verify formulation and process parameters; feedback is incorporated before full production.</li>
+</ul>
+</li>
+</ul>
+<h2 id="sec-exceptions">9. Exceptions &amp; Deviations</h2>
+<p>If, due to unforeseen circumstances (e.g., major equipment failure, supplier delay or sudden demand fluctuations), the production plan cannot be followed, the Production Supervisor must immediately notify the Production Manager. An exception note should be recorded, detailing the deviation, reason and corrective actions. Any manual raw material issue or consumption outside of ERP must be documented and approved by the Production Manager and Finance Manager. Exceptions are reviewed during monthly performance meetings and corrective actions tracked.</p>
+<h2 id="sec-governance">10. Governance &amp; Alignment</h2>
+<ul>
+<li>This SOP aligns with the company’s HR Policy (for manpower planning and overtime), Finance Policy (for cost control and budget approvals) and Procurement Policy (for supplier selection and procurement procedures).</li>
+<li>The Production Manager is responsible for ensuring compliance; the SOP shall be reviewed annually or after major process changes.</li>
+<li>All amendments to this SOP require consultation with HR, Finance, Procurement and approval by the General Manager.</li>
+<li>Training on this SOP must be provided to relevant employees and documented.</li>
+</ul>
+<h2 id="sec-annexes">11. Annexes</h2>
+<p>The following templates and forms support this SOP and are maintained in the central repository:</p>
+<ul>
+<li>Annex A – Annual Production Plan Template</li>
+<li>Annex B – Monthly Production Plan Template</li>
+<li>Annex C – Weekly Production Schedule Template</li>
+<li>Annex D – Daily Production Report Template</li>
+<li>Annex E – BOM Consumption Report Template</li>
+<li>Annex F – Finished Goods Handover Report</li>
+<li>Annex G – BOM Definition &amp; Maintenance Template</li>
+<li>Annex H – New SKU Request &amp; Approval Form</li>
+</ul>
+<a aria-label="Back to top" class="toplink" href="#top">↑</a>
+</div>
+</main>
+</div>
+<script>
+
+    (function(){
+      // Print
+      var printBtn = document.getElementById('printBtn');
+      if (printBtn) printBtn.addEventListener('click', function(){ window.print(); });
+
+      // Header click → Home (except on actionable elements)
+      var siteHeader = document.querySelector('header.site');
+      if(siteHeader){
+        siteHeader.addEventListener('click', function(e){
+          var t = e.target;
+          if(t.closest('a') || t.closest('button')) return; 
+          window.location.href = './index.html';
+        });
+      }
+
+      // Header height -> CSS var (for anchor offset math)
+      function headerH(){ var h = document.querySelector('header.site'); return (h && h.offsetHeight) ? h.offsetHeight : 72; }
+      function applyHeaderVar(){ document.documentElement.style.setProperty('--header-h', headerH() + 'px'); }
+      window.addEventListener('load', applyHeaderVar);
+      window.addEventListener('resize', applyHeaderVar);
+
+      // Build TOC with nesting (h1 + h2 + h3)
+      var contentRoot = document.querySelector('.content-inner');
+      var headings = Array.from(contentRoot.querySelectorAll('h1, h2, h3'));
+      var tocEl = document.getElementById('toc');
+      var rootUl = document.createElement('ul');
+      var currentUl = rootUl;
+      var stack = [rootUl];
+      var lastLi = null;
+      function lvl(tag){ return tag === 'H1' ? 1 : (tag === 'H2' ? 2 : 3); }
+      var lastLevel = 1;
+      headings.forEach(function(h){
+        if(!h.id){ h.id = h.textContent.trim().toLowerCase().replace(/[^a-z0-9]+/g,'-'); }
+        var level = lvl(h.tagName);
+        if(level > lastLevel){
+          var newUl = document.createElement('ul');
+          if(lastLi) lastLi.appendChild(newUl);
+          stack.push(newUl);
+          currentUl = newUl;
+        } else if(level < lastLevel){
+          while(stack.length > (level)){
+            stack.pop();
+          }
+          currentUl = stack[stack.length - 1];
+        }
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = '#' + h.id;
+        a.textContent = h.textContent;
+        li.appendChild(a);
+        currentUl.appendChild(li);
+        lastLi = li;
+        lastLevel = level;
+      });
+      tocEl.appendChild(rootUl);
+
+      // Highlight active TOC item on scroll
+      var observerOptions = {root: null, rootMargin: '0px', threshold: 0.35};
+      var observer = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          var id = entry.target.id;
+          var tocLink = tocEl.querySelector('a[href="#' + id + '"]');
+          if(entry.isIntersecting){ tocLink.classList.add('active'); } else { tocLink.classList.remove('active'); }
+        });
+      }, observerOptions);
+      headings.forEach(function(h){ observer.observe(h); });
+    })();
+  </script>
+<link href="/public/bot.css" rel="stylesheet"/>
+<script>window.RAGBOT_API_BASE = "http://127.0.0.1:8000";</script>
+<script defer="" src="/public/bot.js"></script>
+<script src="/public/highlight_fallback.js"></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+  if (window.TitoBot && typeof window.TitoBot.init === 'function') {
+    window.TitoBot.init({
+      apiBase: '',
+      askEndpoint: '/api/ask',
+      sourceBase: 'https://adrc-policies.pages.dev',
+      sitemapHint: 'https://adrc-policies.pages.dev/sitemap.xml',
+      defaultLang: 'auto'
+    });
+  }
+});</script></body>
+</html>

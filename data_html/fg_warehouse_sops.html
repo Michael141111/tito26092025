@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<link href="favicon.ico" rel="icon"/>
+<!-- Highlighting support -->
+<link href="highlight.css" rel="stylesheet"/>
+<script defer="" src="highlight.js"></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>FG Warehouse SOPs Executive with Steps</title>
+<style>
+    :root{
+      --brand:#0a66c2; /* company color */
+      --ink:#1f2937;  /* slate-800 */
+      --muted:#6b7280;/* slate-500 */
+      --bg:#ffffff;
+      --panel:#f8fafc;/* slate-50 */
+      --border:#e5e7eb;/* slate-200 */
+      --accent:#10b981;/* emerald */
+      --warning:#f59e0b;/* amber */
+      --danger:#ef4444;/* red */
+      --header-h:72px;
+    }
+    html,body{height:100%;}
+    body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";}
+    /* ----- Header (matches bad_debts_control.html?v=99999 style) ----- */
+    header.site{position:sticky;top:0;z-index:50;backdrop-filter:saturate(180%) blur(8px);background:color-mix(in srgb, var(--bg), transparent 10%);border-bottom:1px solid var(--border);height:var(--header-h);cursor:pointer;}    
+    .header-wrap{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:16px;padding:12px 16px;height:100%;}
+    .logo{display:flex;align-items:center;gap:12px;min-width:0}
+    .logo img{height:44px;width:auto;object-fit:contain;background:#fff;border-radius:8px;padding:4px;box-shadow:0 0 0 1px var(--border) inset}
+    .meta{display:flex;flex-direction:column;min-width:0}
+    .meta .title{font-weight:700;font-size:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .meta .subtitle{font-size:12px;color:var(--muted)}
+    .actions{margin-left:auto;display:flex;align-items:center;gap:8px}
+    .btn{appearance:none;border:1px solid var(--border);background:#fff;border-radius:10px;padding:8px 12px;cursor:pointer;text-decoration:none;color:inherit;display:inline-block}
+    .btn:hover{box-shadow:0 1px 0 var(--border)}
+    .btn.primary{border-color:color-mix(in srgb, var(--brand), white 60%);background:color-mix(in srgb, var(--brand), white 85%);}
+    /* ----- Layout with independent scroll areas ----- */
+    .shell{height:calc(100vh - var(--header-h));display:grid;grid-template-columns:300px 1fr;border-top:1px solid var(--border)}
+    @media (max-width: 980px){.shell{grid-template-columns:1fr}}
+    aside.toc{border-right:1px solid var(--border);background:var(--panel);min-height:0;}
+    .toc-inner{height:100%;overflow:auto;padding:16px;position:relative}
+    .toc-title{font-weight:700;margin:0 0 8px 0}
+    .toc a{display:block;color:var(--ink);text-decoration:none;font-size:14px;padding:6px 8px;border-radius:8px}
+    .toc a:hover{background:#fff}
+    .toc a.active{background:color-mix(in srgb, var(--brand), white 88%);box-shadow:inset 3px 0 0 var(--brand);}
+    .toc ul{list-style:none;margin:0;padding:0}
+    .toc ul ul{padding-left:12px}
+    main.content{min-height:0;}
+    .content-inner{height:100%;overflow:auto;padding:24px 28px;}
+    .content-inner h1{margin-top:0}
+    h2{margin-top:32px;border-bottom:1px dashed var(--border);padding-bottom:6px}
+    h3{margin-top:20px}
+    table{width:100%;border-collapse:collapse;margin:12px 0}
+    th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
+    thead th{background:var(--panel)}
+    .muted{color:var(--muted)}
+    .toplink{position:fixed;right:16px;bottom:16px;border-radius:999px;padding:10px 12px;background:var(--brand);color:#fff;text-decoration:none;box-shadow:0 6px 20px color-mix(in srgb, var(--brand), transparent 70%)}
+    /* Offset anchors for sticky header when deep-linking */
+    :where(.content-inner h1,.content-inner h2,.content-inner h3){scroll-margin-top:calc(var(--header-h) + 8px);} 
+    /* Print */
+    @media print{
+      header.site,.toplink{display:none}
+      .shell{grid-template-columns:1fr}
+      aside.toc{display:none}
+      .content-inner{overflow:visible}
+    }
+  </style>
+</head>
+<body>
+<header class="site" role="banner">
+<div class="header-wrap">
+<div class="logo">
+<a href="index.html?v=99999" title="Home"><img alt="Company Logo" src="adrc_logo_white.png"/></a>
+</div>
+<div class="meta">
+<div class="title">FG Warehouse SOPs Executive with Steps</div>
+<div class="subtitle">SOP — Auto-generated from internal slides · Review and approve</div>
+</div>
+<div class="actions">
+<a class="btn primary" href="fg_warehouse_sops_quick_guide.html?v=99999" title="Open Quick Guide">Quick Guide ↗</a>
+<button class="btn" id="printBtn" title="Print / Save PDF">Print</button>
+</div>
+</div>
+</header>
+<div class="shell" role="application">
+<aside aria-label="Table of contents" class="toc">
+<div class="toc-inner">
+<h3 class="toc-title" id="contents">Contents</h3>
+<nav class="toc" id="toc"></nav>
+</div>
+</aside>
+<main class="content" id="top">
+<div class="content-inner">
+<h1 id="fg-warehouse-sops-executive-with-steps">FG Warehouse SOPs Executive with Steps</h1>
+<h2 id="fg-sops-warehouse-department">FG SOPs Warehouse Department</h2>
+<h2 id="-sop-index--fg-warehouse">📑 SOP Index – FG Warehouse</h2>
+<ul><li>Daily Production Handover</li><li>Daily Receipt (Production Facility)</li><li>Managing Receipts From DRC</li><li>Managing Dispatches to Al Ain</li><li>Managing Receipts from Al Ain Warehouse</li><li>Damaged Goods (During Warehouse handling)</li><li>Physical Stock Count -Daily</li><li>Physical Stock Count -Monthly</li><li>Physical Stock Count -Yearly</li><li>Transfer of Goods from Designated Area to Loading Area</li><li>Finished Good Issue to Customers (Load In)</li><li>Finished Good Return ( Off load)</li><li>Goods Return Voucher (GRV)</li><li>Supporting Material Receipts (Post Mix)</li><li>Daily Stock Report</li><li>Pre Sales Trucks Loading</li><li>Other Daily Reports</li></ul>
+<h2 id="-1-daily-production-handover">📌 1. Daily Production Handover</h2>
+<ul><li>🔧 Step 1: The Production team will hand over the daily “Production Handover Sheet,” which includes the report’s page sequence number for each operation and the item quantities, to the Warehouse In-Charge. The Warehouse team will count the items and acknowledge receipt.</li><li>💻 System: Partially</li><li>✅ Implemented: ✔️</li><li>👥 Approver(s): Warehouse In-Charge</li><li>🧭 Involved: Production Supervisor, Warehouse In-Charge</li><li>⚠️ SAP Mapping Notes: Handling Unit Pallet Transfer Process from Production to DZ zone should be followed - Handled by Warehouse Team</li><li>📈 Workflow Integration: N/A📋 Executive Comment: ✅ Aligned with SAP</li></ul>
+<h2 id="-2-daily-receipt-production-facility">📌 2. Daily Receipt (Production Facility)</h2>
+<ul><li>🔧 Step 1: Move the items to designated zone based on SKU and batch wise separated.</li><li>🔧 Step 2: Enter the details into Stores System (RBS) and post the transaction, The hard copy is printed and 'prepared by', 'approved by' and 'received by' signatures are obtained.</li><li>🔧 Step 3: If any discrepancies are found, inspect and record them, prepare a report, and obtain management approval for the required actions to resolve the variances.</li><li>💻 System: Partially</li><li>✅ Implemented: ✔️</li><li>👥 Approver(s): Warehouse team</li><li>🧭 Involved: Warehouse In-charge, Warehouse Assistant</li><li>⚠️ SAP Mapping Notes:1. Handling Unit Pallet Transfer Process from Production to DZ zone should be followed - Handled by Warehouse Team | 2. Transfer of Handling Unit Printout can be taken in SAP.</li><li>📈 Workflow Integration: N/A📋 Executive Comment: 🔔 ✅ Aligned with SAP</li></ul>
+<h2 id="-3-managing-receipts-from-drc">📌 3. Managing Receipts From DRC</h2>
+<ul><li>🔧 Step 1: Based on expected Sales requirement (customer orders) and same month of previous years utilization, Warehouse In-charge will make the Monthly Forecast of Stock requirement of DRC stock and email to DRC.</li><li>🔧 Step 2: Monthly PR is prepared by warehouse In-charge based on the Forecast.</li><li>🔧 Step 3: Monthly PO is prepared by warehouse In-charge based on the Forecast.</li><li>🔧 Step 4: Warehouse In-charge will send daily email to DRC on Daily requirement and items will be dispatched from DRC accordingly</li><li>🔧 Step 5: Daily dispatch arrives at the designated zone from DRC and Warehouse Assistant will receive the items and Warehouse in-charge will verify the items received.</li><li>🔧 Step 6: GRN and Invoice details will be updated in the system</li><li>🔧 Step 7: QC In-charge will inspect the items received from DRC and document the 'Warehouse Material Transfer Report'. Warehouse Assistant and Warehouse In-charge will check and verify the document.</li><li>💻 System: Partially</li><li>✅ Implemented: ✔️</li><li>👥 Approver(s): Warehouse Manager, Warehouse In-Charge, Procurement Manager, Finance Manager, General Manager</li><li>🧭 Involved: Warehouse Manager, Warehouse In-Charge, Procurement Manager, Finance Manager, General Manager</li><li>⚠️ SAP Mapping Notes: Procurement from DRC process should be followed in SAP.</li><li>📈 Workflow Integration: Multi Level based on Workflow.📋 Executive Comment: ✅ Aligned with SAP</li></ul>
+<h2 id="-4-managing-dispatches-to-al-ain">📌 4. Managing Dispatches to Al Ain</h2>
+<ul><li>🔧 Step 1: Abu Dhabi Warehouse In-charge will receive the daily requirements from Al Ain Warehouse In-Charge via email</li><li>🔧 Step 2: QC In-charge will inspect the items for dispatch and document in 'Warehouse Material Transfer Report'. Warehouse Assistant and Warehouse In-Charge will check and verify the document.</li><li>🔧 Step 3: Abu Dhabi Warehouse supervisor will create the 'Stock Transfer Note' and Abu Dhabi Warehouse In-Charge will approve.</li><li>🔧 Step 4: Once the goods are received at Al Ain , the Al Ain Warehouse In-Charge will post the Stock Transfer Note' in the system and status will change to 'Posted' and share the physical stamped document back to Abu Dhabi for filing.</li><li>💻 System: Partially</li><li>✅ Implemented: ✔️</li><li>👥 Approver(s): Warehouse In-Charge, Al Ain Warehouse In-Charge</li><li>🧭 Involved: Warehouse Assistant Abu Dhabi, Warehouse In-Charge Abu Dhabi, Warehouse Assistant Al Ain, Warehouse In-Charge Al Ain</li><li>⚠️ SAP Mapping Notes: Stock Transfer Process from Abu Dhabi to Al Ain process should be followed in SAP.</li><li>📈 Workflow Integration: N/A📋 Executive Comment: ✅ Aligned with SAP</li></ul>
+<h2 id="-5-managing-receipts-from-al-ain-warehouse">📌 5. Managing Receipts from Al Ain Warehouse</h2>
+<ul><li>🔧 Step 1: Al Ain Warehouse In-charge will receive the weekly requirement from Abu Dhabi Warehouse In-Charge via email</li><li>🔧 Step 2: QC In-Charge will inspect the items for dispatch and document in 'Warehouse Material Transfer Report'. Warehouse Assistant and Warehouse In-Charge will check and verify the document.</li><li>🔧 Step 3: Al Ain Warehouse supervisor will create the 'Stock Transfer Note' and Al Ain Warehouse In-charge will approve.</li><li>🔧 Step 4: Once the goods are received at Abu Dhabi , the Abu Dhabi Warehouse In-Charge will post the Stock Transfer Note' in the system and status will change to 'Posted' and share the physical stamped document back to Al Ain for filing.</li><li>💻 System: Partially</li><li>✅ Implemented: ✔️</li><li>👥 Approver(s): Warehouse In-Charge, Al Ain Warehouse In-Charge</li><li>🧭 Involved: Warehouse Assistant Abu Dhabi, Warehouse In-Charge Abu Dhabi, Warehouse Assistant Al Ain, Warehouse In-Charge Al Ain</li><li>⚠️ SAP Mapping Notes: Reciprocal Process of Stock transfer from Abu Dhabi to Al Ain transfer process should be followed in SAP.</li><li>📈 Workflow Integration: Multi Level based on Workflow.📋 Executive Comment: ✅ Aligned with SAP</li></ul>
+<h2 id="-6-damaged-goods-during-warehouse-handling">📌 6. Damaged Goods (During Warehouse handling)</h2>
+<ul><li>🔧 Step 1: Damaged items will be moved to the repacking area, and the details (quantity, reason, repacked) will be documented in the Daily Damage Report.</li><li>🔧 Step 2: A third-party contractor will collect the items for disposal on a daily basis.</li><li>🔧 Step 3: Enter the details into Stores System (RBS) and post the transaction.</li><li>🔧 Step 4: In case of any damaged:</li><li>- If the damaged product is available, send it to Quality Assurance for inspection and approval of receipt.</li><li>- If the product is not available, report the shortage and send a replenishment request to the Warehouse Manager, then forward the case to Human Resources for the required actions.</li><li>💻 System: Yes</li><li>✅ Implemented: ✔️</li><li>👥 Approver(s): Warehouse In-Charge</li><li>🧭 Involved: Warehouse In-Charge, Warehouse Manager, QC Manager</li><li>⚠️ SAP Mapping Notes:1. Transfer Posting with Plant transaction should be executed in SAP | 2. AMC (Annual Maintenance Contract) service process should be followed in SAP.</li><li>📈 Workflow Integration: Multi Level based on Workflow.📋 Executive Comment: ✅ Aligned with SAP</li></ul>
+<h2 id="-7-physical-stock-count--daily">📌 7. Physical Stock Count -Daily</h2>
+<ul><li>🔧 Step 1: Warehouse In-Charge along with Warehouse Assistant will do a daily stock count</li><li>🔧 Step 2: Updated the detail in the RBS system in Stock Status.</li><li>🔧 Step 3: If any discrepancies are found, inspect and record them, prepare a report, and obtain management approval for the required actions to resolve the variances.</li><li>💻 System: Yes</li><li>✅ Implemented: ✔️</li><li>👥 Approver(s): Warehouse In-Charge</li><li>🧭 Involved: Warehouse Assistant, Warehouse In-Charge</li><li>⚠️ SAP Mapping Notes: Physical Inventory Verification process should be followed in SAP.📈 Workflow Integration: One level of Approval.📋 Executive Comment: ✅ Aligned with SAP</li></ul>
+<h2 id="-8-physical-stock-count--monthly">📌 8. Physical Stock Count -Monthly</h2>
+<ul><li>🔧 Step 1: On the last day of the month, the Warehouse Assistant will conduct a stock count along with Warehouse In-Charge and Finance Dept Representative and update the 'Stock Status Report' print out on the actual available on the floor. The stock count is carried out at the following locations:1. Designated Zone2. Abu Dhabi Loading Area3. Al Ain Loading AreaThe outcome is reported to Warehouse Manager and Finance Manager if there is any variance found.</li><li>💻 System: Yes</li><li>✅ Implemented: ✔️</li><li>👥 Approver(s): Warehouse In-Charge, Warehouse Manager, Finance team</li><li>🧭 Involved: Warehouse Assistant, Warehouse In-Charge, Warehouse Manager, Finance team, Finance Manager</li><li>⚠️ SAP Mapping Notes: Physical Inventory Verification process should be followed in SAP.</li><li>📈 Workflow Integration: One Level Approval</li><li>📋 Executive Comment: 🔔 Follow-up required</li><li>⚠️ Notes: Multi Level based on Workflow</li></ul>
+<h2 id="-9-physical-stock-count--yearly">📌 9. Physical Stock Count -Yearly</h2>
+<ul><li>🔧 Step 1: On the last day of the year, the Warehouse Assistant will conduct a stock count along with Warehouse In charge, External Audit and Finance Dept Representative and update the 'Stock Status Report' print out on the actual available on the floor. The stock count is carried out in the following:1. Designated Zone2. Abu Dhabi Loading Area3. Al Ain Loading AreaThe outcome is reported to Warehouse Manager and Finance Manager if there is any variance found.Please Note: PCI also will conduct a yearly stock count of finished goods and concentrate raw materials.</li><li>💻 System: Yes</li><li>✅ Implemented: ✔️</li><li>👥 Approver(s): Warehouse In-Charge, Warehouse Manager, Finance team, External Audit</li><li>🧭 Involved: Warehouse Assistant, Warehouse In-Charge, Warehouse Manager, Finance team, Finance Manager, External Audit</li><li>⚠️ SAP Mapping Notes: Physical Inventory Verification process should be followed in SAP.</li><li>📈 Workflow Integration: One Level Approval.</li><li>📋 Executive Comment: 🔔 Follow-up required</li><li>⚠️ Notes: Multi Level based on Workflow</li></ul>
+<h2 id="-10-transfer-of-goods-from-designated-area-to-loading-area">📌 10. Transfer of Goods from Designated Area to Loading Area</h2>
+<ul><li>🔧 Step 1: Warehouse Assistant will prepare 'Daily Transfer Report' sheet in MS Excel and along with Forklift operator, The Warehouse Assistant will arrange to move the items from Designated Zone to Loading Area in a FEFO (First Expiry Frist Out) order.</li><li>🔧 Step 2: Warehouse Assistant will prepare the 'Stock Transfer Note' and Warehouse In-charge will approve and post in the system</li><li>💻 System: Partially</li><li>✅ Implemented: ✔️</li><li>👥 Approver(s): Warehouse In-Charge</li><li>🧭 Involved: Warehouse Assistant, Forklift operator, Warehouse In-Charge</li><li>⚠️ SAP Mapping Notes: Stock Transfer Process from DZ Plant to Non - DZ Plant (Loading Area) should be followed in SAP.</li><li>📈 Workflow Integration: One level of Approval.📋 Executive Comment: ✅ Aligned with SAP</li></ul>
+<h2 id="-11-finished-good-issue-to-customers-load-in">📌 11. Finished Good Issue to Customers (Load In)</h2>
+<ul><li>🔧 Step 1: Based on customer order , sales invoice (sales request) will be prepared by Sales man in the Hand-Held Device (HHD)</li><li>🔧 Step 2: Once they reach the Warehouse, HHD will be uploaded to the system and Gate Pass Out will be generated and printed out</li><li>🔧 Step 3: Items are loaded to Sales Truck according to the Gate Pass Out. Verified by the Salesman, Warehouse Team and Gatekeeper</li><li>💻 System: Yes</li><li>✅ Implemented: ✔️</li><li>👥 Approver(s): Warehouse team, Salesman, Gatekeeper</li><li>🧭 Involved: Salesman , Warehouse Assistant, Warehouse In-Charge, Gatekeeper</li><li>⚠️ SAP Mapping Notes: 1. Out of SAP. | 2.Stock loading to VAN location transfer note Printout can be taken in SAP. | 3.Transfer Posting within Plants (Loading area to VAN location) process should be followed in SAP.</li><li>📈 Workflow Integration: N/A📋 Executive Comment: ✅ Aligned with SAP</li></ul>
+<h2 id="-12-finished-good-return--off-load">📌 12. Finished Good Return ( Off load)</h2>
+<ul><li>🔧 Step 1: Sales Truck with unsold items arrives at the Gate and Gate keeper verifies the printed out of 'Route Van Stock' (Issued to the Van (Loadout Added) - Sold = Available in the Van)</li><li>🔧 Step 2: Warehouse Assistant will do the cross checking of items in the van before offloading (Flavor wise). Forklift Operator will offload the items to Loading Area.</li><li>🔧 Step 3: Upon confirmation from Warehouse Assistant, the Salesman will print the 'Load in' and 'Off Load' report and arrange with IT department to offload the data in the HHD to the system and Load Summary Report will be printed out</li><li>🔧 Step 4: Warehouse In-Charge will conduct the cross verification between Load in Reports vs Load Summary Report</li><li>💻 System: Yes</li><li>✅ Implemented: ✔️</li><li>👥 Approver(s): Warehouse team, Salesman, Gatekeeper</li><li>🧭 Involved: Salesman , Warehouse Assistant, Warehouse In-Charge, Gatekeeper</li><li>⚠️ SAP Mapping Notes: Transfer Posting within Plants (Loading area to VAN location) process should be followed in SAP.</li><li>📈 Workflow Integration: N/A📋 Executive Comment: ✅ Aligned with SAP</li></ul>
+<h2 id="-13-goods-return-voucher-grv">📌 13. Goods Return Voucher (GRV)</h2>
+<ul><li>🔧 Step 1: Warehouse In-Charge will receive an email from Sales team or by verbal confirmation to accept return of goods</li><li>🔧 Step 2: Salesman will bring the items back to warehouse along with Goods Return Voucher from customer.Please Note: Stages of 'Finished Good Return (Off load)' process will be followed at the warehouse</li><li>🔧 Step 3: Sales Supervisor will send an email to IT Team and Warehouse In-charge to allocate return receipt in system and Credit Note is generated and Warehouse In-Charge will verify the count in the system.</li><li>💻 System: Yes</li><li>✅ Implemented: ✔️</li><li>👥 Approver(s): IT Team, Warehouse In-Charge, Finance team will Post and generate Credit Note</li><li>🧭 Involved: Warehouse In-Charge, Salesman , Sales Supervisor, IT Team, Finance team</li><li>⚠️ SAP Mapping Notes: 1. Out of SAP. | 2&amp;3.Return Sales from Customer process should be booked in SAP.</li><li>📈 Workflow Integration: One level Approval.📋 Executive Comment: 🔔 Follow-up required</li><li>⚠️ Notes: Multi Level based on Workflow</li></ul>
+<h2 id="-14-supporting-material-receipts-post-mix">📌 14. Supporting Material Receipts (Post Mix)</h2>
+<ul><li>🔧 Step 1: Same as raw material receipt (GRN _ Material _ Import Receipts / Local Receipts -process mentioned in the Store Process will be followed ). However, items will be stored in the finished goods warehouse in separate zone.</li><li>💻 System: Yes</li><li>✅ Implemented: ✔️</li><li>👥 Approver(s): Normal Approval process of PR, PO is followed.</li><li>🧭 Involved: Warehouse In-Charge, Normal Approval process of PR, PO is followed.</li><li>⚠️ SAP Mapping Notes: N/A</li><li>📈 Workflow Integration: N/A📋 Executive Comment: 🔔 Follow-up required</li><li>⚠️ Notes: GRN_Material _ Import Receipts / Local Receipts -process mentioned in the Store Process will be followed.</li></ul>
+<h2 id="-15-daily-stock-report">📌 15. Daily Stock Report</h2>
+<ul><li>🔧 Step 1: Daily physical stock report ("Daily Stock Report") is maintained in MS Excel in AUH and AL Ain and a combined report is prepared and circulated to all the key stakeholders (stores, production and sales teams) for information on stock availability and planning purposes.</li><li>💻 System: No</li><li>✅ Implemented: ✔️</li><li>👥 Approver(s): N/A</li><li>🧭 Involved: Warehouse In-Charge, stores, production and sales teams</li><li>⚠️ SAP Mapping Notes: N/A</li><li>📈 Workflow Integration: N/A📋 Executive Comment: 🔔 Follow-up required</li></ul>
+<h2 id="-16-pre-sales-trucks-loading">📌 16. Pre Sales Trucks Loading</h2>
+<ul><li>🔧 Step 1: Transport Coordinator from the Logistics Department will initiate the stock order for the trucks based on 'customer online orders' and 'pre-seller collected orders' in the system.</li><li>🔧 Step 2: A gate pass will be generated from the system by the FG Warehouse team for truck loading and order dispatch.</li><li>🔧 Step 3: Items are loaded onto the sales truck according to the gate pass. Verification is done by the salesman, warehouse team, and gatekeeper.</li><li>💻 System: Partially</li><li>✅ Implemented: ✔️</li><li>👥 Approver(s): Warehouse In-Charge.</li><li>🧭 Involved: Transport Coordinator, Warehouse Assistant, Warehouse In-Charge.</li><li>⚠️ SAP Mapping Notes: N/A</li><li>📈 Workflow Integration: N/A📋 Executive Comment: 🔔 Follow-up required</li><li>⚠️ Notes: These are additional processes managed by Warehouse Team- Approvals to be incorporated as applicable.</li></ul>
+<h2 id="-17-other-daily-reports">📌 17. Other Daily Reports</h2>
+<ul><li>🔧 Step 1: Warehouse team will prepare the following reports: on a daily basis:1. Cleaning Reports and Checklists (for the warehouse and associated area)2. Daily Product Loading Report (FIFO based) (First-In Fist-Out)3. Daily Warehouse Report ( Storage Utilization, Productivity, Stock Status, Warehouse Waste etc.)4. Daily Load Summary Report ( Load In, Load Out and Return with Return Percentage)on a monthly basis:1. Stock Aging Report2. Closing Stock for PI Report</li><li>💻 System: Partially</li><li>✅ Implemented: ✔️</li><li>👥 Approver(s): Warehouse Manager.</li><li>🧭 Involved: Warehouse In-Charge, Warehouse Manager.</li><li>⚠️ SAP Mapping Notes: N/A</li><li>📈 Workflow Integration: N/A📋 Executive Comment: 🔔 Follow-up required</li><li>⚠️ Notes: These are additional processes managed by Warehouse Team- Approvals to be incorporated as applicable.</li></ul>
+</div>
+</main>
+</div>
+<script>
+
+  (function(){
+    // Print
+    var printBtn = document.getElementById('printBtn');
+    if (printBtn) printBtn.addEventListener('click', function(){ window.print(); });
+
+    // Header click → Home (except on actionable elements)
+    var siteHeader = document.querySelector('header.site');
+    if(siteHeader){
+      siteHeader.addEventListener('click', function(e){
+        var t = e.target;
+        if(t.closest('a') || t.closest('button')) return; 
+        window.location.href = './index.html?v=99999';
+      });
+    }
+
+    // Header height -> CSS var (for anchor offset math)
+    function headerH(){ var h = document.querySelector('header.site'); return (h && h.offsetHeight) ? h.offsetHeight : 72; }
+    function applyHeaderVar(){ document.documentElement.style.setProperty('--header-h', headerH() + 'px'); }
+    window.addEventListener('load', applyHeaderVar);
+    window.addEventListener('resize', applyHeaderVar);
+
+    // Build TOC with nesting (h1 + h2 + h3)
+    var contentRoot = document.querySelector('.content-inner');
+    var headings = Array.from(contentRoot.querySelectorAll('h1, h2, h3'));
+    var tocEl = document.getElementById('toc');
+    var rootUl = document.createElement('ul');
+    var currentUl = rootUl;
+    var stack = [rootUl];
+    var lastLi = null;
+    function lvl(tag){ return tag === 'H1' ? 1 : (tag === 'H2' ? 2 : 3); }
+    var lastLevel = 1;
+    headings.forEach(function(h){
+      if(!h.id){ h.id = h.textContent.trim().toLowerCase().replace(/[^a-z0-9]+/g,'-'); }
+      var L = lvl(h.tagName);
+      while(L > lastLevel){
+        var ul = document.createElement('ul');
+        if (lastLi) { lastLi.appendChild(ul); } else { currentUl.appendChild(ul); }
+        stack.push(ul); currentUl = ul; lastLevel++;
+      }
+      while(L < lastLevel){
+        stack.pop(); currentUl = stack[stack.length-1] || rootUl; lastLevel--;
+      }
+      var li = document.createElement('li');
+      var a = document.createElement('a');
+      a.href = '#' + h.id; a.textContent = h.textContent;
+      li.appendChild(a); currentUl.appendChild(li);
+      lastLi = li;
+    });
+    tocEl.textContent = ''; tocEl.appendChild(rootUl);
+
+    // Cache tocLinks in same order as headings
+    var tocLinks = Array.from(tocEl.querySelectorAll('a'));
+
+    // Active state + ensure TOC item visible
+    function setActiveByIndex(idx){
+      tocLinks.forEach(function(l){ l.classList.remove('active'); });
+      var link = tocLinks[idx];
+      if(link){ link.classList.add('active'); link.scrollIntoView({block:'nearest', inline:'nearest'}); }
+    }
+
+    // Smooth scroll to a heading inside the content scroll container
+    function scrollToHeadingByIndex(idx){
+      var el = headings[idx];
+      if(!el) return;
+      var offset = headerH() + 8;
+      var targetTop = el.offsetTop - offset;
+      contentRoot.scrollTo({ top: targetTop, behavior: 'smooth' });
+      history.pushState(null,'','#'+el.id);
+    }
+
+    // Click handler: set active immediately, then smooth scroll. Pause auto-sync briefly.
+    var clickSyncLock = false;
+    tocLinks.forEach(function(a,idx){
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        clickSyncLock = true;
+        setActiveByIndex(idx);
+        scrollToHeadingByIndex(idx);
+        setTimeout(function(){ clickSyncLock = false; }, 600);
+      });
+    });
+
+    // Compute active index on scroll (deterministic): pick last heading whose top <= scrollTop + header
+    function computeActiveIndex(){
+      var st = contentRoot.scrollTop;
+      var offset = headerH() + 12;
+      var idx = 0;
+      for (var i = 0; i < headings.length; i++){
+        if (headings[i].offsetTop <= st + offset){ idx = i; } else { break; }
+      }
+      return idx;
+    }
+
+    function syncActive(){
+      if (clickSyncLock) return;
+      var idx = computeActiveIndex();
+      setActiveByIndex(idx);
+    }
+
+    contentRoot.addEventListener('scroll', function(){
+      if (contentRoot.__raf) cancelAnimationFrame(contentRoot.__raf);
+      contentRoot.__raf = requestAnimationFrame(syncActive);
+    });
+
+    // Initial highlight
+    setTimeout(syncActive, 0);
+
+    // 'Back to top' should scroll the content area
+    var topLink = document.querySelector('a.toplink');
+    if(topLink){
+      topLink.addEventListener('click', function(e){
+        e.preventDefault();
+        contentRoot.scrollTo({ top: 0, behavior: 'smooth' });
+        setActiveByIndex(0);
+      });
+    }
+  })();
+  
+</script>
+<link href="bot.css" rel="stylesheet"/>
+<script>window.RAGBOT_API_BASE = "http://127.0.0.1:8000";</script>
+<script defer="" src="bot.js"></script>
+<script src="highlight_fallback.js"></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+  if (window.TitoBot && typeof window.TitoBot.init === 'function') {
+    window.TitoBot.init({
+      apiBase: '',
+      askEndpoint: '/api/ask',
+      sourceBase: 'https://adrc-policies.pages.dev',
+      sitemapHint: 'https://adrc-policies.pages.dev/sitemap.xml',
+      defaultLang: 'auto'
+    });
+  }
+});</script></body>
+</html>

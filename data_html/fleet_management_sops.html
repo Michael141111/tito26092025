@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<link href="favicon.ico" rel="icon"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Fleet Management – SOP (Unified)</title>
+<style>
+    :root{
+      --brand:#0a66c2; /* adjust to company color */
+      --ink:#1f2937;  /* slate-800 */
+      --muted:#6b7280;/* slate-500 */
+      --bg:#ffffff;
+      --panel:#f8fafc;/* slate-50 */
+      --border:#e5e7eb;/* slate-200 */
+      --accent:#10b981;/* emerald */
+      --warning:#f59e0b;/* amber */
+      --danger:#ef4444;/* red */
+      --header-h:72px;
+    }
+    html,body{height:100%}
+    body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"}
+
+    /* ----- Header (same chrome as Bad Debts Control) ----- */
+    header.site{position:sticky;top:0;z-index:50;backdrop-filter:saturate(180%) blur(8px);background:color-mix(in srgb, var(--bg), transparent 10%);border-bottom:1px solid var(--border);height:var(--header-h);cursor:pointer}
+    .header-wrap{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:16px;padding:12px 16px;height:100%}
+    .logo{display:flex;align-items:center;gap:12px;min-width:0}
+    .logo img{height:44px;width:auto;object-fit:contain;background:#fff;border-radius:8px;padding:4px;box-shadow:0 0 0 1px var(--border) inset}
+    .meta{display:flex;flex-direction:column;min-width:0}
+    .meta .title{font-weight:700;font-size:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .meta .subtitle{font-size:12px;color:var(--muted)}
+    .actions{margin-left:auto;display:flex;align-items:center;gap:8px}
+    .btn{appearance:none;border:1px solid var(--border);background:#fff;border-radius:10px;padding:8px 12px;cursor:pointer;text-decoration:none;color:inherit;display:inline-block}
+    .btn:hover{box-shadow:0 1px 0 var(--border)}
+    .btn.primary{border-color:color-mix(in srgb, var(--brand), white 60%);background:color-mix(in srgb, var(--brand), white 85%)}
+
+    /* ----- Layout with independent scroll areas ----- */
+    .shell{height:calc(100vh - var(--header-h));display:grid;grid-template-columns:300px 1fr;border-top:1px solid var(--border)}
+    @media (max-width: 980px){.shell{grid-template-columns:1fr}}
+    aside.toc{border-right:1px solid var(--border);background:var(--panel);min-height:0}
+    .toc-inner{height:100%;overflow:auto;padding:16px;position:relative}
+    .toc-title{font-weight:700;margin:0 0 8px 0}
+    .toc a{display:block;color:var(--ink);text-decoration:none;font-size:14px;padding:6px 8px;border-radius:8px}
+    .toc a:hover{background:#fff}
+    .toc a.active{background:color-mix(in srgb, var(--brand), white 88%);box-shadow:inset 3px 0 0 var(--brand)}
+    .toc ul{list-style:none;margin:0;padding:0}
+    .toc ul ul{padding-left:12px}
+
+    main.content{min-height:0}
+    .content-inner{height:100%;overflow:auto;padding:24px 28px}
+    .content-inner h1{margin-top:0}
+    h2{margin-top:32px;border-bottom:1px dashed var(--border);padding-bottom:6px}
+    h3{margin-top:20px}
+    .kpi,.note,.warn,.danger,.tip{border:1px solid var(--border);border-left-width:4px;padding:12px 14px;border-radius:10px;margin:14px 0;background:#fff}
+    .kpi{border-left-color:var(--accent)}
+    .warn{border-left-color:var(--warning)}
+    .danger{border-left-color:var(--danger)}
+    .muted{color:var(--muted)}
+    table{width:100%;border-collapse:collapse;margin:12px 0}
+    th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
+    thead th{background:var(--panel)}
+    code{background:var(--panel);padding:2px 6px;border-radius:6px;border:1px solid var(--border)}
+
+    .toplink{position:fixed;right:16px;bottom:16px;border-radius:999px;padding:10px 12px;background:var(--brand);color:#fff;text-decoration:none;box-shadow:0 6px 20px color-mix(in srgb, var(--brand), transparent 70%)}
+
+    /* Offset anchors for sticky header */
+    :where(.content-inner h1,.content-inner h2,.content-inner h3){scroll-margin-top:calc(var(--header-h) + 8px)}
+
+    /* Print */
+    @media print{header.site,.toplink{display:none}.shell{grid-template-columns:1fr}aside.toc{display:none}.content-inner{overflow:visible}}
+  </style>
+<!-- Highlighting support -->
+<link href="highlight.css" rel="stylesheet"/>
+<script defer="" src="highlight.js"></script>
+</head>
+<body>
+<header class="site" role="banner">
+<div class="header-wrap">
+<div class="logo">
+<!-- Adjusted for policies subdirectory: link back to portal and correct logo path -->
+<a href="index.html?v=99999" title="Home"><img alt="Company Logo" src="adrc_logo_white.png"/></a>
+</div>
+<div class="meta">
+<div class="title">Fleet Management – SOP (Unified)</div>
+<div class="subtitle">Document Code: FLEET-MGT-SOP-001 · Version v1.0 · Effective: <em>TBD</em></div>
+</div>
+<div class="actions">
+<!-- Quick Guide points to the dedicated quick_guides folder with version query -->
+<a class="btn primary" href="fleet_management_sops_quick_guide.html?v=99999" title="Open Quick Guide">Quick Guide ↗</a>
+<button class="btn" id="printBtn" title="Print / Save PDF">Print</button>
+</div>
+</div>
+</header>
+<div class="shell" role="application">
+<aside aria-label="Table of contents" class="toc">
+<div class="toc-inner">
+<h3 class="toc-title" id="contents">Contents</h3>
+<nav class="toc" id="toc"></nav>
+</div>
+</aside>
+<main class="content" id="top">
+<div class="content-inner">
+<h2 id="sec-docctl">0. Document Control</h2>
+<table>
+<thead><tr><th>Version</th><th>Date</th><th>Change Description</th><th>Author</th><th>Approver</th></tr></thead>
+<tbody>
+<tr><td>v1.0</td><td><em>TBD</em></td><td>Initial release (Unified SOP; aligned to Credit Policy presentation style)</td><td>Fleet Coordinator</td><td>HR Mgr · Fleet Mgr · Finance Mgr · GM</td></tr>
+</tbody>
+</table>
+<p><strong>Document Ownership:</strong> Fleet Department is the process owner. Any changes require Fleet Manager review and GM approval.</p>
+<h1 id="sec-purpose">1. Purpose</h1>
+<p>Define end‑to‑end procedures to allocate, operate, maintain, and retire ADRC vehicles safely and efficiently, with clear roles, controls, and evidence standards.</p>
+<h2 id="sec-scope">2. Scope</h2>
+<p>Applies to <strong>all company‑owned vehicles</strong> (sales cars, admin cars, vans, trucks, forklifts, diesel drums) across all locations.</p>
+<h2 id="sec-defs">3. Definitions &amp; Abbreviations</h2>
+<ul>
+<li><strong>Fleet Coordinator:</strong> Day‑to‑day fleet operations focal point.</li>
+<li><strong>PRO:</strong> Public Relations Officer – government/traffic interactions.</li>
+<li><strong>Mulkiya:</strong> Vehicle registration card and status.</li>
+<li><strong>Smart Tag:</strong> ADNOC RFID fueling tag.</li>
+<li><strong>EM:</strong> SAP Equipment Maintenance module (assets as equipment).</li>
+<li><strong>MR:</strong> Material Request (spare‑parts procurement request).</li>
+</ul>
+<h2 id="sec-roles">4. Roles &amp; Responsibilities (RACI)</h2>
+<table>
+<thead><tr><th>Activity</th><th>Driver / Sales</th><th>Fleet Coord.</th><th>HR</th><th>Finance</th><th>Proc.</th><th>PRO</th><th>Fleet Mgr</th><th>HR Mgr</th><th>Fin. Mgr</th><th>GM</th></tr></thead>
+<tbody>
+<tr><td>Vehicle allocation &amp; handover</td><td>I</td><td><strong>R</strong></td><td><strong>A</strong></td><td>I</td><td>I</td><td>I</td><td><strong>C</strong></td><td><strong>A</strong></td><td>I</td><td>I</td></tr>
+<tr><td>Traffic fines handling</td><td><strong>R/A</strong></td><td><strong>C</strong></td><td><strong>A</strong></td><td><strong>R</strong> (deduction)</td><td>I</td><td>C</td><td>I</td><td><strong>A</strong></td><td>C</td><td>I</td></tr>
+<tr><td>Oil change / preventive maintenance</td><td><strong>R</strong></td><td><strong>A</strong></td><td>I</td><td>I</td><td>I</td><td>I</td><td><strong>A</strong></td><td>I</td><td>I</td><td>I</td></tr>
+<tr><td>Job card &amp; repairs</td><td>I</td><td><strong>R</strong></td><td>I</td><td>I</td><td><strong>A</strong></td><td>I</td><td><strong>A</strong></td><td>I</td><td>I</td><td>I</td></tr>
+<tr><td>Spare parts MR &amp; re‑order levels</td><td>I</td><td><strong>R</strong></td><td>I</td><td>I</td><td><strong>A</strong></td><td>I</td><td><strong>C</strong></td><td>I</td><td>I</td><td>I</td></tr>
+<tr><td>Fuel portals (ENOC/ADNOC)</td><td>I</td><td><strong>R</strong></td><td>I</td><td>I</td><td>I</td><td>I</td><td><strong>A</strong></td><td>I</td><td>I</td><td>I</td></tr>
+<tr><td>Route changes</td><td>I</td><td><strong>R</strong></td><td>I</td><td>I</td><td>I</td><td>I</td><td><strong>A</strong></td><td>I</td><td>I</td><td>I</td></tr>
+<tr><td>Vehicle removal / scrapping</td><td>I</td><td><strong>R</strong></td><td>I</td><td><strong>R</strong> (assets)</td><td><strong>A</strong></td><td><strong>R</strong> (govt)</td><td><strong>A</strong></td><td>I</td><td><strong>A</strong></td><td><strong>A</strong></td></tr>
+</tbody>
+</table>
+<h2 id="sec-kpis">5. KPIs &amp; Controls</h2>
+<ul>
+<li><strong>Oil Overdue Rate:</strong> ≤ 0% vehicles with overdue oil change (monthly sample checks).</li>
+<li><strong>Fines Acknowledgement:</strong> 100% employee acknowledgement before deduction/payment.</li>
+<li><strong>Fuel Limit Breaches:</strong> 0 unauthorized limit increases.</li>
+<li><strong>Evidence Quality:</strong> 100% cases with receipts/forms named per standard.</li>
+</ul>
+<h2 id="sec-evidence">6. Evidence &amp; Documentation Standards</h2>
+<ul>
+<li>Use naming: <code>[Plate]_[DocType]_[YYYYMMDD]_[Ref]</code> (e.g., <code>12345-Fines_Receipt_20250903_Ref123</code>).</li>
+<li>Store in fleet drive; retain 7 years. Attach to SAP incident/EM equipment when applicable.</li>
+<li>Accepted proofs: portal screenshots, receipts, signed forms, photos with timestamps, police refs.</li>
+</ul>
+<h2 id="sec-systems">7. Systems &amp; Data</h2>
+<ul>
+<li>Vehicles are created as <strong>Equipment</strong> in SAP EM; for retirement set <em>Deletion Flag</em>.</li>
+<li>Where processes run outside SAP (fuel portals, fines), create a basic incident record to attach evidence if needed.</li>
+</ul>
+<h2 id="sec-sops">8. Operating Procedures</h2>
+<h3 id="sop-1">8.1 Vehicle Allocation &amp; Handover</h3>
+<div class="tip"><strong>Trigger:</strong> New hire, replacement, or department request. <strong>Output:</strong> Signed vehicle handover form.</div>
+<ul>
+<li>Request raised by department; approved by Department Head.</li>
+<li>HR validates and coordinates with Fleet Coordinator.</li>
+<li>Fleet prepares vehicle and <em>Vehicle Details Form</em> (checklist + handover).</li>
+<li>Employee signs handover &amp; accepts responsibilities.</li>
+</ul>
+<p class="muted">System: Out of SAP scope; optional incident for attachments. Approver: HR Manager.</p>
+<h3 id="sop-2">8.2 Traffic Fines &amp; Penalties</h3>
+<div class="warn"><strong>Principle:</strong> Fines are employee liability unless an approved exception exists.</div>
+<ol>
+<li><strong>Daily monitoring:</strong> Fleet checks govt portal; PRO receives SMS alerts.</li>
+<li><strong>Notify driver:</strong> Phone/WhatsApp/email; obtain written acknowledgement.</li>
+<li><strong>Payment:</strong> Employee pays within SLA; <em>exception</em> requires prior approvals (Fleet Coord., HR Mgr, Fin. Mgr, GM).</li>
+<li><strong>Deduction:</strong> Signed knowledge/acknowledgement + receipt → Finance (Senior Accountant) for payroll deduction.</li>
+<li><strong>Petty Cash Reimbursement:</strong> If company paid, petty cash reimbursed against receipt &amp; approvals.</li>
+</ol>
+<p class="muted">Evidence: portal proof + receipt + signed form. System: outside SAP (record incident if needed).</p>
+<h3 id="sop-3">8.3 Oil Change (Preventive Maintenance)</h3>
+<ul>
+<li>Issue sticker at handover (date, current km, next km, filter note).</li>
+<li>Driver brings vehicle when due; Fleet performs change.</li>
+<li>Fleet performs random premise checks; overdue = non‑compliance.</li>
+</ul>
+<p class="muted">SAP: create PM plan &amp; measuring documents (km readings).</p>
+<h3 id="sop-4">8.4 Job Card (Major Issues)</h3>
+<ul>
+<li>Vehicle to workshop; Job Card opened (Job No., dates IN/OUT, defect, work done, parts, cost).</li>
+<li>Close after QA; attach vendor invoices/part refs.</li>
+</ul>
+<h3 id="sop-5">8.5 Material Request – Spare Parts</h3>
+<ul>
+<li>Fleet raises MR with part no/qty/needed‑by; Procurement sources/approves.</li>
+<li>Maintain <em>critical stock list</em> &amp; re‑order levels for fast‑moving parts.</li>
+</ul>
+<h3 id="sop-6">8.6 Critical Level / Re‑order</h3>
+<ul>
+<li>Define min/max per part; monthly review; spot‑check store counts.</li>
+</ul>
+<h3 id="sop-7">8.7 Diesel – ENOC Portal (New/Inclusion/Exclusion)</h3>
+<ul>
+<li>Request inclusion of truck/drum/forklift in ENOC portal; maintain asset &amp; plate mapping.</li>
+<li>For exclusion, disable access immediately upon asset retirement/transfer.</li>
+</ul>
+<h3 id="sop-8">8.8 Diesel – Monthly Consumption Invoice</h3>
+<ul>
+<li>Reconcile ENOC invoice vs. logs; investigate variances; post to cost centers.</li>
+</ul>
+<h3 id="sop-9">8.9 Route Planning Changes</h3>
+<ul>
+<li>On addition/deletion/change of salesman or route, update fleet allocation and access (fuel portals).</li>
+<li>Keep audit trail of who/when changed.</li>
+</ul>
+<h3 id="sop-10">8.10 Petrol – ADNOC Portal (New Car Inclusion)</h3>
+<ul>
+<li>Submit request; install Smart Tag; confirm activation before use.</li>
+</ul>
+<h3 id="sop-11">8.11 Petrol – ADNOC Portal (Car Exclusion)</h3>
+<ul>
+<li>Submit exclusion; effective once portal shows disabled; collect/void Smart Tag.</li>
+</ul>
+<h3 id="sop-12">8.12 Petrol – Smart Tag Replacement</h3>
+<ul>
+<li>Raise inspection; choose location/time; if damaged, ADNOC replaces; then reactivate.</li>
+</ul>
+<h3 id="sop-13">8.13 Fuel Limit Increase</h3>
+<ul>
+<li>Employee requests with business justification; HOD approves; Senior Accountant notified.</li>
+<li>Temporary increases carry expiry date; revert automatically.</li>
+</ul>
+<h3 id="sop-14">8.14 Vehicle Removal from Fleet</h3>
+<div class="danger"><strong>Risk:</strong> No fuel or usage must occur after removal decision. Disable fuel portal access immediately.</div>
+<ol>
+<li><strong>Assessment:</strong> Fleet identifies uneconomical vehicles; compile pack (maintenance cost letter, quotes, comparison, scrap request signed).</li>
+<li><strong>Finance check:</strong> Submit pack to Finance for verification.</li>
+<li><strong>Approvals:</strong> Fleet Mgr → Finance Mgr → GM (owner not required).</li>
+<li><strong>Cancelations:</strong> Remove ADNOC Smart Tag (keep proof), PRO cancels Mulkiya &amp; insurance.</li>
+<li><strong>Assets:</strong> Finance raises fixed‑asset retirement; set deletion flag in SAP EM.</li>
+<li><strong>Disposal:</strong> Tow to scrap yard (Al Ain) with gate pass.</li>
+</ol>
+<h3 id="sop-15">8.15 Scrapping Old Vehicles</h3>
+<ul>
+<li>Fleet notifies Finance Mgr (cc: Sales Dir, Purchase Mgr, PRO, HR Mgr); gather vendor quotes + comparison.</li>
+<li>Procurement validates vendors and coordinates final selection.</li>
+<li>Approvals: Purchase Mgr → Finance Mgr → GM; complete within 3 months of approval.</li>
+</ul>
+<h3 id="sop-16">8.16 Purchase Request – Vehicle Spare Parts</h3>
+<ul>
+<li>Raise PR with complete specs; Procurement issues PO; receiving &amp; posting as per policy.</li>
+</ul>
+<h2 id="sec-exceptions">9. Exceptions &amp; Deviations</h2>
+<p>Any deviation requires Fleet Manager approval and GM notification. Emergency actions allowed to protect assets; record rationale and evidence within 24 hours.</p>
+<h2 id="sec-govern">10. Governance &amp; Alignment</h2>
+<p>This SOP is subordinate to HR Policies (custody &amp; payroll), Finance Policies (payments &amp; asset accounting), and Procurement Policy (sourcing &amp; vendor controls). Where ambiguity exists, escalate to Fleet Manager and GM for direction.</p>
+<h2 id="sec-annex">Annexes</h2>
+<h3 id="annex-a">Annex A – Vehicle Handover Form</h3>
+<table>
+<thead><tr><th>Field</th><th>Details</th></tr></thead>
+<tbody>
+<tr><td>Employee / Dept</td><td></td></tr>
+<tr><td>Vehicle (Plate/Model)</td><td></td></tr>
+<tr><td>Checklist</td><td>Registration, insurance, tools, safety kit, fuel tag</td></tr>
+<tr><td>Signatures</td><td>Employee · Fleet Coord. · HR</td></tr>
+</tbody>
+</table>
+<h3 id="annex-b">Annex B – Job Card Template</h3>
+<table>
+<thead><tr><th>Job No.</th><th>Reg No.</th><th>IN/OUT</th><th>Defect</th><th>Work Done</th><th>Parts</th><th>Cost</th><th>Sign</th></tr></thead>
+<tbody><tr><td class="muted" colspan="8">One card per job; attach invoices.</td></tr></tbody>
+</table>
+<h3 id="annex-c">Annex C – Fine Acknowledgement &amp; Deduction</h3>
+<table>
+<thead><tr><th>Driver</th><th>Fine Ref</th><th>Amount</th><th>Date</th><th>Reason</th><th>Signature</th></tr></thead>
+<tbody><tr><td class="muted" colspan="6">Attach receipt &amp; portal screenshot.</td></tr></tbody>
+</table>
+<h3 id="annex-d">Annex D – ENOC / ADNOC Portal Request</h3>
+<ul>
+<li>Inclusion/Exclusion/Smart Tag replacement</li>
+<li>Plate · Asset · Dept · Justification · Approver</li>
+</ul>
+<h3 id="annex-e">Annex E – Scrap Conversion Request</h3>
+<table>
+<thead><tr><th>Vehicle</th><th>Reason</th><th>Quotes</th><th>Comparison</th><th>Approvals</th></tr></thead>
+<tbody><tr><td class="muted" colspan="5">Attach cost letter &amp; vendor analysis.</td></tr></tbody>
+</table>
+<h3 id="annex-f">Annex F – Fuel Limit Increase Request</h3>
+<table>
+<thead><tr><th>Employee</th><th>Plate</th><th>Current Limit</th><th>Requested</th><th>Period</th><th>Justification</th><th>HOD Sign</th></tr></thead>
+<tbody><tr><td class="muted" colspan="7">Temporary increases must have an end date.</td></tr></tbody>
+</table>
+<p class="muted">© Fleet Department · This page follows the unified SOP style used in other ADRC SOPs/Policies.</p>
+</div>
+</main>
+</div>
+<a class="toplink" href="#top" title="Back to top">↑</a>
+<script>
+  (function(){
+    // Print
+    var printBtn = document.getElementById('printBtn');
+    if (printBtn) printBtn.addEventListener('click', function(){ window.print(); });
+
+    // Header click → Home (except on actionable elements)
+    var siteHeader = document.querySelector('header.site');
+    if(siteHeader){
+      siteHeader.addEventListener('click', function(e){
+        var t = e.target;
+        if(t.closest('a') || t.closest('button')) return; 
+        // Redirect to portal index in parent folder when header clicked
+        window.location.href = './index.html';
+      });
+    }
+
+    // Header height -> CSS var (for anchor offset math)
+    function headerH(){ var h = document.querySelector('header.site'); return (h && h.offsetHeight) ? h.offsetHeight : 72; }
+    function applyHeaderVar(){ document.documentElement.style.setProperty('--header-h', headerH() + 'px'); }
+    window.addEventListener('load', applyHeaderVar);
+    window.addEventListener('resize', applyHeaderVar);
+
+    // Build TOC with nesting (h1 + h2 + h3)
+    var contentRoot = document.querySelector('.content-inner');
+    var headings = Array.from(contentRoot.querySelectorAll('h1, h2, h3'));
+    var tocEl = document.getElementById('toc');
+    var rootUl = document.createElement('ul');
+    var currentUl = rootUl;
+    var stack = [rootUl];
+    var lastLi = null;
+    function lvl(tag){ return tag === 'H1' ? 1 : (tag === 'H2' ? 2 : 3); }
+    var lastLevel = 1;
+    headings.forEach(function(h){
+      if(!h.id){ h.id = h.textContent.trim().toLowerCase().replace(/[^a-z0-9]+/g,'-'); }
+      var L = lvl(h.tagName);
+      while(L > lastLevel){
+        var ul = document.createElement('ul');
+        if (lastLi) { lastLi.appendChild(ul); } else { currentUl.appendChild(ul); }
+        stack.push(ul); currentUl = ul; lastLevel++;
+      }
+      while(L < lastLevel){
+        stack.pop(); currentUl = stack[stack.length-1] || rootUl; lastLevel--;
+      }
+      var li = document.createElement('li');
+      var a = document.createElement('a');
+      a.href = '#' + h.id; a.textContent = h.textContent;
+      li.appendChild(a); currentUl.appendChild(li);
+      lastLi = li;
+    });
+    tocEl.textContent = ''; tocEl.appendChild(rootUl);
+
+    // Cache tocLinks in same order as headings
+    var tocLinks = Array.from(tocEl.querySelectorAll('a'));
+
+    // Active state + ensure TOC item visible
+    function setActiveByIndex(idx){
+      tocLinks.forEach(function(l){ l.classList.remove('active'); });
+      var link = tocLinks[idx];
+      if(link){ link.classList.add('active'); link.scrollIntoView({block:'nearest', inline:'nearest'}); }
+    }
+
+    // Smooth scroll to a heading inside the content scroll container
+    function scrollToHeadingByIndex(idx){
+      var el = headings[idx];
+      if(!el) return;
+      var offset = headerH() + 8;
+      var targetTop = el.offsetTop - offset;
+      contentRoot.scrollTo({ top: targetTop, behavior: 'smooth' });
+      history.pushState(null,'','#'+el.id);
+    }
+
+    // Click handler: set active immediately, then smooth scroll. Pause auto-sync briefly.
+    var clickSyncLock = false;
+    tocLinks.forEach(function(a,idx){
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        clickSyncLock = true;
+        setActiveByIndex(idx);
+        scrollToHeadingByIndex(idx);
+        setTimeout(function(){ clickSyncLock = false; }, 600);
+      });
+    });
+
+    // Compute active index on scroll (deterministic): pick last heading whose top <= scrollTop + header
+    function computeActiveIndex(){
+      var st = contentRoot.scrollTop;
+      var offset = headerH() + 12;
+      var idx = 0;
+      for (var i = 0; i < headings.length; i++){
+        if (headings[i].offsetTop <= st + offset){ idx = i; } else { break; }
+      }
+      return idx;
+    }
+
+    function syncActive(){
+      if (clickSyncLock) return;
+      var idx = computeActiveIndex();
+      setActiveByIndex(idx);
+    }
+
+    contentRoot.addEventListener('scroll', function(){
+      if (contentRoot.__raf) cancelAnimationFrame(contentRoot.__raf);
+      contentRoot.__raf = requestAnimationFrame(syncActive);
+    });
+
+    // Initial highlight
+    setTimeout(syncActive, 0);
+
+    // 'Back to top' should scroll the content area
+    var topLink = document.querySelector('a.toplink');
+    if(topLink){
+      topLink.addEventListener('click', function(e){
+        e.preventDefault();
+        contentRoot.scrollTo({ top: 0, behavior: 'smooth' });
+        setActiveByIndex(0);
+      });
+    }
+  })();
+  </script>
+<link href="bot.css" rel="stylesheet"/>
+<script>window.RAGBOT_API_BASE = "http://127.0.0.1:8000";</script>
+<script defer="" src="bot.js"></script>
+<script src="highlight_fallback.js"></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+  if (window.TitoBot && typeof window.TitoBot.init === 'function') {
+    window.TitoBot.init({
+      apiBase: '',
+      askEndpoint: '/api/ask',
+      sourceBase: 'https://adrc-policies.pages.dev',
+      sitemapHint: 'https://adrc-policies.pages.dev/sitemap.xml',
+      defaultLang: 'auto'
+    });
+  }
+});</script></body>
+</html>

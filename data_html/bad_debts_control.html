@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<link href="favicon.ico" rel="icon"/>
+<!-- Highlighting support -->
+<link href="highlight.css" rel="stylesheet"/>
+<script defer="" src="highlight.js"></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Bad Debts Management – SOP (Standalone)</title>
+<style>
+    :root{
+      --brand:#0a66c2; /* adjust to company color */
+      --ink:#1f2937;  /* slate-800 */
+      --muted:#6b7280;/* slate-500 */
+      --bg:#ffffff;
+      --panel:#f8fafc;/* slate-50 */
+      --border:#e5e7eb;/* slate-200 */
+      --accent:#10b981;/* emerald */
+      --warning:#f59e0b;/* amber */
+      --danger:#ef4444;/* red */
+      --header-h:72px;
+    }
+    html,body{height:100%;}
+    body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";}
+    /* ----- Header ----- */
+    header.site{position:sticky;top:0;z-index:50;backdrop-filter:saturate(180%) blur(8px);background:color-mix(in srgb, var(--bg), transparent 10%);border-bottom:1px solid var(--border);height:var(--header-h);cursor:pointer;}    
+    .header-wrap{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:16px;padding:12px 16px;height:100%;}
+    .logo{display:flex;align-items:center;gap:12px;min-width:0}
+    .logo img{height:44px;width:auto;object-fit:contain;background:#fff;border-radius:8px;padding:4px;box-shadow:0 0 0 1px var(--border) inset}
+    .meta{display:flex;flex-direction:column;min-width:0}
+    .meta .title{font-weight:700;font-size:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .meta .subtitle{font-size:12px;color:var(--muted)}
+    .actions{margin-left:auto;display:flex;align-items:center;gap:8px}
+    .btn{appearance:none;border:1px solid var(--border);background:#fff;border-radius:10px;padding:8px 12px;cursor:pointer;text-decoration:none;color:inherit;display:inline-block}
+    .btn:hover{box-shadow:0 1px 0 var(--border)}
+    .btn.primary{border-color:color-mix(in srgb, var(--brand), white 60%);background:color-mix(in srgb, var(--brand), white 85%);}
+   
+    /* ----- Layout ----- */
+    .shell{height:calc(100vh - var(--header-h));display:grid;grid-template-columns:300px 1fr;border-top:1px solid var(--border)}
+    @media (max-width: 980px){.shell{grid-template-columns:1fr}}
+    aside.toc{border-right:1px solid var(--border);background:var(--panel);min-height:0;/* critical for independent scroll */}
+    .toc-inner{height:100%;overflow:auto;padding:16px;position:relative}
+    .toc-title{font-weight:700;margin:0 0 8px 0}
+    .toc a{display:block;color:var(--ink);text-decoration:none;font-size:14px;padding:6px 8px;border-radius:8px}
+    .toc a:hover{background:#fff}
+    .toc a.active{background:color-mix(in srgb, var(--brand), white 88%);box-shadow:inset 3px 0 0 var(--brand);}
+    .toc ul{list-style:none;margin:0;padding:0}
+    .toc ul ul{padding-left:12px}
+
+    main.content{min-height:0;/* critical for independent scroll */}
+    .content-inner{height:100%;overflow:auto;padding:24px 28px;}
+    .content-inner h1{margin-top:0}
+    h2{margin-top:32px;border-bottom:1px dashed var(--border);padding-bottom:6px}
+    h3{margin-top:20px}
+    .kpi, .note, .warn, .tip{border:1px solid var(--border);border-left-width:4px;padding:12px 14px;border-radius:10px;margin:14px 0;background:#fff}
+    .kpi{border-left-color:var(--accent)}
+    .warn{border-left-color:var(--warning)}
+    .danger{border-left-color:var(--danger)}
+    .muted{color:var(--muted)}
+    table{width:100%;border-collapse:collapse;margin:12px 0}
+    th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
+    thead th{background:var(--panel)}
+    code{background:var(--panel);padding:2px 6px;border-radius:6px;border:1px solid var(--border)}
+
+    .toplink{position:fixed;right:16px;bottom:16px;border-radius:999px;padding:10px 12px;background:var(--brand);color:#fff;text-decoration:none;box-shadow:0 6px 20px color-mix(in srgb, var(--brand), transparent 70%)}
+
+    /* Offset anchors for sticky header */
+    :where(.content-inner h1,.content-inner h2,.content-inner h3){scroll-margin-top:calc(var(--header-h) + 8px);} 
+
+    /* Print */
+    @media print{
+      header.site,.toplink{display:none}
+      .shell{grid-template-columns:1fr}
+      aside.toc{display:none}
+      .content-inner{overflow:visible}
+    }
+  </style>
+</head>
+<body>
+<header class="site" role="banner">
+<div class="header-wrap">
+<div class="logo">
+<!-- Replace src with your logo path; white background retained -->
+<!-- Adjusted for policies subdirectory: navigate back to parent index and use correct logo path -->
+<a href="index.html?v=99999" title="Home"><img alt="Company Logo" src="adrc_logo_white.png"/></a>
+</div>
+<div class="meta">
+<a class="title" href="index.html?v=99999" style="color:inherit;text-decoration:none;">Bad Debts Management – SOP (Standalone)</a>
+<div class="subtitle">Document Code: FIN-CRD-BD-SOP · Version v1.0 · Effective: <span id="effDate">[Insert Date]</span></div>
+</div>
+<div class="actions">
+<!-- Link to quick guide now points to quick_guides folder -->
+<a class="btn primary" href="bad-debts-quick-guide.html?v=99999" title="Open Quick Guide">Quick Guide ↗</a>
+<button class="btn" id="printBtn" title="Print / Save PDF">Print</button>
+</div>
+</div>
+</header>
+<div class="shell" role="application">
+<aside aria-label="Table of contents" class="toc">
+<div class="toc-inner">
+<h3 class="toc-title" id="contents">Contents</h3>
+<nav class="toc" id="toc"></nav>
+</div>
+</aside>
+<main class="content" id="top">
+<div class="content-inner">
+<h2 id="sec-doc-control">0. Document Control</h2>
+<table>
+<thead>
+<tr><th>Version</th><th>Date</th><th>Change Description</th><th>Author</th><th>Approver</th></tr>
+</thead>
+<tbody>
+<tr><td>v1.0</td><td>[Insert]</td><td>Initial release (standalone Bad Debts SOP aligned to Credit Policy)</td><td>Finance</td><td>GM</td></tr>
+</tbody>
+</table>
+<p><strong>Document Ownership:</strong> Finance Department is the process owner. Any changes require Finance Manager review and GM approval.</p>
+<h1 id="sec-purpose">1. Purpose</h1>
+<p>This SOP defines the end‑to‑end process to identify, monitor, escalate, and resolve bad debts for both <strong>Short Cash Customers</strong> and <strong>Company Credit Customers</strong>. It is subordinate to the Company Credit Policy and the DoA matrix.</p>
+<h2 id="sec-scope">2. Scope</h2>
+<p><strong>Applies to:</strong> Salesmen, Sales Supervisors, Channel Managers, Sales Directors, Accounting (AR), Finance Manager, General Manager, <strong>MeM Department</strong>, PRO, Legal/Compliance (as required). Covers all overdue invoices under Short Cash and Company Credit.</p>
+<h2 id="sec-defs">3. Definitions &amp; Abbreviations</h2>
+<ul>
+<li><strong>Overdue Date:</strong> The day after invoice due date.</li>
+<li><strong>High‑Risk Case:</strong> Exposure with clear risk of loss.</li>
+<li><strong>BDR:</strong> Bad Debts Report (&gt;60 days past overdue).</li>
+<li><strong>MeM Department:</strong> Custodian of <em>evidence</em> that company assets were removed/transferred after request; maintains logs and proof.</li>
+<li><strong>Aging Buckets:</strong> On Due, 0–15, 15–30, 30–60, &gt;60.</li>
+</ul>
+<h2 id="sec-roles">4. Roles &amp; Responsibilities (RACI)</h2>
+<table>
+<thead><tr><th>Role</th><th>Key Responsibilities</th><th>Short Cash</th><th>Company Credit</th></tr></thead>
+<tbody>
+<tr><td>Salesman</td><td>Follow up, collection, documentation</td><td>R/A</td><td>R/A</td></tr>
+<tr><td>Sales Supervisor</td><td>15–30 owner, visit records</td><td>A</td><td>A</td></tr>
+<tr><td>Channel Manager</td><td>Co‑owner 15–30, route discipline</td><td>A</td><td>A</td></tr>
+<tr><td>Sales Director</td><td>30–60 lead, field approvals, BDR sign</td><td>A</td><td>A</td></tr>
+<tr><td>Accounting (AR)</td><td>Statements, aging, BDR financials</td><td>C/R</td><td>C/R</td></tr>
+<tr><td>Finance Manager</td><td>Escalation approvals, staff actions</td><td>A</td><td>A</td></tr>
+<tr><td>General Manager</td><td>Final BDR/discipline authority</td><td>A</td><td>A</td></tr>
+<tr><td><strong>MeM Department</strong></td><td>Evidence of asset removal/transfer; custody records</td><td>R</td><td>R</td></tr>
+<tr><td>PRO</td><td>Police case opening/liaison</td><td>R</td><td>R</td></tr>
+</tbody>
+</table>
+<h2 id="sec-highrisk">5. High‑Risk Notification (Immediate)</h2>
+<div class="warn"><strong>Trigger:</strong> Any risk of losing any amount. <strong>Action:</strong> Immediate alert to Accounting, Finance Manager, Sales Director, GM (use Annex D template). <strong>SLA:</strong> within 24h.</div>
+<h2 id="sec-monthly">6. Monthly Controls &amp; Upfront Monitoring</h2>
+<h3 id="sec-shortcash-stmt">6.1 Short Cash Statement (Day 1–5)</h3>
+<p>Issued per salesman; includes invoice‑level details, <em>Days Remaining</em>, and totals per Aging Buckets with <strong>amounts &amp; percentages</strong>.</p>
+<h3 id="sec-shortcash-decl">6.2 Monthly Outstanding Declaration (Short Cash)</h3>
+<p>Due by Day 15; lists actions taken, next action date, and risk rating (Annex B).</p>
+<h3 id="sec-company-dunning">6.3 Company Credit Dunning</h3>
+<p>Aligned with Credit Policy checkpoints (Overdue 0, +5, +15, +30, +60); evidence recorded.</p>
+<h2 id="sec-timeline">7. Timeline &amp; Escalation (by overdue age)</h2>
+<h3 id="sec-0-15">7.1 0–15 Days</h3>
+<ul>
+<li>Salesman &amp; Supervisor follow up; document contacts; set next action.</li>
+</ul>
+<h3 id="sec-15-30">7.2 &gt;15–30 Days</h3>
+<ul>
+<li>Open <strong>separate case file</strong> (ID).</li>
+<li>Mandatory visit by <strong>Sales Supervisor &amp; Channel Manager</strong> (Annex C‑1).</li>
+<li><em>Short Cash:</em> Convert to Pure Cash if delay persists; <em>Company:</em> continue dunning and reassess exposure.</li>
+</ul>
+<h3 id="sec-30-60">7.3 &gt;30–60 Days</h3>
+<ul>
+<li>Additional visit by <strong>Sales Director &amp; PRO</strong>.</li>
+<li>PRO to open police case if applicable; record references.</li>
+<li><strong>Asset removal</strong> initiated; <strong>MeM</strong> evidences transfer (photos/serials/forms/timestamps).</li>
+</ul>
+<h3 id="sec-60plus">7.4 &gt;60 Days – Bad Debts Report</h3>
+<ul>
+<li>Prepare the <strong>BDR</strong> (Annex A) and submit to Finance Manager &amp; GM.</li>
+<li>If approved → apply KPI Ratio Rate to roles; if rejected → staff disciplinary review.</li>
+</ul>
+<h2 id="sec-evidence">8. Evidence &amp; Documentation Standards</h2>
+<ul>
+<li>Contact logs, emails/messages, signed visit reports, commitment notes, police references.</li>
+<li><strong>MeM asset evidence</strong>: photos, serials, handover forms; custody log.</li>
+<li>Naming: <code>[CaseID]_[CustomerCode]_[InvoiceNo]_[YYYYMMDD]_[DocType]</code>; retention: 7 years.</li>
+</ul>
+<h2 id="sec-bdr">9. Bad Debts Report – Content &amp; Approvals</h2>
+<ol>
+<li>Customer master &amp; contacts</li>
+<li>Relationship start &amp; total purchases</li>
+<li>Outstanding &amp; aging profile</li>
+<li>Sales volume trend</li>
+<li>Chronology (0–15, 15–30, 30–60, &gt;60)</li>
+<li>Communications &amp; notices</li>
+<li><strong>MeM evidence</strong> &amp; asset status</li>
+<li>Police references (if any)</li>
+<li>Risk &amp; recommendation</li>
+<li>Signatures: Salesman, Supervisor, Channel Manager, Sales Director</li>
+<li>Approvals: Finance Manager, General Manager</li>
+</ol>
+<h2 id="sec-custdisc">10. Customer Disciplinary Rules</h2>
+<h3 id="sec-sc">10A. Short Cash</h3>
+<ul>
+<li>Breach = Automatic Block</li>
+<li>Delay &gt;15 days ⇒ Convert to Pure Cash</li>
+<li>3+ violations ⇒ Permanent Cash</li>
+<li>Any invoicing to blocked customer ⇒ DoA approval</li>
+</ul>
+<h3 id="sec-cc">10B. Company Credit</h3>
+<ul>
+<li>Breach = Automatic/Manual Block</li>
+<li>Reinstatement: Full payment realization + DoA</li>
+<li>Delay &gt;45 days ⇒ DoA for credit continuation</li>
+<li>Any invoicing to blocked customer ⇒ DoA</li>
+</ul>
+<h2 id="sec-staffdisc">11. Staff Disciplinary Framework</h2>
+<ul>
+<li>Removal of targets/incentives; salary deduction (e.g., up to 1% of customer outstanding), warning, termination; training/probation as needed.</li>
+</ul>
+<h2 id="sec-ecl">12. Accounting &amp; ECL Interface</h2>
+<p>Finance to determine provisioning/write‑off per IFRS9 (PD × LGD × EAD). BDR approval triggers provisioning review and entries.</p>
+<h2 id="sec-systems">13. Systems, Data &amp; Reports</h2>
+<ul>
+<li>ERP fields accurate (due dates, routes, customer codes).</li>
+<li>Flags: Blocked/Manual Block/DoA Sale/BDR Flag.</li>
+<li>Dashboards: aging by salesperson; &gt;60‑day cases; MeM asset recovery status.</li>
+<li>Exports: Monthly Short Cash Statements (Day 1–5).</li>
+</ul>
+<h2 id="sec-exceptions">14. Exceptions &amp; Deviations</h2>
+<p>Any deviation requires Finance Manager approval and GM notification. Emergency actions allowed to protect assets; record rationale within 24h.</p>
+<h2 id="sec-govern">15. Governance &amp; Alignment</h2>
+<p>This SOP is subordinate to the Credit Policy and DoA. If conflict arises, the master policy prevails. Annual Finance review; interim updates as needed.</p>
+<h2 id="sec-annex">Annexes</h2>
+<h3 id="annex-a">Annex A – Bad Debts Report (BDR) Template</h3>
+<table>
+<thead><tr><th colspan="4">Section 1 – Customer Profile</th></tr></thead>
+<tbody>
+<tr><td>Name</td><td>Code</td><td>TRN</td><td>Address / Contacts</td></tr>
+</tbody>
+</table>
+<p><strong>Section 2 – Account History:</strong> Relationship Start | Total Purchases | Avg Monthly Sales | Current Status</p>
+<p><strong>Section 3 – Financials:</strong> Invoice list (No., Date, Due, Amount, Paid, Outstanding, Bucket) + Totals by bucket</p>
+<p><strong>Section 4 – Chronology:</strong> 0–15 | 15–30 | 30–60 | &gt;60</p>
+<p><strong>Section 5 – Evidence:</strong> Emails, messages, visit reports, <strong>MeM asset</strong> records, police ref.</p>
+<p><strong>Section 6 – Risk &amp; Recommendation</strong></p>
+<p><strong>Section 7 – Signatures:</strong> Salesman | Supervisor | Channel Manager | Sales Director</p>
+<p><strong>Section 8 – Approvals:</strong> Finance Manager | General Manager</p>
+<h3 id="annex-b">Annex B – Monthly Outstanding Declaration (Short Cash)</h3>
+<table>
+<thead><tr><th>Customer</th><th>Invoice</th><th>Amount</th><th>Overdue Days</th><th>Action taken</th><th>Next action</th><th>Risk</th><th>Owner</th><th>Notes</th></tr></thead>
+<tbody><tr><td class="muted" colspan="9">(Fill monthly; due by Day 15)</td></tr></tbody>
+</table>
+<h3 id="annex-c">Annex C – Visit &amp; Asset Recovery Forms</h3>
+<ul>
+<li><strong>C‑1 Visit Report (15–30)</strong>: date, attendees (Supervisor &amp; Channel Manager), summary, commitment, next date, customer stamp/sign.</li>
+<li><strong>C‑2 Escalation Visit (30–60)</strong>: date, attendees (Sales Director &amp; PRO), escalation actions, notices served.</li>
+<li><strong>C‑3 Asset Recovery Checklist</strong>: asset type, qty, serials, condition, location, <strong>MeM photo</strong>, handover/collection form, timestamp, MeM verifier.</li>
+</ul>
+<h3 id="annex-d">Annex D – High‑Risk Alert Email Template</h3>
+<pre>
+Subject: HIGH-RISK COLLECTION – [Customer / Invoice]
+Summary of risk, amount, overdue days, last action, next action, support needed.
+Attachments: statement &amp; evidence.
+Recipients: Accounting, Finance Manager, Sales Director, GM.
+</pre>
+<h3 id="annex-f">Annex F – Blocking &amp; Reinstatement Decision Tree</h3>
+<ol>
+<li>Breach → Block (Short Cash automatic; Company credit auto/manual).</li>
+<li>New invoicing while blocked → DoA approval only.</li>
+<li>Reinstatement after <em>full payment</em> (Company Credit requires DoA).</li>
+<li>Short Cash: &gt;15d delay ⇒ Pure Cash; 3+ violations ⇒ Permanent Cash.</li>
+</ol>
+<h3 id="annex-g">Annex G – RACI Matrix (Detailed)</h3>
+<table>
+<thead><tr>
+<th>Activity</th><th>Salesman</th><th>Supervisor</th><th>Channel Manager</th><th>Sales Director</th><th>Accounting</th><th>Finance Mgr</th><th>GM</th><th>MeM</th><th>PRO</th>
+</tr></thead>
+<tbody>
+<tr><td>Monthly Short Cash Statement</td><td>C</td><td>C</td><td>C</td><td>C</td><td><strong>R/A</strong></td><td>C</td><td>I</td><td>I</td><td>I</td></tr>
+<tr><td>Declaration (Short Cash)</td><td><strong>R</strong></td><td><strong>A</strong></td><td>C</td><td>I</td><td>C</td><td>I</td><td>I</td><td>I</td><td>I</td></tr>
+<tr><td>0–15 Follow up</td><td><strong>R</strong></td><td><strong>A</strong></td><td>C</td><td>I</td><td>C</td><td>I</td><td>I</td><td>I</td><td>I</td></tr>
+<tr><td>15–30 Visit</td><td>C</td><td><strong>R/A</strong></td><td><strong>R/A</strong></td><td>I</td><td>C</td><td>I</td><td>I</td><td>I</td><td>I</td></tr>
+<tr><td>30–60 Escalation Visit</td><td>I</td><td>C</td><td>C</td><td><strong>R/A</strong></td><td>C</td><td>I</td><td>I</td><td>I</td><td><strong>R</strong></td></tr>
+<tr><td>Police Case</td><td>I</td><td>I</td><td>I</td><td>C</td><td>I</td><td>I</td><td>I</td><td>I</td><td><strong>R</strong></td></tr>
+<tr><td>Asset Removal Evidence</td><td>I</td><td>I</td><td>I</td><td>C</td><td>I</td><td>I</td><td>I</td><td><strong>R</strong></td><td>I</td></tr>
+<tr><td>BDR Preparation</td><td>C</td><td>C</td><td>C</td><td><strong>A</strong></td><td><strong>R</strong></td><td><strong>A</strong></td><td><strong>A</strong></td><td>C</td><td>C</td></tr>
+<tr><td>KPI Update</td><td>I</td><td>I</td><td>I</td><td>I</td><td><strong>R</strong></td><td><strong>A</strong></td><td>I</td><td>I</td><td>I</td></tr>
+<tr><td>Staff Disciplinary</td><td>I</td><td>I</td><td>I</td><td>I</td><td>C</td><td><strong>A</strong></td><td><strong>A</strong></td><td>I</td><td>I</td></tr>
+</tbody>
+</table>
+<h3 id="annex-h">Annex H – KPI Ratio Rate Transmission</h3>
+<ul>
+<li>Once BDR is <strong>approved</strong>, Accounting notifies HR/BI to post KPI Ratio Rate against: Salesman, Supervisor, Channel Manager, Sales Director.</li>
+<li>If <strong>rejected</strong>, HR/BI stands by for GM‑approved staff disciplinary instruction.</li>
+</ul>
+<h3 id="annex-i">Annex I – Dunning Timeline (Company Credit Alignment)</h3>
+<ul>
+<li>Overdue 0: courtesy reminder.</li>
+<li>+5: written reminder.</li>
+<li>+15: firm reminder, visit scheduled.</li>
+<li>+30: escalation notice; potential Manual Block; Director involvement.</li>
+<li>+60: BDR preparation and submission.</li>
+</ul>
+<h3 id="annex-j">Annex J – Sample Formal Notice (30–60 Stage)</h3>
+<p>Formal letter including amount due, invoice refs, deadline, intention to open police case (if applicable), and asset removal clause; delivery proof retained.</p>
+<h2 id="sec-compliance">Compliance Statement</h2>
+<p>This SOP is subordinate to the Credit Policy and the DoA. No step herein may contradict the master policy. Where ambiguity exists, escalate to Finance Manager and GM for direction.</p>
+<p class="muted">© Finance Department · This page is subordinate to the Company Credit Policy and DoA.</p>
+</div>
+</main>
+</div>
+<a class="toplink" href="#top" title="Back to top">↑</a>
+<script>
+(function(){
+  // Print
+  var printBtn = document.getElementById('printBtn');
+  if (printBtn) printBtn.addEventListener('click', function(){ window.print(); });
+
+  // Elements
+  var tocEl = document.getElementById('toc');
+  var contentRoot = document.querySelector('.content-inner');
+  var siteHeader = document.querySelector('header.site');
+  if(siteHeader){
+    siteHeader.addEventListener('click', function(e){
+      // ignore clicks that originated from actionable elements inside header
+      var t = e.target;
+      if(t.closest('a') || t.closest('button')) return; 
+      window.location.href = './index.html?v=99999';
+    });
+  }
+
+  // Header height -> CSS var
+  function headerH(){ var h = document.querySelector('header.site'); return (h && h.offsetHeight) ? h.offsetHeight : 72; }
+  function applyHeaderVar(){ document.documentElement.style.setProperty('--header-h', headerH() + 'px'); }
+  window.addEventListener('load', applyHeaderVar);
+  window.addEventListener('resize', applyHeaderVar);
+
+  // Build TOC with nesting (h1 + h2 + h3)
+  var headings = Array.from(contentRoot.querySelectorAll('h1, h2, h3'));
+  var rootUl = document.createElement('ul');
+  var currentUl = rootUl;
+  var stack = [rootUl];
+  var lastLi = null;
+  function lvl(tag){ return tag === 'H1' ? 1 : (tag === 'H2' ? 2 : 3); }
+  var lastLevel = 1;
+  headings.forEach(function(h){
+    if(!h.id){ h.id = h.textContent.trim().toLowerCase().replace(/[^a-z0-9]+/g,'-'); }
+    var L = lvl(h.tagName);
+    while(L > lastLevel){
+      var ul = document.createElement('ul');
+      if (lastLi) { lastLi.appendChild(ul); } else { currentUl.appendChild(ul); }
+      stack.push(ul); currentUl = ul; lastLevel++;
+    }
+    while(L < lastLevel){
+      stack.pop(); currentUl = stack[stack.length-1] || rootUl; lastLevel--;
+    }
+    var li = document.createElement('li');
+    var a = document.createElement('a');
+    a.href = '#' + h.id; a.textContent = h.textContent;
+    li.appendChild(a); currentUl.appendChild(li);
+    lastLi = li;
+  });
+  tocEl.textContent = ''; tocEl.appendChild(rootUl);
+
+  // Cache tocLinks in same order as headings
+  var tocLinks = Array.from(tocEl.querySelectorAll('a'));
+
+  // Active state + ensure TOC item visible
+  function setActiveByIndex(idx){
+    tocLinks.forEach(function(l){ l.classList.remove('active'); });
+    var link = tocLinks[idx];
+    if(link){ link.classList.add('active'); link.scrollIntoView({block:'nearest', inline:'nearest'}); }
+  }
+
+  // Smooth scroll to a heading inside the content scroll container
+  function scrollToHeadingByIndex(idx){
+    var el = headings[idx];
+    if(!el) return;
+    var offset = headerH() + 8;
+    var targetTop = el.offsetTop - offset;
+    contentRoot.scrollTo({ top: targetTop, behavior: 'smooth' });
+    history.pushState(null,'','#'+el.id);
+  }
+
+  // Click handler: set active immediately, then smooth scroll. Pause auto-sync briefly.
+  var clickSyncLock = false;
+  tocLinks.forEach(function(a,idx){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      clickSyncLock = true;
+      setActiveByIndex(idx);
+      scrollToHeadingByIndex(idx);
+      // release lock after scrolling settles
+      setTimeout(function(){ clickSyncLock = false; }, 600);
+    });
+  });
+
+  // Compute active index on scroll (deterministic): pick last heading whose top <= scrollTop + header
+  function computeActiveIndex(){
+    var st = contentRoot.scrollTop;
+    var offset = headerH() + 12;
+    var idx = 0;
+    for (var i = 0; i < headings.length; i++){
+      if (headings[i].offsetTop <= st + offset){ idx = i; } else { break; }
+    }
+    return idx;
+  }
+
+  function syncActive(){
+    if (clickSyncLock) return;
+    var idx = computeActiveIndex();
+    setActiveByIndex(idx);
+  }
+
+  contentRoot.addEventListener('scroll', function(){
+    // Use rAF to avoid thrashing
+    if (contentRoot.__raf) cancelAnimationFrame(contentRoot.__raf);
+    contentRoot.__raf = requestAnimationFrame(syncActive);
+  });
+
+  // Initial highlight
+  setTimeout(syncActive, 0);
+
+  // Handle 'Back to top' button to scroll content area (not the whole page)
+  var topLink = document.querySelector('a.toplink');
+  if(topLink){
+    topLink.addEventListener('click', function(e){
+      e.preventDefault();
+      contentRoot.scrollTo({ top: 0, behavior: 'smooth' });
+      setActiveByIndex(0);
+    });
+  }
+})();
+</script>
+<link href="bot.css" rel="stylesheet"/>
+<script>window.RAGBOT_API_BASE = "http://127.0.0.1:8000";</script>
+<script defer="" src="bot.js"></script>
+<script src="highlight_fallback.js"></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+  if (window.TitoBot && typeof window.TitoBot.init === 'function') {
+    window.TitoBot.init({
+      apiBase: '',
+      askEndpoint: '/api/ask',
+      sourceBase: 'https://adrc-policies.pages.dev',
+      sitemapHint: 'https://adrc-policies.pages.dev/sitemap.xml',
+      defaultLang: 'auto'
+    });
+  }
+});</script></body>
+</html>

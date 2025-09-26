@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<link href="favicon.ico" rel="icon"/>
+<!-- Highlighting support -->
+<link href="highlight.css" rel="stylesheet"/>
+<script defer="" src="highlight.js"></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Procurement SOPs</title>
+<style>
+    :root{
+      --brand:#0a66c2; /* company color */
+      --ink:#1f2937;  /* slate-800 */
+      --muted:#6b7280;/* slate-500 */
+      --bg:#ffffff;
+      --panel:#f8fafc;/* slate-50 */
+      --border:#e5e7eb;/* slate-200 */
+      --accent:#10b981;/* emerald */
+      --warning:#f59e0b;/* amber */
+      --danger:#ef4444;/* red */
+      --header-h:72px;
+    }
+    html,body{height:100%;}
+    body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";}
+    /* ----- Header (matches bad_debts_control.html?v=99999 style) ----- */
+    header.site{position:sticky;top:0;z-index:50;backdrop-filter:saturate(180%) blur(8px);background:color-mix(in srgb, var(--bg), transparent 10%);border-bottom:1px solid var(--border);height:var(--header-h);cursor:pointer;}    
+    .header-wrap{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:16px;padding:12px 16px;height:100%;}
+    .logo{display:flex;align-items:center;gap:12px;min-width:0}
+    .logo img{height:44px;width:auto;object-fit:contain;background:#fff;border-radius:8px;padding:4px;box-shadow:0 0 0 1px var(--border) inset}
+    .meta{display:flex;flex-direction:column;min-width:0}
+    .meta .title{font-weight:700;font-size:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .meta .subtitle{font-size:12px;color:var(--muted)}
+    .actions{margin-left:auto;display:flex;align-items:center;gap:8px}
+    .btn{appearance:none;border:1px solid var(--border);background:#fff;border-radius:10px;padding:8px 12px;cursor:pointer;text-decoration:none;color:inherit;display:inline-block}
+    .btn:hover{box-shadow:0 1px 0 var(--border)}
+    .btn.primary{border-color:color-mix(in srgb, var(--brand), white 60%);background:color-mix(in srgb, var(--brand), white 85%);}
+    /* ----- Layout with independent scroll areas ----- */
+    .shell{height:calc(100vh - var(--header-h));display:grid;grid-template-columns:300px 1fr;border-top:1px solid var(--border)}
+    @media (max-width: 980px){.shell{grid-template-columns:1fr}}
+    aside.toc{border-right:1px solid var(--border);background:var(--panel);min-height:0;}
+    .toc-inner{height:100%;overflow:auto;padding:16px;position:relative}
+    .toc-title{font-weight:700;margin:0 0 8px 0}
+    .toc a{display:block;color:var(--ink);text-decoration:none;font-size:14px;padding:6px 8px;border-radius:8px}
+    .toc a:hover{background:#fff}
+    .toc a.active{background:color-mix(in srgb, var(--brand), white 88%);box-shadow:inset 3px 0 0 var(--brand);}
+    .toc ul{list-style:none;margin:0;padding:0}
+    .toc ul ul{padding-left:12px}
+    main.content{min-height:0;}
+    .content-inner{height:100%;overflow:auto;padding:24px 28px;}
+    .content-inner h1{margin-top:0}
+    h2{margin-top:32px;border-bottom:1px dashed var(--border);padding-bottom:6px}
+    h3{margin-top:20px}
+    table{width:100%;border-collapse:collapse;margin:12px 0}
+    th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
+    thead th{background:var(--panel)}
+    .muted{color:var(--muted)}
+    .toplink{position:fixed;right:16px;bottom:16px;border-radius:999px;padding:10px 12px;background:var(--brand);color:#fff;text-decoration:none;box-shadow:0 6px 20px color-mix(in srgb, var(--brand), transparent 70%)}
+    /* Offset anchors for sticky header when deep-linking */
+    :where(.content-inner h1,.content-inner h2,.content-inner h3){scroll-margin-top:calc(var(--header-h) + 8px);} 
+    /* Print */
+    @media print{
+      header.site,.toplink{display:none}
+      .shell{grid-template-columns:1fr}
+      aside.toc{display:none}
+      .content-inner{overflow:visible}
+    }
+  </style>
+</head>
+<body>
+<header class="site" role="banner">
+<div class="header-wrap">
+<div class="logo">
+<a href="index.html?v=99999" title="Home"><img alt="Company Logo" src="adrc_logo_white.png"/></a>
+</div>
+<div class="meta">
+<div class="title">Procurement SOPs</div>
+<div class="subtitle">SOP — Auto-generated from internal slides · Review and approve</div>
+</div>
+<div class="actions">
+<a class="btn primary" href="procurement_sops_quick_guide.html?v=99999" title="Open Quick Guide">Quick Guide ↗</a>
+<button class="btn" id="printBtn" title="Print / Save PDF">Print</button>
+</div>
+</div>
+</header>
+<div class="shell" role="application">
+<aside aria-label="Table of contents" class="toc">
+<div class="toc-inner">
+<h3 class="toc-title" id="contents">Contents</h3>
+<nav class="toc" id="toc"></nav>
+</div>
+</aside>
+<main class="content" id="top">
+<div class="content-inner">
+<h1 id="procurement-sops">Procurement SOPs</h1>
+<h2 id="adrc">ADRC</h2>
+<ul><li>SOPs Summary for</li><li>Procurement Department</li></ul>
+<h2 id="-sop-index--procurement">📑 SOP Index – Procurement</h2>
+<ul><li>Vendor Creation / Vendor Master Update/Modification</li><li>Vendor Selection – RM Concentrate</li><li>Vendor Selection – RM Primary PI</li><li>Vendor Selection – RM Secondary / Others</li><li>Vendor Selection - Spares Parts (Plant and Machinery)</li><li>Vendor Selection - Marketing Equipment Maintenance</li><li>Vendor Selection - Support Function (IT, marketing, Finance, HR)</li><li>Comparative Analysis &amp; Purchase Order</li><li>De-activation of vendor</li><li>Vendor Evaluation</li><li>Blocking of vendor (Proposed New)</li><li>Vendor Master Review (Proposed New)</li><li>Trade license expiry notification (Proposed New)</li><li>Trade license expiry (Proposed New)</li><li>Business Continuation with vendors for Trade license expiry (Proposed New)</li><li>Vendor Reconciliation</li><li>Vendor Payment</li><li>Vendor Advance</li></ul>
+<h2 id="-1-vendor-creation--vendor-master-updatemodification">📌 1. Vendor Creation / Vendor Master Update/Modification</h2>
+<ul><li>🔧 Step 1: The Procurement team will analyze the market for new suppliers who can deliver services/products of a given requirement.</li><li>🔧 Step 2: Contact the supplier and obtain details like:</li><li>a) Trade License b) TRN no. c) Bank a/c details d) Payment terms e) Details of key two contact persons (phone number, email address) etc.</li><li>🔧 Step 3: Update the details in Supplier Onboarding Form (MS Excel form)</li><li>🔧 Step 4: Update the supplier details in RBS System (for modification process, it directly starts from this step for any updates)Please Note: Currently this process is managed by Accounts Department.</li><li>💻 System: Partially</li><li>✅ Implemented: ✔️</li><li>👥 Approver(s): Procurement Manager</li><li>🧭 Involved: Procurement Coordinator, Procurement Manager</li><li>⚠️ SAP Mapping Notes: Creation of Vendor master should be done in SAP.</li><li>📈 Workflow Integration: One Level Approval can be provided in SAP.📋 Executive Comment:</li><li>✅ Aligned with SAP</li></ul>
+<h2 id="-2-vendor-selection--rm-concentrate">📌 2. Vendor Selection – RM Concentrate</h2>
+<ul><li>🔧 Step 1: Since the product is monopoly, Pepsi-Cola International (PCI) will be the single supplier of Raw Material Contrate. There is no change to this process.💻 System: Partially</li><li>✅ Implemented: ✔️</li><li>👥 Approver(s):</li><li>🧭 Involved: Procurement Manager</li><li>⚠️ SAP Mapping Notes: Pepsi - Cola International (PCI) as a Supplier will be uploaded in SAP as part of Cutover.</li><li>📈 Workflow Integration: N/A📋 Executive Comment: Approval workflow to be provided in SAP.</li><li>✅ Aligned with SAP</li></ul>
+<h2 id="-3-vendor-selection--rm-primary-pi">📌 3. Vendor Selection – RM Primary PI</h2>
+<ul><li>🔧 Step 1: List of approved primary suppliers is provided by PCI. ADRC procurement can choose from the provided list of suppliers for procurement needs.</li><li>Please Note: Any addition to add in the primary list would be initiated by PCI only.</li><li>💻 System: Partially</li><li>✅ Implemented: ✔️</li><li>👥 Approver(s): Procurement Manager</li><li>🧭 Involved: Procurement Coordinator, Procurement Manager</li><li>⚠️ SAP Mapping Notes: All Approved Supplier will be available in SAP as part of Cutover process.</li><li>📈 Workflow Integration: N/A📋 Executive Comment: Approval workflow to be provided in SAP.</li><li>✅ Aligned with SAP</li></ul>
+<h2 id="-4-vendor-selection--rm-secondary--others">📌 4. Vendor Selection – RM Secondary / Others</h2>
+<ul><li>🔧 Step 1: Any suppliers can be chosen from the market who meets ADRC's quality requirements, price and other terms of delivery.</li><li>Please Note: The general process of selection listed in Sr#1 will be followed.</li><li>💻 System: Partially</li><li>✅ Implemented: ✔️</li><li>👥 Approver(s): Procurement Manager</li><li>🧭 Involved: Procurement Coordinator, Procurement Manager</li><li>⚠️ SAP Mapping Notes: Refer Point No. 8</li><li>📈 Workflow Integration: N/A📋 Executive Comment: Approval workflow to be provided in SAP.</li><li>✅ Aligned with SAP</li></ul>
+<h2 id="-5-vendor-selection---spares-parts-plant-and-machinery">📌 5. Vendor Selection - Spares Parts (Plant and Machinery)</h2>
+<ul><li>🔧 Step 1: Any suppliers can be chosen from the market who meets ADRC's quality requirements, price and other terms of delivery.</li><li>Please Note: The general process of selection listed in Sr#1 will be followed.</li><li>💻 System: Partially</li><li>✅ Implemented: ✔️</li><li>👥 Approver(s): Procurement Manager</li><li>🧭 Involved: Procurement Coordinator, Procurement Manager</li><li>⚠️ SAP Mapping Notes: Refer Point No. 8</li><li>📈 Workflow Integration: N/A📋 Executive Comment: Approval workflow to be provided in SAP.</li><li>✅ Aligned with SAP</li></ul>
+<h2 id="-6-vendor-selection---marketing-equipment-maintenance">📌 6. Vendor Selection - Marketing Equipment Maintenance</h2>
+<ul><li>🔧 Step 1: Any suppliers can be chosen from the market who meets ADRC's quality requirements, price and other terms of delivery.</li><li>Please Note: The general process of selection listed in Sr#1 will be followed.</li><li>💻 System: Partially</li><li>✅ Implemented: ✔️</li><li>👥 Approver(s): Procurement Manager</li><li>🧭 Involved: Procurement Coordinator, Procurement Manager</li><li>⚠️ SAP Mapping Notes: Refer Point No. 8</li><li>📈 Workflow Integration: N/A📋 Executive Comment: Approval workflow to be provided in SAP.</li><li>✅ Aligned with SAP</li></ul>
+<h2 id="-7-vendor-selection---support-function-it-marketing-finance-hr">📌 7. Vendor Selection - Support Function (IT, marketing, Finance, HR)</h2>
+<ul><li>🔧 Step 1: Any suppliers can be chosen from the market who meets ADRC's quality requirements, price and other terms of delivery.</li><li>Please Note: The general process of selection listed in Sr#1 will be followed.</li><li>💻 System: Partially</li><li>✅ Implemented: ✔️</li><li>👥 Approver(s): Procurement Manager</li><li>🧭 Involved: Procurement Coordinator, Procurement Manager</li><li>⚠️ SAP Mapping Notes: Refer Point No. 8</li><li>📈 Workflow Integration: N/A📋 Executive Comment: Approval workflow to be provided in SAP.</li><li>✅ Aligned with SAP</li></ul>
+<h2 id="-8-comparative-analysis--purchase-order-2-slide">📌 8. Comparative Analysis &amp; Purchase Order (2 Slide)</h2>
+<ul><li>🔧 Step 1: Contact the supplier(s) for quotation</li><li>🔧 Step 2: Document the details in the Comparative Analysis Sheet (MS Excel)</li><li>🔧 Step 3: Choose the most eligible supplier after considering factors like price, quality, turn around time and payment terms.</li><li>🔧 Step 4: Generate Purchase Order (PO)Current practice of obtaining number of quotation(s) vs value of purchase: a) To obtain a minimum of two quotations for value above AED 10,000 b) To obtain a minimum of one quotation for purchases between AED 1,500 to AED 10,000. c) No quotations needed for purchases up to AED 1500 which will be routed through petty cash.</li><li>Please note:</li><li>There is no documented approval from senior management for the above practice. Only verbal approval in place.</li><li>Comparative Analysis Sheet will be prepared only for purchases as per the discretion of the Procurement Manager. In most cases, quotations will be attached to the Purchase Order for scrutiny and approval.</li><li>All Original Equipment Manufacturer (OEM) vendors and Custom products - single source</li></ul>
+<h2 id="-8-comparative-analysis--purchase-order-2-slide">📌 8. Comparative Analysis &amp; Purchase Order (2 Slide)</h2>
+<ul><li>4) Store Supervisor will initiate all the 'Raw Material PO' after obtaining approvals and confirming the PO pricing details from the Procurement Manager. Store Supervisor will contact the vendor and send the delivery schedule (only for raw materials). All other type of PO's are handled by Procurement Team.</li><li>💻 System: Partially</li><li>✅ Implemented: ✔️</li><li>👥 Approver(s): Procurement Manager</li><li>🧭 Involved: Procurement Coordinator, Procurement Manager</li><li>⚠️ SAP Mapping Notes:</li><li>1. Create Request for Quotation in SAP</li><li>2. No Change in SAP</li><li>3. Maintain Price and Compare Supplier Quotation in SAP</li><li>4. Create Purchase Order in SAP.</li><li>Note: RFQ Printout can be attached in the respective PO.</li><li>📈 Workflow Integration: 1, 2 &amp; 3 N/A, 4. Multi Level as Per Workflow📋 Executive Comment:</li><li>1. N/A</li><li>2. SAP</li><li>3. a) Completely to be managed in SAP b) Document upload option to be there.</li><li>4. Please follow the KDS documentation for workflow.</li><li>✅ Aligned with SAP</li></ul>
+<h2 id="-9-de-activation-of-vendor">📌 9. De-activation of vendor</h2>
+<ul><li>🔧 Step 1: 1) Upon analysis the vendor transaction, if Procurement Manager finds that vendor has repeatedly compromised in terms of:</li><li>a) Quality of the product b) Terms of delivery etc.</li><li>🔧 Step 2: The Procurement Manager may request Account Department to De-Activate the vendor in the system.</li><li>Please Note: There is no documented and approved procedure in place for this. Currently de-activation is implemented by Account Department upon request from Procurement Manager</li><li>💻 System: Partially</li><li>✅ Implemented: ✔️</li><li>👥 Approver(s): Procurement Manager, Finance Manager</li><li>🧭 Involved: Procurement Coordinator, Procurement Manager, Finance Manager</li><li>⚠️ SAP Mapping Notes: Block Vendor master in SAP</li><li>📈 Workflow Integration: One Level Approval📋 Executive Comment:</li><li>✅ Aligned with SAP</li></ul>
+<h2 id="-10-vendor-evaluation">📌 10. Vendor Evaluation</h2>
+<ul><li>🔧 Step 1: Vendor evaluation will be initiated on an annual basis for the supplier with a total procurement of AED 50,000.</li><li>💻 System: Partially</li><li>✅ Implemented: ✔️</li><li>👥 Approver(s):</li><li>🧭 Involved:</li><li>⚠️ SAP Mapping Notes:</li><li>📈 Workflow Integration: 📋 Executive Comment: Work flow to be defined in the system (Procurement Dept to initiate and User Department to sign-off)</li><li>✅ Aligned with SAP</li></ul>
+<h2 id="-11-blocking-of-vendor-proposed-new">📌 11. Blocking of vendor (Proposed New)</h2>
+<ul><li>🔧 Step 1: This process is not started yet as per Procurement Manager (to be included in the - 'to be processes’)</li><li>💻 System: Partially</li><li>✅ Implemented: ❌</li><li>👥 Approver(s): Purchase Manager, Quality Department / Respective Head of Department, General Manager</li><li>🧭 Involved: Purchase coordinator, Purchase Manager, Quality Department / Respective Head of Department, General Manager</li><li>⚠️ SAP Mapping Notes: Possible in SAP</li><li>📈 Workflow Integration: One Level Approval 📋 Executive Comment:</li><li>✅ Aligned with SAP</li></ul>
+<h2 id="-12-vendor-master-review-proposed-new">📌 12. Vendor Master Review (Proposed New)</h2>
+<ul><li>🔧 Step 1: Vendor Master trigger in the system (proposed new)</li><li>Note: Vendor will be contacted for the updated information</li><li>💻 System: Partially</li><li>✅ Implemented: ❌</li><li>👥 Approver(s): Senior Accountant, Procurement Coordinator, Purchase Manager, Finance Manager</li><li>🧭 Involved: Accounts Payable, Senior Accountant, Procurement Coordinator, Purchase Manager, Finance Manager</li><li>⚠️ SAP Mapping Notes: KYC update in Vendor master in case any update required from Vendor.</li><li>📈 Workflow Integration: One Level Approval📋 Executive Comment:</li><li>✅ Aligned with SAP</li></ul>
+<h2 id="-13-trade-license-expiry-notification-proposed-new">📌 13. Trade license expiry notification (Proposed New)</h2>
+<ul><li>🔧 Step 1: This process is not started yet as per Procurement Manager (to be included in the - 'to be processes')</li><li>30 days and 15 days before the expiry date, on and 15 days after the due date</li><li>Note: Vendor will be contacted for the updated information</li><li>💻 System: Partially</li><li>✅ Implemented: ❌</li><li>👥 Approver(s): Senior Accountant, Procurement Coordinator, Purchase Manager, Finance Manager</li><li>🧭 Involved: Accounts Payable, Senior Accountant, Procurement Coordinator, Purchase Manager, Finance Manager</li><li>⚠️ SAP Mapping Notes: Possible in SAP</li><li>📈 Workflow Integration: N/A📋 Executive Comment: Notification to be defined</li><li>✅ Aligned with SAP</li></ul>
+<h2 id="-14-trade-license-expiry-proposed-new">📌 14. Trade license expiry (Proposed New)</h2>
+<ul><li>🔧 Step 1: This process is not started yet as per Procurement Manager (to be included in the - 'to be processes')</li><li>Vendor Block from Payment and creation of new PO</li><li>Note: System Pre-set control</li><li>💻 System: Partially</li><li>✅ Implemented: ❌</li><li>👥 Approver(s):</li><li>🧭 Involved: System Pre-set control</li><li>⚠️ SAP Mapping Notes: Possible in SAP</li><li>📈 Workflow Integration: Subject to Check📋 Executive Comment:</li><li>✅ Aligned with SAP</li></ul>
+<h2 id="-15-business-continuation-with-vendors-for-trade-license-expiry-proposed-new">📌 15. Business Continuation with vendors for Trade license expiry (Proposed New)</h2>
+<ul><li>🔧 Step 1: This process is not started yet as per Procurement Manager (to be included in the - 'to be processes')</li><li>Vendor Block from Payment and creation of new PO</li><li>💻 System: Partially</li><li>✅ Implemented: ❌</li><li>👥 Approver(s): Senior Accountant, Purchase Manager, Finance Manager, General Manager</li><li>🧭 Involved: Accounts Payable, Senior Accountant, Purchase Manager, Finance Manager, General Manager</li><li>⚠️ SAP Mapping Notes: Possible in SAP</li><li>📈 Workflow Integration: N/A📋 Executive Comment: Work flow to be defined in the system</li><li>✅ Aligned with SAP</li></ul>
+<h2 id="-16-vendor-reconciliation">📌 16. Vendor Reconciliation</h2>
+<ul><li>🔧 Step 1: Accounts Payable Accountant will contact the vendor for Statement of Account (SOA)</li><li>🔧 Step 2: Reconcile the SOA provided by the Vendor with ADRC GL</li><li>🔧 Step 3: Investigate and rectify variance (if any).</li><li>💻 System: Partially</li><li>✅ Implemented: ✔️</li><li>👥 Approver(s):</li><li>🧭 Involved: Accounts Payable Accountant</li><li>⚠️ SAP Mapping Notes: Advance Payment document should be created in SAP.</li><li>📈 Workflow Integration: Multi Level can be configured in SAP.📋 Executive Comment: Please provide a common agreed template for the vendors to populate the transactions and facilitate auto reconciliation.</li><li>✅ Aligned with SAP</li></ul>
+<h2 id="-17-vendor-payment">📌 17. Vendor Payment</h2>
+<ul><li>🔧 Step 1: Vendor payment process as per the 'Accounts Payable Pre-SOP Documentation' will trigger. Please refer Accounts Payable document.</li><li>💻 System: Partially</li><li>✅ Implemented: ✔️</li><li>👥 Approver(s):</li><li>🧭 Involved:</li><li>⚠️ SAP Mapping Notes: Refer Accounts Payable document</li><li>📈 Workflow Integration: 📋 Executive Comment:</li><li>✅ Aligned with SAP</li></ul>
+<h2 id="-18-vendor-advance">📌 18. Vendor Advance</h2>
+<ul><li>🔧 Step 1: Vendor raises Proforma Invoice as per the payment terms of the PO/Contract for an advance payment.</li><li>🔧 Step 2: Accounts Payable accountant will verify the Proforma Invoice and prepare an Advance Payment Request.</li><li>🔧 Step 3: Accounts Payable Accountant will obtain approval of Senior Accountant, Procurement Manager and Finance Manager on the advance payment request.</li><li>🔧 Step 4: Payment will be processed after obtaining approvals as per current practice of delegation of authority.</li><li>Please Note: Only in exceptional cases of custom items only advance payment will be entertained. There is no process of obtaining bank guarantee for advance payment as no supplier provides the same.</li><li>💻 System: Partially</li><li>✅ Implemented: ✔️</li><li>👥 Approver(s): Senior Accountant, Procurement Manager, Finance Manager, General Manager</li><li>🧭 Involved: Accounts Payable Accountant, Senior Accountant, Procurement Manager, Finance Manager, General Manager</li><li>⚠️ SAP Mapping Notes: Refer Accounts Payable document</li><li>📈 Workflow Integration: 📋 Executive Comment:</li><li>✅ Aligned with SAP</li></ul>
+</div>
+</main>
+</div>
+<script>
+
+  (function(){
+    // Print
+    var printBtn = document.getElementById('printBtn');
+    if (printBtn) printBtn.addEventListener('click', function(){ window.print(); });
+
+    // Header click → Home (except on actionable elements)
+    var siteHeader = document.querySelector('header.site');
+    if(siteHeader){
+      siteHeader.addEventListener('click', function(e){
+        var t = e.target;
+        if(t.closest('a') || t.closest('button')) return; 
+        window.location.href = './index.html?v=99999';
+      });
+    }
+
+    // Header height -> CSS var (for anchor offset math)
+    function headerH(){ var h = document.querySelector('header.site'); return (h && h.offsetHeight) ? h.offsetHeight : 72; }
+    function applyHeaderVar(){ document.documentElement.style.setProperty('--header-h', headerH() + 'px'); }
+    window.addEventListener('load', applyHeaderVar);
+    window.addEventListener('resize', applyHeaderVar);
+
+    // Build TOC with nesting (h1 + h2 + h3)
+    var contentRoot = document.querySelector('.content-inner');
+    var headings = Array.from(contentRoot.querySelectorAll('h1, h2, h3'));
+    var tocEl = document.getElementById('toc');
+    var rootUl = document.createElement('ul');
+    var currentUl = rootUl;
+    var stack = [rootUl];
+    var lastLi = null;
+    function lvl(tag){ return tag === 'H1' ? 1 : (tag === 'H2' ? 2 : 3); }
+    var lastLevel = 1;
+    headings.forEach(function(h){
+      if(!h.id){ h.id = h.textContent.trim().toLowerCase().replace(/[^a-z0-9]+/g,'-'); }
+      var L = lvl(h.tagName);
+      while(L > lastLevel){
+        var ul = document.createElement('ul');
+        if (lastLi) { lastLi.appendChild(ul); } else { currentUl.appendChild(ul); }
+        stack.push(ul); currentUl = ul; lastLevel++;
+      }
+      while(L < lastLevel){
+        stack.pop(); currentUl = stack[stack.length-1] || rootUl; lastLevel--;
+      }
+      var li = document.createElement('li');
+      var a = document.createElement('a');
+      a.href = '#' + h.id; a.textContent = h.textContent;
+      li.appendChild(a); currentUl.appendChild(li);
+      lastLi = li;
+    });
+    tocEl.textContent = ''; tocEl.appendChild(rootUl);
+
+    // Cache tocLinks in same order as headings
+    var tocLinks = Array.from(tocEl.querySelectorAll('a'));
+
+    // Active state + ensure TOC item visible
+    function setActiveByIndex(idx){
+      tocLinks.forEach(function(l){ l.classList.remove('active'); });
+      var link = tocLinks[idx];
+      if(link){ link.classList.add('active'); link.scrollIntoView({block:'nearest', inline:'nearest'}); }
+    }
+
+    // Smooth scroll to a heading inside the content scroll container
+    function scrollToHeadingByIndex(idx){
+      var el = headings[idx];
+      if(!el) return;
+      var offset = headerH() + 8;
+      var targetTop = el.offsetTop - offset;
+      contentRoot.scrollTo({ top: targetTop, behavior: 'smooth' });
+      history.pushState(null,'','#'+el.id);
+    }
+
+    // Click handler: set active immediately, then smooth scroll. Pause auto-sync briefly.
+    var clickSyncLock = false;
+    tocLinks.forEach(function(a,idx){
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        clickSyncLock = true;
+        setActiveByIndex(idx);
+        scrollToHeadingByIndex(idx);
+        setTimeout(function(){ clickSyncLock = false; }, 600);
+      });
+    });
+
+    // Compute active index on scroll (deterministic): pick last heading whose top <= scrollTop + header
+    function computeActiveIndex(){
+      var st = contentRoot.scrollTop;
+      var offset = headerH() + 12;
+      var idx = 0;
+      for (var i = 0; i < headings.length; i++){
+        if (headings[i].offsetTop <= st + offset){ idx = i; } else { break; }
+      }
+      return idx;
+    }
+
+    function syncActive(){
+      if (clickSyncLock) return;
+      var idx = computeActiveIndex();
+      setActiveByIndex(idx);
+    }
+
+    contentRoot.addEventListener('scroll', function(){
+      if (contentRoot.__raf) cancelAnimationFrame(contentRoot.__raf);
+      contentRoot.__raf = requestAnimationFrame(syncActive);
+    });
+
+    // Initial highlight
+    setTimeout(syncActive, 0);
+
+    // 'Back to top' should scroll the content area
+    var topLink = document.querySelector('a.toplink');
+    if(topLink){
+      topLink.addEventListener('click', function(e){
+        e.preventDefault();
+        contentRoot.scrollTo({ top: 0, behavior: 'smooth' });
+        setActiveByIndex(0);
+      });
+    }
+  })();
+  
+</script>
+<link href="bot.css" rel="stylesheet"/>
+<script>window.RAGBOT_API_BASE = "http://127.0.0.1:8000";</script>
+<script defer="" src="bot.js"></script>
+<script src="highlight_fallback.js"></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+  if (window.TitoBot && typeof window.TitoBot.init === 'function') {
+    window.TitoBot.init({
+      apiBase: '',
+      askEndpoint: '/api/ask',
+      sourceBase: 'https://adrc-policies.pages.dev',
+      sitemapHint: 'https://adrc-policies.pages.dev/sitemap.xml',
+      defaultLang: 'auto'
+    });
+  }
+});</script></body>
+</html>

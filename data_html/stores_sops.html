@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<link href="favicon.ico" rel="icon"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Stores SOPs</title>
+<style>
+    :root{
+      --brand:#0a66c2; /* company color */
+      --ink:#1f2937;  /* slate-800 */
+      --muted:#6b7280;/* slate-500 */
+      --bg:#ffffff;
+      --panel:#f8fafc;/* slate-50 */
+      --border:#e5e7eb;/* slate-200 */
+      --accent:#10b981;/* emerald */
+      --warning:#f59e0b;/* amber */
+      --danger:#ef4444;/* red */
+      --header-h:72px;
+    }
+    html,body{height:100%;}
+    body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";}
+    /* ----- Header (matches bad_debts_control.html?v=99999 style) ----- */
+    header.site{position:sticky;top:0;z-index:50;backdrop-filter:saturate(180%) blur(8px);background:color-mix(in srgb, var(--bg), transparent 10%);border-bottom:1px solid var(--border);height:var(--header-h);cursor:pointer;}    
+    .header-wrap{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:16px;padding:12px 16px;height:100%;}
+    .logo{display:flex;align-items:center;gap:12px;min-width:0}
+    .logo img{height:44px;width:auto;object-fit:contain;background:#fff;border-radius:8px;padding:4px;box-shadow:0 0 0 1px var(--border) inset}
+    .meta{display:flex;flex-direction:column;min-width:0}
+    .meta .title{font-weight:700;font-size:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .meta .subtitle{font-size:12px;color:var(--muted)}
+    .actions{margin-left:auto;display:flex;align-items:center;gap:8px}
+    .btn{appearance:none;border:1px solid var(--border);background:#fff;border-radius:10px;padding:8px 12px;cursor:pointer;text-decoration:none;color:inherit;display:inline-block}
+    .btn:hover{box-shadow:0 1px 0 var(--border)}
+    .btn.primary{border-color:color-mix(in srgb, var(--brand), white 60%);background:color-mix(in srgb, var(--brand), white 85%);}
+    /* ----- Layout with independent scroll areas ----- */
+    .shell{height:calc(100vh - var(--header-h));display:grid;grid-template-columns:300px 1fr;border-top:1px solid var(--border)}
+    @media (max-width: 980px){.shell{grid-template-columns:1fr}}
+    aside.toc{border-right:1px solid var(--border);background:var(--panel);min-height:0;}
+    .toc-inner{height:100%;overflow:auto;padding:16px;position:relative}
+    .toc-title{font-weight:700;margin:0 0 8px 0}
+    .toc a{display:block;color:var(--ink);text-decoration:none;font-size:14px;padding:6px 8px;border-radius:8px}
+    .toc a:hover{background:#fff}
+    .toc a.active{background:color-mix(in srgb, var(--brand), white 88%);box-shadow:inset 3px 0 0 var(--brand);}
+    .toc ul{list-style:none;margin:0;padding:0}
+    .toc ul ul{padding-left:12px}
+    main.content{min-height:0;}
+    .content-inner{height:100%;overflow:auto;padding:24px 28px;}
+    .content-inner h1{margin-top:0}
+    h2{margin-top:32px;border-bottom:1px dashed var(--border);padding-bottom:6px}
+    h3{margin-top:20px}
+    table{width:100%;border-collapse:collapse;margin:12px 0}
+    th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
+    thead th{background:var(--panel)}
+    .muted{color:var(--muted)}
+    .toplink{position:fixed;right:16px;bottom:16px;border-radius:999px;padding:10px 12px;background:var(--brand);color:#fff;text-decoration:none;box-shadow:0 6px 20px color-mix(in srgb, var(--brand), transparent 70%)}
+    /* Offset anchors for sticky header when deep-linking */
+    :where(.content-inner h1,.content-inner h2,.content-inner h3){scroll-margin-top:calc(var(--header-h) + 8px);} 
+    /* Print */
+    @media print{
+      header.site,.toplink{display:none}
+      .shell{grid-template-columns:1fr}
+      aside.toc{display:none}
+      .content-inner{overflow:visible}
+    }
+  </style>
+<!-- Highlighting support -->
+<link href="highlight.css" rel="stylesheet"/>
+<script defer="" src="highlight.js"></script>
+</head>
+<body>
+<header class="site" role="banner">
+<div class="header-wrap">
+<div class="logo">
+<a href="index.html?v=99999" title="Home"><img alt="Company Logo" src="adrc_logo_white.png"/></a>
+</div>
+<div class="meta">
+<div class="title">Stores SOPs</div>
+<div class="subtitle">SOP — Auto-generated from internal slides · Review and approve</div>
+</div>
+<div class="actions">
+<a class="btn primary" href="stores_sops_quick_guide.html?v=99999" title="Open Quick Guide">Quick Guide ↗</a>
+<button class="btn" id="printBtn" title="Print / Save PDF">Print</button>
+</div>
+</div>
+</header>
+<div class="shell" role="application">
+<aside aria-label="Table of contents" class="toc">
+<div class="toc-inner">
+<h3 class="toc-title" id="contents">Contents</h3>
+<nav class="toc" id="toc"></nav>
+</div>
+</aside>
+<main class="content" id="top">
+<div class="content-inner">
+<h1 id="stores-sops">Stores SOPs</h1>
+<h2 id="rm-stores-sops-warehouse-department">RM Stores SOPs Warehouse Department</h2>
+<h2 id="-sop-index--stores-department">📑 SOP Index – Stores Department</h2>
+<ul><li>New Material Code – RM &amp; Production Material</li><li>Item Master - Block</li><li>PR - Production &amp; Consumables</li><li>Good Receipt Note (GRN)</li><li>Material Return</li><li>Stores Quality Management</li><li>Material Movement - Concentrate</li><li>Material Movement - RM and PM (2 Slides)</li><li>Monthly Wastage Analysis</li><li>Physical Verification - Daily - Raw Materials and Packing Material</li><li>Physical Verification - Monthly - Raw Materials and Packing Material</li><li>Physical Verification - Year End - Raw Materials and Packing Material</li><li>Material Movement - Spares _ Plant</li><li>Return of Used Spare part</li><li>Material Movement _ QC Consumables</li><li>Material Movement - Spare parts _ Vehicles and MEM - Coolers &amp; Post Mix</li><li>Waste Management (Recyclable)</li><li>Waste Management (Hazardous)</li><li>Waste Management (General)</li><li>TADWEER Reporting</li></ul>
+<h2 id="-new-material-code--rm--production-material">📌 New Material Code – RM &amp; Production Material</h2>
+<ul><li>🗂️ Source: UHY</li><li>🔧 Steps:</li><li>1. Production &amp; Warehouse Manager or concerned department heads will request for opening a new code. The request is verbal through telephonic conversation Or in the meeting, E-mail. Please Note: The code could be Raw Material or Production Material as Mr. Samer is in charge of both production and warehouse.</li><li>2. Stores Supervisor will create a code in the system (RBS System) by choosing the type of code required. Stores Supervisor will also confirm the GL code to be linked to the new code in 'Account Code Setting' section in the RBS system during the process of creating the code. Note: Concerned department representative will initiate the request (for e.g. spare parts, equipment)</li><li>💻 System: Partially</li><li>✅ Implemented: Yes</li><li>👥 Approver: None</li><li>🧭 Involved: Stores Supervisor, HOD</li><li>⚠️ Notes: Step 1:Verbally Confirmation got from Concerned department</li><li>Step 2: Verbally GL link Confirmation got from Finance department or IT</li></ul>
+<h2 id="-item-master---block">📌 Item Master - Block</h2>
+<ul><li>🗂️ Source: PKF</li><li>🔧 Steps:</li><li>1. Periodic Item Review: Biannual (Twice a year), the Warehouse Manager prepares a report showing the status of all item codes and identifies inactive codes (those with no quantity and/or value).</li><li>2. Corrective Actions &amp; Deactivation: Item codes with value only are adjusted through Journal Voucher entries. Codes with no quantity and no value are sent to the IT department for deactivation in the ERP system.</li><li>3. Approval &amp; Confirmation: The IT manager reviews and approves the deactivation. Once approved, the IT Administrator confirms the successful removal of inactive item codes.</li><li>💻 System: Partially</li><li>✅ Implemented: No</li><li>👥 Approver: IT</li><li>🧭 Involved: Warehouse Manager, IT</li><li>⚠️ Notes: This process needs to be integrated into the ERP system</li></ul>
+<h2 id="-purchase-request---production--consumables">📌 Purchase Request - Production &amp; Consumables</h2>
+<ul><li>🗂️ Source: PKF</li><li>🔧 Steps:</li><li>Request Initiation: Store Keeper receives material request and creates a PR in the ERP system with full item details.</li><li>Inventory Verification: Store Supervisor checks stock. If available, forwards to HOD for approval and issues items.</li><li>Check Existing POs: If not in stock, checks for open PO. If delivery expected soon, updates the requester.</li><li>Urgent/Unavailable Items: If urgent and no PO available, escalates to HOD for approval and continues procurement.</li><li>💻 System: Yes</li><li>✅ Implemented: Yes</li><li>👥 Approver: HOD</li><li>🧭 Involved: Store Keeper, Store Supervisor, HOD⚠️ Notes: Step 1: Concerned department generate PR with verifying stock in system before PR.</li></ul>
+<h2 id="-vendor-quotation--production--consumables">📌 Vendor Quotation – Production &amp; Consumables</h2>
+<ul><li>🗂️ Source: PKF</li><li>🔧 Steps:</li><li>Vendor Check: Procurement verifies if approved vendors exist. If not, sources new vendors.</li><li>Send RFQs: RFQs sent to vendors. Quotations collected.</li><li>Comparison Sheet: Quotation comparison sheet is prepared. Number of quotes based on PO value.</li><li>Approval &amp; Selection: Selection made based on financial and technical review. Approvals as per matrix.</li><li>💻 System: No</li><li>✅ Implemented: Yes</li><li>👥 Approver: Warehouse Manager</li><li>🧭 Involved: Procurement Executive, Vendors, Warehouse Manager</li><li>⚠️ Notes: Proposed to be from the procurement department</li></ul>
+<h2 id="-purchase-order--production--consumables">📌 Purchase Order – Production &amp; Consumables</h2>
+<ul><li>🗂️ Source: PKF</li><li>🔧 Steps:</li><li>1. Initiate PO: The Stores Supervisor prepares the Purchase Order in coordination with the approved Material Request and quotation.🔹 Note: PO price must be confirmed by the Procurement Manager before proceeding.</li><li>2. Obtain PO Approvals: The PO is routed for approval as per the workflow.</li><li>3. Share Approved PO with Vendor: Upon approval, the Stores Supervisor sends the final PO and delivery schedule to the vendor/supplier.🔹 Note: The Department Head and Procurement Manager must be copied in all vendor communications.</li><li>💻 System: Yes</li><li>✅ Implemented: Yes</li><li>👥 Approver: Warehouse Manager, Finance, General Manager</li><li>🧭 Involved: Warehouse Team, Procurement Manager, Finance, General Manager</li><li>⚠️ Notes: Proposed to be from the procurement department</li></ul>
+<h2 id="-good-receipt-note-grn">📌 Good Receipt Note (GRN)</h2>
+<ul><li>🗂️ Source: UHY</li><li>🔧 Steps:</li><li>1. When a shipment arrives at the gate, they will report to the gate keeper security. After initial checking, the security will inform the Stores Keeper</li><li>2. Storekeeper will verify the documents PO, Invoice, Packing List, etc.), storekeeper will prepare Raw Material Receiving Report</li><li>3. Quality Control will perform random inspections on items prior to offloading if required, to ensure compliance with the required quality standards.</li><li>4. Store Supervisor creates the GRN and post the GRN along with GC (Goods Costing) to the system</li><li>5. Quality team will carry out random inspections on all items received items to verify that quality standards are consistently maintained.</li><li>💻 System: Partially</li><li>✅ Implemented: Yes</li><li>👥 Approver: Stores Supervisor, Quality Manager</li><li>🧭 Involved: Gate Keeper, Storekeeper, Stores Supervisor, Quality Technician, Quality Manager, Warehouse Manager</li><li>⚠️ Notes: Step 2: This process needs to be integrated into the ERP system</li><li>Step 3: Need to add in ERP with checklist &amp; identify which items required for checking from master data</li><li>Step 4 : Need to segregation of duties between creation and posting GRN (Creation by Store Supervisor and Posting by Accounts department)</li><li>Step 5: Quality team (maybe Quality Control, IT Technician, Maintenance Technician or requester) General Steps: Need to add in to ERP with checklist</li></ul>
+<h2 id="-material-return">📌 Material Return</h2>
+<ul><li>🗂️ Source: UHY</li><li>🔧 Steps:</li><li>1. Responsibility for Supplier Communication in Case of Returns</li><li>When the material return is requested, the department responsible for communicating with the supplier is assigned based on the reason:</li><li>Quality defect ➜ Quality Department handles communication.</li><li>Technical or system issue ➜ IT Department coordinates with the supplier.</li><li>Wrong delivery or excess quantity ➜ Warehouse Department manages the return.</li><li>Wrong request or internal cancellation ➜ Requesting Department contacts the supplier in coordination with Purchasing.</li><li>All actions must be documented and shared with the Purchasing , Warehouse teams and accounts to ensure accurate tracking and inventory updates.</li><li>💻 System: Partially</li><li>✅ Implemented: Yes</li><li>👥 Approver: 1.QC Manager or HOD, 2. Warehouse Manager</li><li>🧭 Involved: Stores Supervisor, Warehouse Manager, QC Technician, QC Manager, HOD Requester</li><li>⚠️ Notes: This process needs to be integrated into the ERP system</li></ul>
+<h2 id="-stores-quality-management">📌 Stores Quality Management</h2>
+<ul><li>🗂️ Source: UHY</li><li>🔧 Steps:</li><li>1. On a daily basis, the Storekeeper will visit each store in the premises and document the following:</li><li>Cleanliness</li><li>FEFO (First Expiry Fist Out) Control</li><li>Light &amp; AC</li><li>Material Condition (New Stock &amp; Used Materials)</li><li>Condition of the Floor</li><li>💻 System: Manually</li><li>✅ Implemented: Yes</li><li>👥 Approver: Stores Supervisor</li><li>🧭 Involved: Storekeeper, Stores Supervisor</li><li>⚠️ Notes: This process needs to be integrated into the ERP system</li><li>with checklist control</li></ul>
+<h2 id="-material-movement---concentrate">📌 Material Movement - Concentrate</h2>
+<ul><li>🗂️ Source: UHY</li><li>🔧 Steps:</li><li>1. Once the material is depleted in the Production Store, Concentrate will be moved from Main Store to the Production Store as per space availability and upcoming production requirements. The movement of contrate item is documented in 'Concentrate Handover Report'.</li><li>Note: QC Department will sign the Received By as part of the quality control procedures. However, the store is managed by Stores Supervisor.</li><li>💻 System: No</li><li>✅ Implemented: Yes</li><li>👥 Approver: Stores Supervisor , QC Team</li><li>🧭 Involved: Storekeeper, Stores Supervisor, QC Team</li><li>⚠️ Notes: This process needs to be integrated into the ERP system</li></ul>
+<h2 id="-material-movement---row-materials--primary-materials2-slides">📌 Material Movement - Row Materials &amp; Primary Materials(2 Slides)</h2>
+<ul><li>🗂️ Source: UHY</li><li>🔧 Steps:</li><li>1. Weekly Production Schedule Preparation: The Production Team prepares the weekly production schedule and communicates it to the Stores and Warehouse teams for necessary material arrangements.</li><li>2. Material Request Checklist: One to two days prior to production, the Production Team issues the 'Material Request Posted Checklist' to Stores.</li><li>3. Raw Material Usage Reporting: At the end of each production day, the Production Supervisor prepares and submits the 'Raw Material Used Report' to the Stores Team.</li><li>4. Daily Stock Verification: Every morning, the Store Keeper performs a stock verification of materials consumed during production and documents it in the 'Raw Material After Stock Production' checklist.</li><li>5. Issuance and Variance Handling: Once both the 'Raw Material Used Report' and the 'Raw Material After Stock Production' checklist are verified, the Stores Supervisor issues the 'Stores Issue Note'.• In case of discrepancies, the Stores Supervisor and Production Supervisor jointly investigate and report the findings to the Production and Warehouse Managers.• Any required adjustments are made based on their approvals.</li></ul>
+<h2 id="-material-movement---row-materials--primary-materials2-slides">📌 Material Movement - Row Materials &amp; Primary Materials(2 Slides)</h2>
+<ul><li>6. Daily Stock Reporting and Control: The Stores Supervisor updates the 'Raw Material Stock Report' control sheet in MS Excel daily. This sheet is used to monitor:• Upcoming material deliveries and ordering schedules• Forecast accuracy• Daily concentrate aging report🔎 Note: Although this information exists in the ERP system, MS Excel is still used for customized tracking and personal control.📧 These reports are emailed daily to the Stores and Warehouse Manager.💻 System: Partially✅ Implemented: Yes 👥 Approver: Stores Supervisor, Warehouse Manager, Production Supervisor, Production Manager 🧭 Involved: Stores Keeper, Stores Supervisor, Warehouse Manager, Production Supervisor, Production Manager ⚠️ Notes: Need to change the workflow process</li></ul>
+<h2 id="-monthly-wastage-analysis">📌 Monthly Wastage Analysis</h2>
+<ul><li>🗂️ Source: UHY</li><li>🔧 Steps:</li><li>1. On a monthly basis, Stores Supervisor will update 'Monthly Wastage Report' control sheet in MS Excel to identify the yield % and wastage analysis. Note: This report is emailed to Stores &amp; Warehouse Manager on a monthly basis.</li><li>💻 System: Manually</li><li>✅ Implemented: Yes</li><li>👥 Approver: Stores &amp; Warehouse Manager</li><li>🧭 Involved: Stores Supervisor, Warehouse Manager</li><li>⚠️ Notes: Need to be automated in ERP</li></ul>
+<h2 id="-physical-verification---daily-raw-materials-and-packing-material">📌 Physical Verification - Daily Raw Materials and Packing Material</h2>
+<ul><li>🗂️ Source: UHY</li><li>🔧 Steps:</li><li>The Store Keeper is responsible for performing physical verification of all raw materials issued to production. This includes, but is not limited to, the following items:</li><li>Concentrate, Empty Cans, Plain Ends, Trays, Preforms, Closures, Labels, Plain Sheets, Films, Sugar, CO₂, Glue, BIB Bags, BIB Boxes</li><li>The actual physical count of these items is recorded and documented by the Store Keeper in the 'Raw Material Stock After Production' sheet for daily control and reconciliation purposes.</li><li>💻 System: Manually</li><li>✅ Implemented: Yes</li><li>👥 Approver: Stores Supervisor</li><li>🧭 Involved: Storekeeper, Stores Supervisor</li><li>⚠️ Notes: This process needs to be integrated into the ERP system</li></ul>
+<h2 id="-physical-verification---monthly-raw-materials-and-packing-material">📌 Physical Verification - Monthly Raw Materials and Packing Material</h2>
+<ul><li>🗂️ Source: UHY</li><li>🔧 Steps:</li><li>1. Month-End Stock Count by Stores Team: On the last day of each month, the Storekeeper, together with the Stores Supervisor, performs a physical stock count on the shop floor. The findings are updated in the printed ‘Raw Material Stock Report’, and any variances identified are reported to the Stores &amp; Warehouse Manager for review.</li><li>2. Joint Verification with Finance Team: After the month is officially closed, a printed copy of the final Stock Report is used for a joint physical stock verification conducted in collaboration with a representative from the Accounts and Finance Department. Any variances found during this verification are investigated and resolved accordingly.</li><li>💻 System: Partially</li><li>✅ Implemented: Yes</li><li>👥 Approver: Stores Supervisor, Warehouse Manager, Finance Team</li><li>🧭 Involved: Storekeeper, Stores Supervisor, Warehouse Manager, Finance Team</li><li>⚠️ Notes: No workflow currently exists for handling stock variances. A formal process needs to be defined.</li></ul>
+<h2 id="-physical-verification--external-raw-materials-and-packing-material-stock-coun">📌 Physical Verification – External Raw Materials and Packing Material Stock Count</h2>
+<ul><li>🗂️ Source: UHY</li><li>🔧 Steps:</li><li>1. During the last day of the year, the Store Team along with External Auditors will conduct yearly stock count and variances if any are investigated.</li><li>💻 System: Partially</li><li>✅ Implemented: Yes</li><li>👥 Approver: 1.Third Party Auditor, 2.Finance Team, 3.Warehouse Manager</li><li>🧭 Involved: Third Party Auditor, Finance Team, Warehouse Manager</li><li>⚠️ Notes: No workflow currently exists for handling stock variances. A formal process needs to be defined.</li></ul>
+<h2 id="-material-movement---spare-partsplant">📌 Material Movement - Spare Parts_Plant</h2>
+<ul><li>🗂️ Source: UHY</li><li>🔧 Steps:</li><li>When a spare part is required for plant equipment, the Maintenance In-Charge raises a ‘Material Request’ and submits it to the Stores.➤ Stock availability is verified in the system.</li><li>The Storekeeper reviews the ‘Material Request’ and issues the requested item if available.</li><li>An ‘Issue Note’ is generated by the Storekeeper, and the item is handed over to the authorized Maintenance Technician.</li><li>The Storekeeper then prints the ‘Material Request’ along with the ‘Issue Note’ and files the documents for record-keeping.</li><li>💻 System: Partially</li><li>✅ Implemented: Yes</li><li>👥 Approver: Store Keeper, Store Supervisor Maintenance Team</li><li>🧭 Involved: Storekeeper, Store Supervisor, Maintenance Technicien, Maintenance in Charge</li><li>⚠️ Notes: This process needs to be integrated into the ERP system</li></ul>
+<h2 id="-return-of-used-spare-part">📌 Return of Used Spare part</h2>
+<ul><li>🗂️ Source: UHY</li><li>🔧 Steps:</li><li>After completing the maintenance activity, the Maintenance In-Charge evaluates whether the replaced spare part is reusable or not.➤ A ‘Spare Return / Scrap Note’ is then issued and submitted to the Store.</li><li>If the item is reusable, it is transferred to the ‘Production Used Spare Parts Store’ for future use.</li><li>If the item is non-reusable, it is moved to the scrap holding area for disposal.</li><li>The Stores Supervisor records the transaction in the system for both reusable and scrapped items.➤ The ‘Spares Return / Scrap Form’ is printed and signed by the Storekeeper, Stores Supervisor, and Maintenance In-Charge for documentation.</li><li>💻 System: Yes</li><li>✅ Implemented: Yes</li><li>👥 Approver: Maintenance Supervisor, Stores Supervisor</li><li>🧭 Involved: Maintenance Supervisor, Stores Keeper, Stores Supervisor</li><li>⚠️ Notes: None</li></ul>
+<h2 id="-material-movementqc-consumables">📌 Material Movement_QC Consumables</h2>
+<ul><li>🗂️ Source: UHY</li><li>🔧 Steps:</li><li>1. When QC Consumables are required, the QC In-Charge raises a ‘Material Request’ and submits it to the Stores.➤ Stock availability is checked in the system.</li><li>2. The Storekeeper verifies the request and issues the required items accordingly.</li><li>3. An ‘Issue Note’ is generated by the Storekeeper, and the items are handed over to the authorized QC Technician.</li><li>4. The Storekeeper prints the ‘Material Request’ along with the’ Issue Note’ both of which are signed by the Storekeeper and the receiving QC team, and then filed for documentation.</li><li>💻 System: Yes</li><li>✅ Implemented: Yes</li><li>👥 Approver: QC In-Charge , Store Supervisor</li><li>🧭 Involved: QC In-Charge ,Stores Keeper, Store Supervisor</li><li>⚠️ Notes: None</li></ul>
+<h2 id="-material-movement---spare-parts-for-fleet-and-mem">📌 Material Movement - Spare parts for Fleet and MEM</h2>
+<ul><li>🗂️ Source: UHY</li><li>🔧 Steps:</li><li>When a spare part is required for Fleet or MEM equipment, the Maintenance In-Charge raises a ‘Material Request’ and submits it to the Stores.➤ Stock availability is verified in the system.</li><li>The Storekeeper reviews and verifies the request, and issues the required item if available.</li><li>An ‘Issue Note’ is generated by the Storekeeper, and the spare part is handed over to the authorized Maintenance Technician.</li><li>The ‘Material Request’ along with the ’ Issue Note’ is printed, signed by the Storekeeper and the receiving representative, and then filed for documentation.</li><li>💻 System: Yes</li><li>✅ Implemented: Yes</li><li>👥 Approver: Maintenance In-Charger, Store Supervisor</li><li>🧭 Involved: Maintenance In-Charger, Stores Keeper, Store Supervisor</li><li>⚠️ Notes: None</li></ul>
+<h2 id="-waste-management-recyclable">📌 Waste Management (Recyclable)</h2>
+<ul><li>🗂️ Source: UHY</li><li>🔧 Steps:</li><li>The Stores Supervisor coordinates with the waste service provider to ensure the daily collection of recyclable waste from the premises.</li><li>After the waste is collected, the Stores Supervisor issues a gate pass to allow the service provider to exit the facility.</li><li>The Stores Supervisor updates the Manifest Request on the TADWEER website, including the following details:</li><li>Quantity of waste collected</li><li>Type of waste collected</li><li>🔹 Note: The Finance Department is responsible for collecting payment from the service provider in accordance with the contract terms, as this revenue is considered income for ADRC.</li><li>💻 System: Partially</li><li>✅ Implemented: Yes</li><li>👥 Approver: -</li><li>🧭 Involved: Store Supervisor</li><li>⚠️ Notes: None</li></ul>
+<h2 id="-waste-management-hazardous">📌 Waste Management (Hazardous)</h2>
+<ul><li>🗂️ Source: UHY</li><li>🔧 Steps:</li><li>The Stores Supervisor coordinates with the approved waste collection service provider for the removal of recyclable waste, based on operational needs.</li><li>🔹 Note: The collection frequency is determined by the accumulation level of the waste material.</li><li>After collection, the Stores Supervisor issues a gate pass to allow the service provider to exit the premises.</li><li>The Stores Supervisor updates the Manifest Request on the TADWEER website with the following details:</li><li>Quantity of waste collected</li><li>Type of waste collected</li><li>🔹 Note: The Finance Department, in coordination with the Stores Supervisor, will handle the payment or collection process based on the waste type and contract terms.</li><li>Certain types of waste generate income for ADRC (e.g., used oil, used batteries, tires).</li><li>Other types incur costs to ADRC, where payment to the service provider is required (e.g., electronic waste such as toner, cartridges, lamps, etc.).</li><li>💻 System: Partially</li><li>✅ Implemented: Yes</li><li>👥 Approver: -</li><li>🧭 Involved: Store Supervisor</li><li>⚠️ Notes: None</li></ul>
+<h2 id="-waste-management-general">📌 Waste Management (General)</h2>
+<ul><li>🗂️ Source: UHY</li><li>🔧 Steps:</li><li>The Stores Supervisor coordinates with the designated service provider to arrange for the collection of general waste, based on operational requests.</li><li>🔹 Note: The frequency of collection depends on the accumulation level of waste material.</li><li>After collection, the Stores Supervisor issues a gate pass to allow the service provider to exit the facility.</li><li>The Stores Supervisor updates the Manifest Request on the TADWEER platform with the following details:</li><li>Quantity of waste collected</li><li>Type of waste collected</li><li>🔹 Note: The Finance Department is responsible for processing payments to the service provider in accordance with the agreed contract terms for general waste management.</li><li>💻 System: Partially</li><li>✅ Implemented: Yes</li><li>👥 Approver: -</li><li>🧭 Involved: Store Supervisor</li><li>⚠️ Notes: None</li></ul>
+<h2 id="-tadweer-reporting">📌 TADWEER Reporting</h2>
+<ul><li>🗂️ Source: UHY</li><li>🔧 Steps:</li><li>1. Store Department will prepare and submit Waste Reduction - Yearly Report to TADWEER</li><li>💻 System: Partially</li><li>✅ Implemented: Yes</li><li>👥 Approver: Warehouse Manager</li><li>🧭 Involved: Store Supervisor, Warehouse Manager</li><li>⚠️ Notes: None</li></ul>
+</div>
+</main>
+</div>
+<script>
+
+  (function(){
+    // Print
+    var printBtn = document.getElementById('printBtn');
+    if (printBtn) printBtn.addEventListener('click', function(){ window.print(); });
+
+    // Header click → Home (except on actionable elements)
+    var siteHeader = document.querySelector('header.site');
+    if(siteHeader){
+      siteHeader.addEventListener('click', function(e){
+        var t = e.target;
+        if(t.closest('a') || t.closest('button')) return; 
+        window.location.href = './index.html?v=99999';
+      });
+    }
+
+    // Header height -> CSS var (for anchor offset math)
+    function headerH(){ var h = document.querySelector('header.site'); return (h && h.offsetHeight) ? h.offsetHeight : 72; }
+    function applyHeaderVar(){ document.documentElement.style.setProperty('--header-h', headerH() + 'px'); }
+    window.addEventListener('load', applyHeaderVar);
+    window.addEventListener('resize', applyHeaderVar);
+
+    // Build TOC with nesting (h1 + h2 + h3)
+    var contentRoot = document.querySelector('.content-inner');
+    var headings = Array.from(contentRoot.querySelectorAll('h1, h2, h3'));
+    var tocEl = document.getElementById('toc');
+    var rootUl = document.createElement('ul');
+    var currentUl = rootUl;
+    var stack = [rootUl];
+    var lastLi = null;
+    function lvl(tag){ return tag === 'H1' ? 1 : (tag === 'H2' ? 2 : 3); }
+    var lastLevel = 1;
+    headings.forEach(function(h){
+      if(!h.id){ h.id = h.textContent.trim().toLowerCase().replace(/[^a-z0-9]+/g,'-'); }
+      var L = lvl(h.tagName);
+      while(L > lastLevel){
+        var ul = document.createElement('ul');
+        if (lastLi) { lastLi.appendChild(ul); } else { currentUl.appendChild(ul); }
+        stack.push(ul); currentUl = ul; lastLevel++;
+      }
+      while(L < lastLevel){
+        stack.pop(); currentUl = stack[stack.length-1] || rootUl; lastLevel--;
+      }
+      var li = document.createElement('li');
+      var a = document.createElement('a');
+      a.href = '#' + h.id; a.textContent = h.textContent;
+      li.appendChild(a); currentUl.appendChild(li);
+      lastLi = li;
+    });
+    tocEl.textContent = ''; tocEl.appendChild(rootUl);
+
+    // Cache tocLinks in same order as headings
+    var tocLinks = Array.from(tocEl.querySelectorAll('a'));
+
+    // Active state + ensure TOC item visible
+    function setActiveByIndex(idx){
+      tocLinks.forEach(function(l){ l.classList.remove('active'); });
+      var link = tocLinks[idx];
+      if(link){ link.classList.add('active'); link.scrollIntoView({block:'nearest', inline:'nearest'}); }
+    }
+
+    // Smooth scroll to a heading inside the content scroll container
+    function scrollToHeadingByIndex(idx){
+      var el = headings[idx];
+      if(!el) return;
+      var offset = headerH() + 8;
+      var targetTop = el.offsetTop - offset;
+      contentRoot.scrollTo({ top: targetTop, behavior: 'smooth' });
+      history.pushState(null,'','#'+el.id);
+    }
+
+    // Click handler: set active immediately, then smooth scroll. Pause auto-sync briefly.
+    var clickSyncLock = false;
+    tocLinks.forEach(function(a,idx){
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        clickSyncLock = true;
+        setActiveByIndex(idx);
+        scrollToHeadingByIndex(idx);
+        setTimeout(function(){ clickSyncLock = false; }, 600);
+      });
+    });
+
+    // Compute active index on scroll (deterministic): pick last heading whose top <= scrollTop + header
+    function computeActiveIndex(){
+      var st = contentRoot.scrollTop;
+      var offset = headerH() + 12;
+      var idx = 0;
+      for (var i = 0; i < headings.length; i++){
+        if (headings[i].offsetTop <= st + offset){ idx = i; } else { break; }
+      }
+      return idx;
+    }
+
+    function syncActive(){
+      if (clickSyncLock) return;
+      var idx = computeActiveIndex();
+      setActiveByIndex(idx);
+    }
+
+    contentRoot.addEventListener('scroll', function(){
+      if (contentRoot.__raf) cancelAnimationFrame(contentRoot.__raf);
+      contentRoot.__raf = requestAnimationFrame(syncActive);
+    });
+
+    // Initial highlight
+    setTimeout(syncActive, 0);
+
+    // 'Back to top' should scroll the content area
+    var topLink = document.querySelector('a.toplink');
+    if(topLink){
+      topLink.addEventListener('click', function(e){
+        e.preventDefault();
+        contentRoot.scrollTo({ top: 0, behavior: 'smooth' });
+        setActiveByIndex(0);
+      });
+    }
+  })();
+  
+</script>
+<link href="bot.css" rel="stylesheet"/>
+<script>window.RAGBOT_API_BASE = "http://127.0.0.1:8000";</script>
+<script defer="" src="bot.js"></script>
+<script src="highlight_fallback.js"></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+  if (window.TitoBot && typeof window.TitoBot.init === 'function') {
+    window.TitoBot.init({
+      apiBase: '',
+      askEndpoint: '/api/ask',
+      sourceBase: 'https://adrc-policies.pages.dev',
+      sitemapHint: 'https://adrc-policies.pages.dev/sitemap.xml',
+      defaultLang: 'auto'
+    });
+  }
+});</script></body>
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<link href="favicon.ico" rel="icon"/>
+<!-- Highlighting support -->
+<link href="highlight.css" rel="stylesheet"/>
+<script defer="" src="highlight.js"></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Comprehensive Credit Policy – ADRC</title>
+<style>
+    :root{
+      --brand:#0a66c2; /* company color */
+      --ink:#1f2937;  /* slate-800 */
+      --muted:#6b7280;/* slate-500 */
+      --bg:#ffffff;
+      --panel:#f8fafc;/* slate-50 */
+      --border:#e5e7eb;/* slate-200 */
+      --accent:#10b981;/* emerald */
+      --warning:#f59e0b;/* amber */
+      --danger:#ef4444;/* red */
+      --header-h:72px;
+    }
+    html,body{height:100%;}
+    body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";}
+    /* ----- Header (matches bad_debts_control.html?v=99999 style) ----- */
+    header.site{position:sticky;top:0;z-index:50;backdrop-filter:saturate(180%) blur(8px);background:color-mix(in srgb, var(--bg), transparent 10%);border-bottom:1px solid var(--border);height:var(--header-h);cursor:pointer;}    
+    .header-wrap{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:16px;padding:12px 16px;height:100%;}
+    .logo{display:flex;align-items:center;gap:12px;min-width:0}
+    .logo img{height:44px;width:auto;object-fit:contain;background:#fff;border-radius:8px;padding:4px;box-shadow:0 0 0 1px var(--border) inset}
+    .meta{display:flex;flex-direction:column;min-width:0}
+    .meta .title{font-weight:700;font-size:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .meta .subtitle{font-size:12px;color:var(--muted)}
+    .actions{margin-left:auto;display:flex;align-items:center;gap:8px}
+    .btn{appearance:none;border:1px solid var(--border);background:#fff;border-radius:10px;padding:8px 12px;cursor:pointer;text-decoration:none;color:inherit;display:inline-block}
+    .btn:hover{box-shadow:0 1px 0 var(--border)}
+    .btn.primary{border-color:color-mix(in srgb, var(--brand), white 60%);background:color-mix(in srgb, var(--brand), white 85%);}
+    /* ----- Layout with independent scroll areas ----- */
+    .shell{height:calc(100vh - var(--header-h));display:grid;grid-template-columns:300px 1fr;border-top:1px solid var(--border)}
+    @media (max-width: 980px){.shell{grid-template-columns:1fr}}
+    aside.toc{border-right:1px solid var(--border);background:var(--panel);min-height:0;}
+    .toc-inner{height:100%;overflow:auto;padding:16px;position:relative}
+    .toc-title{font-weight:700;margin:0 0 8px 0}
+    .toc a{display:block;color:var(--ink);text-decoration:none;font-size:14px;padding:6px 8px;border-radius:8px}
+    .toc a:hover{background:#fff}
+    .toc a.active{background:color-mix(in srgb, var(--brand), white 88%);box-shadow:inset 3px 0 0 var(--brand);}
+    .toc ul{list-style:none;margin:0;padding:0}
+    .toc ul ul{padding-left:12px}
+    main.content{min-height:0;}
+    .content-inner{height:100%;overflow:auto;padding:24px 28px;}
+    .content-inner h1{margin-top:0}
+    h2{margin-top:32px;border-bottom:1px dashed var(--border);padding-bottom:6px}
+    h3{margin-top:20px}
+    table{width:100%;border-collapse:collapse;margin:12px 0}
+    th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
+    thead th{background:var(--panel)}
+    .muted{color:var(--muted)}
+    .toplink{position:fixed;right:16px;bottom:16px;border-radius:999px;padding:10px 12px;background:var(--brand);color:#fff;text-decoration:none;box-shadow:0 6px 20px color-mix(in srgb, var(--brand), transparent 70%)}
+    /* Offset anchors for sticky header when deep-linking */
+    :where(.content-inner h1,.content-inner h2,.content-inner h3){scroll-margin-top:calc(var(--header-h) + 8px);} 
+    /* Print */
+    @media print{
+      header.site,.toplink{display:none}
+      .shell{grid-template-columns:1fr}
+      aside.toc{display:none}
+      .content-inner{overflow:visible}
+    }
+  </style>
+</head>
+<body>
+<header class="site" role="banner">
+<div class="header-wrap">
+<div class="logo">
+<a href="index.html?v=99999" title="Home"><img alt="Company Logo" src="adrc_logo_white.png"/></a>
+</div>
+<div class="meta">
+<div class="title">Comprehensive Credit Policy – Short Cash &amp; Company Credit Customers</div>
+<div class="subtitle">Document Code: FIN-CRD-CP-001 · Version v1.0 · Effective: 20/05/2025</div>
+</div>
+<div class="actions">
+<a class="btn primary" href="credit_policy_quick_guide.html?v=99999" title="Open Quick Guide">Quick Guide ↗</a>
+<button class="btn" id="printBtn" title="Print / Save PDF">Print</button>
+</div>
+</div>
+</header>
+<div class="shell" role="application">
+<aside aria-label="Table of contents" class="toc">
+<div class="toc-inner">
+<h3 class="toc-title" id="contents">Contents</h3>
+<nav class="toc" id="toc"></nav>
+</div>
+</aside>
+<main class="content" id="top">
+<div class="content-inner">
+<!-- ===== CREDIT POLICY CONTENT START ===== -->
+<h1 id="comprehensive-credit-policy--short-cash--company-credit-customers">Comprehensive Credit Policy – Short Cash &amp; Company Credit Customers</h1>
+<h2 id="change-management">Change Management</h2>
+<table>
+<thead><tr><th>Date</th><th>Version</th><th>Author</th><th>Change Details</th></tr></thead>
+<tbody>
+<tr><td> </td><td> </td><td> </td><td> </td></tr>
+<tr><td> </td><td> </td><td> </td><td> </td></tr>
+<tr><td> </td><td> </td><td> </td><td> </td></tr>
+</tbody>
+</table>
+<h2 id="approvals">Approvals</h2>
+<table>
+<thead><tr><th>Approved By</th><th>Name</th><th>Date</th><th>Signature</th></tr></thead>
+<tbody>
+<tr><td>Sales Director</td><td>Mr. Ainul Haq</td><td> </td><td> </td></tr>
+<tr><td>AR Accountant</td><td>Mr. Loynish</td><td> </td><td> </td></tr>
+<tr><td>Senior Accountant</td><td>Mr. Naveen</td><td> </td><td> </td></tr>
+<tr><td>Finance Manager</td><td>Mr. Sadikh</td><td> </td><td> </td></tr>
+<tr><td>General Manager</td><td>Mr. Fadi</td><td> </td><td> </td></tr>
+</tbody>
+</table>
+<h2 id="policy-overview">Policy Overview</h2>
+<p>This policy defines the rules and procedures for granting, reviewing, monitoring, and revoking customer credit to ensure effective risk management, consistent practice, and support for business growth.</p>
+<h2 id="scope-objectives">Scope &amp; Objectives</h2>
+<p>Applies to all credit sales across Abu Dhabi, Al Ain, and the Western Region.</p>
+<p><b>Objectives:</b></p>
+<ul>
+<li>Prevent bad debts</li>
+<li>Standardize credit processes</li>
+<li>Ensure transparent approvals</li>
+<li>Enable SAP integration</li>
+</ul>
+<h2 id="definitions-abbreviations">Definitions &amp; Abbreviations</h2>
+<p>SM – Salesman; SP – Supervisor; CM – Channel Manager; SD – Sales Director; AR - Accounts Receivable Accountant; FM – Finance Manager; GM – General Manager; MD – Managing Director; KYC – Know Your Customer; ERP – Enterprise Resource Planning; SOA – Statement of Account; O/S – Outstanding.</p>
+<h2 id="customer-classification-credit-types">Customer Classification &amp; Credit Types</h2>
+<p><b>Customer Categories:</b></p>
+<ul>
+<li>Traditional Trade (TT): Groceries, Traditional Eateries</li>
+<li>HORECA: Hotels, Restaurants (Fast Food, Fine Dining, Casual Dining), Catering</li>
+<li>Modern Trade (MT): Hypermarkets, Supermarkets</li>
+<li>E-commerce: Online Outlets</li>
+<li>Wholesale (WS): Semi/Wholesalers</li>
+<li>Mini Market: Self-Service, Convenience &amp; Grocery (C&amp;G)</li>
+</ul>
+<p><b>Credit Types:</b></p>
+<ul>
+<li>Cash (default first 3 months)</li>
+<li>Short Cash (limited credit)</li>
+<li>Company Credit (based on agreement)</li>
+</ul>
+<h2 id="eligibility-documentation">Eligibility &amp; Documentation Requirements</h2>
+<p><b>Required Documents:</b></p>
+<ul>
+<li>Trade License</li>
+<li>TRN</li>
+<li>ID/Passport (Owner) applicable for short cash customer</li>
+<li>Bank Signatory (Power of Attorney) – POA (Optional)</li>
+</ul>
+<p><b>Additional for Company Credit:</b> Signed Agreement.</p>
+<h2 id="credit-limits-approval-authority">Credit Limits and Approval Authority</h2>
+<p>Refer to Approval Workflow (Short Cash / Company Credit), DoA Matrix, and Channel-specific thresholds, (For existing customers credit terms will remain same and will be reviewed bi-annually.</p>
+<h2 id="billing-invoice-route-compliance">Billing, Invoice &amp; Route Compliance</h2>
+<ul>
+<li>Stamped invoice must be submitted same day</li>
+<li>Failure = Customer blocked</li>
+<li>Short Cash Declaration required by 15th monthly</li>
+<li>Late submission = Salesman blocked by CM</li>
+</ul>
+<h2 id="cheque-handling-policy">Cheque Handling Policy</h2>
+<ul>
+<li>Bounced cheques (insufficient funds / Closed account) = immediate block</li>
+<li>Reinstatement only with bank guarantee</li>
+</ul>
+<h2 id="blocking-reinstatement">Blocking &amp; Reinstatement Rules</h2>
+<h3 id="a-short-cash">A. Short Cash</h3>
+<ol>
+<li>Breach = automatic block</li>
+<li>Payment delay more than 15 days above credit terms, Customer will be converted to pure cash.</li>
+<li>Reinstatement requires full payment realization and DoA approval</li>
+<li>3+ violations = permanent cash</li>
+<li>Any invoicing to blocked customer required DoA approval</li>
+</ol>
+<h3 id="b-company-credit">B. Company Credit</h3>
+<ol>
+<li>Breach = automatic block / Manual Block</li>
+<li>Reinstatement requires full payment realization subject to point no B(3)</li>
+<li>Payment delay more than 45 days above credit terms, DoA approval required for credit facility</li>
+<li>Any invoicing to blocked customer required DoA approval</li>
+</ol>
+<h2 id="dunning-process">Dunning Process &amp; Timelines (Company Credit)</h2>
+<ul>
+<li>0: Due Date: System Generated Email to customer</li>
+<li>+5: Reminder follow-up: System Generated Email to customer</li>
+<li>+15: Sales call: E-mail from sales</li>
+<li>+30: Customer meeting: E-mail from Sales + meeting with customer by Sales.</li>
+<li>+60: Escalation: E-mail from Finance Manager to Sales Director and General Manager</li>
+</ul>
+<h2 id="sap-integration">SAP Integration Notes</h2>
+<ul>
+<li>All workflows and approvals to be embedded in SAP</li>
+<li>Includes blocking/unblocking, monitoring, and reporting</li>
+</ul>
+<h2 id="appendices">Appendices</h2>
+<h3 id="appendix-a">Appendix A: Short Cash Customer Rules &amp; Approvals</h3>
+<table>
+<thead><tr><th></th><th>Rule</th><th>Approval / Note</th></tr></thead>
+<tbody>
+<tr><td>New Customer</td><td>Cash only for first 3 months; credit requires DoA approval (SOA required)</td><td>As per the approval matrix</td></tr>
+<tr><td>Short Cash</td><td>As per the approval matrix</td><td>As per the approval matrix</td></tr>
+<tr><td>Reinstatement</td><td>As per the approval matrix</td><td>As per the approval matrix</td></tr>
+<tr><td>Invoicing blocked customer</td><td>As per the approval matrix</td><td>As per the approval matrix</td></tr>
+</tbody>
+</table>
+<h3 id="appendix-b">Appendix B: Company Credit Rules &amp; Approvals</h3>
+<table>
+<thead><tr><th></th><th>Rule</th><th>Approval / Note</th></tr></thead>
+<tbody>
+<tr><td>New Customer</td><td>Min volume required to qualify (Revenue per Month &gt; AED 7,500)</td><td>As per the approval matrix</td></tr>
+<tr><td>Credit Term Breach</td><td>Repeat breach = restriction</td><td>As per the approval matrix</td></tr>
+<tr><td>Unblocking</td><td>Allowed after payment is credited</td><td>As per the approval matrix</td></tr>
+<tr><td>Reactivation</td><td>Requires DoA approval</td><td>As per the approval matrix</td></tr>
+</tbody>
+</table>
+<h3 id="appendix-c">Appendix C: Approval Matrix – Without Agreement</h3>
+<table>
+<thead><tr><th>Category</th><th>Credit Term</th><th>Credit Limit</th><th>Requestor &amp; Review</th><th>Approval</th><th>Review</th><th>Final Approval</th></tr></thead>
+<tbody>
+<tr><td>Groceries</td><td>30 days</td><td>2,000 AED</td><td>SM/SP</td><td>CM → SD</td><td>AR</td><td>FM → GM → MD</td></tr>
+<tr><td>Mini Market</td><td>30 days</td><td>7,500 AED</td><td>SM/SP</td><td>CM → SD</td><td>AR</td><td>FM → GM → MD</td></tr>
+<tr><td>Supermarkets</td><td>30 days</td><td>9,000 AED</td><td>SM/SP</td><td>CM → SD</td><td>AR</td><td>FM → GM → MD</td></tr>
+<tr><td>Hypermarket</td><td>30 days</td><td>15,000 AED</td><td>SM/SP</td><td>CM → SD</td><td>AR</td><td>FM → GM → MD</td></tr>
+<tr><td>HORECA</td><td>15 days</td><td>12,000 AED</td><td>SM/SP</td><td>CM → SD</td><td>AR</td><td>FM → GM → MD</td></tr>
+<tr><td>Wholesaler</td><td>7 days</td><td>20,000 AED</td><td>SM/SP</td><td>CM → SD</td><td>AR</td><td>FM → GM → MD</td></tr>
+<tr><td>Traditional Eateries</td><td>30 days</td><td>5,000 AED</td><td>SM/SP</td><td>CM → SD</td><td>AR</td><td>FM → GM → MD</td></tr>
+</tbody>
+</table>
+<h3 id="appendix-d">Appendix D: Approval Matrix – With Agreement</h3>
+<table>
+<thead><tr><th>Category</th><th>Final Approval</th></tr></thead>
+<tbody>
+<tr><td>OP – HORECA</td><td>CM → SD → FM → GM → MD</td></tr>
+<tr><td>MT – Supermarket</td><td>CM → SD → FM → GM → MD</td></tr>
+<tr><td>MT – Hypermarket</td><td>CM → SD → FM → GM → MD</td></tr>
+<tr><td>TT – Any Company Credit</td><td>CM → SD → FM → GM → MD</td></tr>
+</tbody>
+</table>
+<h3 id="appendix-e">Appendix E: Authority Matrix Based on Credit Limits (Short Cash)</h3>
+<table>
+<thead><tr><th>Limit</th><th>Approver</th></tr></thead>
+<tbody>
+<tr><td>Up to 10,000 AED</td><td>Sales Director</td></tr>
+<tr><td>&gt;10,000 – 25,000 AED</td><td>Finance Manager</td></tr>
+<tr><td>&gt;25,000 – 200,000 AED</td><td>General Manager</td></tr>
+<tr><td>&gt;200,000 AED</td><td>Managing Director</td></tr>
+</tbody>
+</table>
+<h3 id="appendix-f">Appendix F: Authority Matrix Based on Credit Limits (Company Credit)</h3>
+<table>
+<thead><tr><th>Limit</th><th>Approver</th></tr></thead>
+<tbody>
+<tr><td>7,500 - 10,000 AED</td><td>Sales Director</td></tr>
+<tr><td>&gt;10,000 – 25,000 AED</td><td>Finance Manager</td></tr>
+<tr><td>&gt;25,000 – 200,000 AED</td><td>General Manager</td></tr>
+<tr><td>&gt;200,000 AED</td><td>Managing Director</td></tr>
+</tbody>
+</table>
+<p class="muted">If any new customer needs to be created as an exception in company credit category with less than 7,500 monthly revenues, need approval from General Manager.</p>
+<!-- ===== CREDIT POLICY CONTENT END ===== -->
+<p class="muted">© ADRC · This page mirrors the approved Credit Policy text and matches the site chrome used in Bad Debts Control.</p>
+</div>
+</main>
+</div>
+<a class="toplink" href="#top" title="Back to top">↑</a>
+<script>
+  (function(){
+    // Print
+    var printBtn = document.getElementById('printBtn');
+    if (printBtn) printBtn.addEventListener('click', function(){ window.print(); });
+
+    // Header click → Home (except on actionable elements)
+    var siteHeader = document.querySelector('header.site');
+    if(siteHeader){
+      siteHeader.addEventListener('click', function(e){
+        var t = e.target;
+        if(t.closest('a') || t.closest('button')) return; 
+        window.location.href = './index.html?v=99999';
+      });
+    }
+
+    // Header height -> CSS var (for anchor offset math)
+    function headerH(){ var h = document.querySelector('header.site'); return (h && h.offsetHeight) ? h.offsetHeight : 72; }
+    function applyHeaderVar(){ document.documentElement.style.setProperty('--header-h', headerH() + 'px'); }
+    window.addEventListener('load', applyHeaderVar);
+    window.addEventListener('resize', applyHeaderVar);
+
+    // Build TOC with nesting (h1 + h2 + h3)
+    var contentRoot = document.querySelector('.content-inner');
+    var headings = Array.from(contentRoot.querySelectorAll('h1, h2, h3'));
+    var tocEl = document.getElementById('toc');
+    var rootUl = document.createElement('ul');
+    var currentUl = rootUl;
+    var stack = [rootUl];
+    var lastLi = null;
+    function lvl(tag){ return tag === 'H1' ? 1 : (tag === 'H2' ? 2 : 3); }
+    var lastLevel = 1;
+    headings.forEach(function(h){
+      if(!h.id){ h.id = h.textContent.trim().toLowerCase().replace(/[^a-z0-9]+/g,'-'); }
+      var L = lvl(h.tagName);
+      while(L > lastLevel){
+        var ul = document.createElement('ul');
+        if (lastLi) { lastLi.appendChild(ul); } else { currentUl.appendChild(ul); }
+        stack.push(ul); currentUl = ul; lastLevel++;
+      }
+      while(L < lastLevel){
+        stack.pop(); currentUl = stack[stack.length-1] || rootUl; lastLevel--;
+      }
+      var li = document.createElement('li');
+      var a = document.createElement('a');
+      a.href = '#' + h.id; a.textContent = h.textContent;
+      li.appendChild(a); currentUl.appendChild(li);
+      lastLi = li;
+    });
+    tocEl.textContent = ''; tocEl.appendChild(rootUl);
+
+    // Cache tocLinks in same order as headings
+    var tocLinks = Array.from(tocEl.querySelectorAll('a'));
+
+    // Active state + ensure TOC item visible
+    function setActiveByIndex(idx){
+      tocLinks.forEach(function(l){ l.classList.remove('active'); });
+      var link = tocLinks[idx];
+      if(link){ link.classList.add('active'); link.scrollIntoView({block:'nearest', inline:'nearest'}); }
+    }
+
+    // Smooth scroll to a heading inside the content scroll container
+    function scrollToHeadingByIndex(idx){
+      var el = headings[idx];
+      if(!el) return;
+      var offset = headerH() + 8;
+      var targetTop = el.offsetTop - offset;
+      contentRoot.scrollTo({ top: targetTop, behavior: 'smooth' });
+      history.pushState(null,'','#'+el.id);
+    }
+
+    // Click handler: set active immediately, then smooth scroll. Pause auto-sync briefly.
+    var clickSyncLock = false;
+    tocLinks.forEach(function(a,idx){
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        clickSyncLock = true;
+        setActiveByIndex(idx);
+        scrollToHeadingByIndex(idx);
+        setTimeout(function(){ clickSyncLock = false; }, 600);
+      });
+    });
+
+    // Compute active index on scroll (deterministic): pick last heading whose top <= scrollTop + header
+    function computeActiveIndex(){
+      var st = contentRoot.scrollTop;
+      var offset = headerH() + 12;
+      var idx = 0;
+      for (var i = 0; i < headings.length; i++){
+        if (headings[i].offsetTop <= st + offset){ idx = i; } else { break; }
+      }
+      return idx;
+    }
+
+    function syncActive(){
+      if (clickSyncLock) return;
+      var idx = computeActiveIndex();
+      setActiveByIndex(idx);
+    }
+
+    contentRoot.addEventListener('scroll', function(){
+      if (contentRoot.__raf) cancelAnimationFrame(contentRoot.__raf);
+      contentRoot.__raf = requestAnimationFrame(syncActive);
+    });
+
+    // Initial highlight
+    setTimeout(syncActive, 0);
+
+    // 'Back to top' should scroll the content area
+    var topLink = document.querySelector('a.toplink');
+    if(topLink){
+      topLink.addEventListener('click', function(e){
+        e.preventDefault();
+        contentRoot.scrollTo({ top: 0, behavior: 'smooth' });
+        setActiveByIndex(0);
+      });
+    }
+  })();
+  </script>
+<link href="bot.css" rel="stylesheet"/>
+<script>window.RAGBOT_API_BASE = "http://127.0.0.1:8000";</script>
+<script defer="" src="bot.js"></script>
+<script src="highlight_fallback.js"></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+  if (window.TitoBot && typeof window.TitoBot.init === 'function') {
+    window.TitoBot.init({
+      apiBase: '',
+      askEndpoint: '/api/ask',
+      sourceBase: 'https://adrc-policies.pages.dev',
+      sitemapHint: 'https://adrc-policies.pages.dev/sitemap.xml',
+      defaultLang: 'auto'
+    });
+  }
+});</script></body>
+</html>

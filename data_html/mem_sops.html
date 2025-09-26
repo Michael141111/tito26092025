@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<link href="favicon.ico" rel="icon"/>
+<!-- Highlighting support -->
+<link href="highlight.css" rel="stylesheet"/>
+<script defer="" src="highlight.js"></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>MEM SOPs</title>
+<style>
+    :root{
+      --brand:#0a66c2; /* company color */
+      --ink:#1f2937;  /* slate-800 */
+      --muted:#6b7280;/* slate-500 */
+      --bg:#ffffff;
+      --panel:#f8fafc;/* slate-50 */
+      --border:#e5e7eb;/* slate-200 */
+      --accent:#10b981;/* emerald */
+      --warning:#f59e0b;/* amber */
+      --danger:#ef4444;/* red */
+      --header-h:72px;
+    }
+    html,body{height:100%;}
+    body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";}
+    /* ----- Header (matches bad_debts_control.html?v=99999 style) ----- */
+    header.site{position:sticky;top:0;z-index:50;backdrop-filter:saturate(180%) blur(8px);background:color-mix(in srgb, var(--bg), transparent 10%);border-bottom:1px solid var(--border);height:var(--header-h);cursor:pointer;}    
+    .header-wrap{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:16px;padding:12px 16px;height:100%;}
+    .logo{display:flex;align-items:center;gap:12px;min-width:0}
+    .logo img{height:44px;width:auto;object-fit:contain;background:#fff;border-radius:8px;padding:4px;box-shadow:0 0 0 1px var(--border) inset}
+    .meta{display:flex;flex-direction:column;min-width:0}
+    .meta .title{font-weight:700;font-size:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .meta .subtitle{font-size:12px;color:var(--muted)}
+    .actions{margin-left:auto;display:flex;align-items:center;gap:8px}
+    .btn{appearance:none;border:1px solid var(--border);background:#fff;border-radius:10px;padding:8px 12px;cursor:pointer;text-decoration:none;color:inherit;display:inline-block}
+    .btn:hover{box-shadow:0 1px 0 var(--border)}
+    .btn.primary{border-color:color-mix(in srgb, var(--brand), white 60%);background:color-mix(in srgb, var(--brand), white 85%);}
+    /* ----- Layout with independent scroll areas ----- */
+    .shell{height:calc(100vh - var(--header-h));display:grid;grid-template-columns:300px 1fr;border-top:1px solid var(--border)}
+    @media (max-width: 980px){.shell{grid-template-columns:1fr}}
+    aside.toc{border-right:1px solid var(--border);background:var(--panel);min-height:0;}
+    .toc-inner{height:100%;overflow:auto;padding:16px;position:relative}
+    .toc-title{font-weight:700;margin:0 0 8px 0}
+    .toc a{display:block;color:var(--ink);text-decoration:none;font-size:14px;padding:6px 8px;border-radius:8px}
+    .toc a:hover{background:#fff}
+    .toc a.active{background:color-mix(in srgb, var(--brand), white 88%);box-shadow:inset 3px 0 0 var(--brand);}
+    .toc ul{list-style:none;margin:0;padding:0}
+    .toc ul ul{padding-left:12px}
+    main.content{min-height:0;}
+    .content-inner{height:100%;overflow:auto;padding:24px 28px;}
+    .content-inner h1{margin-top:0}
+    h2{margin-top:32px;border-bottom:1px dashed var(--border);padding-bottom:6px}
+    h3{margin-top:20px}
+    table{width:100%;border-collapse:collapse;margin:12px 0}
+    th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
+    thead th{background:var(--panel)}
+    .muted{color:var(--muted)}
+    .toplink{position:fixed;right:16px;bottom:16px;border-radius:999px;padding:10px 12px;background:var(--brand);color:#fff;text-decoration:none;box-shadow:0 6px 20px color-mix(in srgb, var(--brand), transparent 70%)}
+    /* Offset anchors for sticky header when deep-linking */
+    :where(.content-inner h1,.content-inner h2,.content-inner h3){scroll-margin-top:calc(var(--header-h) + 8px);} 
+    /* Print */
+    @media print{
+      header.site,.toplink{display:none}
+      .shell{grid-template-columns:1fr}
+      aside.toc{display:none}
+      .content-inner{overflow:visible}
+    }
+  </style>
+</head>
+<body>
+<header class="site" role="banner">
+<div class="header-wrap">
+<div class="logo">
+<a href="index.html?v=99999" title="Home"><img alt="Company Logo" src="adrc_logo_white.png"/></a>
+</div>
+<div class="meta">
+<div class="title">MEM SOPs</div>
+<div class="subtitle">SOP — Auto-generated from internal slides · Review and approve</div>
+</div>
+<div class="actions">
+<a class="btn primary" href="mem_sops_quick_guide.html?v=99999" title="Open Quick Guide">Quick Guide ↗</a>
+<button class="btn" id="printBtn" title="Print / Save PDF">Print</button>
+</div>
+</div>
+</header>
+<div class="shell" role="application">
+<aside aria-label="Table of contents" class="toc">
+<div class="toc-inner">
+<h3 class="toc-title" id="contents">Contents</h3>
+<nav class="toc" id="toc"></nav>
+</div>
+</aside>
+<main class="content" id="top">
+<div class="content-inner">
+<h1 id="mem-sops">MEM SOPs</h1>
+<h2 id="maintenance-sopsmem-department">Maintenance SOPsMEM Department</h2>
+<h2 id="1-complaint-registration">1. Complaint Registration</h2>
+<ul><li>🔧 Steps:1. Customer contacts hotline for cooler issue.2. Receptionist gathers details: Customer Code, Priority, Route No., Salesman and Supervisor, Location, Phone, Issue.3. Data entered by Receptionist in ERP to create Service Request Form.4. Service request sent to WhatsApp group including technicians &amp; supervisors.</li><li>📑 Documents:Service Request Form</li><li>👥 Roles:Customer, Receptionist</li><li>💼 Accounting:No accounting entry at this stage</li><li>🗂️ Source:PKF – MEM Complaint Registration SOP</li></ul>
+<h2 id="2-complaint-processing">2. Complaint Processing</h2>
+<ul><li>🔧 Steps:1. Technician reviews ERP service request.2. Visits customer site and inspects cooler.3. Prepares job/site report detailing diagnosis and actions.4. If parts needed → spare issuance process followed.5. If repaired: technician gets customer Signature on report and to verify complaint closure by receptionist phone.6. If not repaired: marked 'On Hold' and moved to workshop with customer signature acknowledgment on report.7. MEM Manager updates ERP location.8. The workshop MEM team take a final decision on repair vs. replacement.9. Follow-up with cooler replacement or scrap process.</li><li>📑 Documents:Service Request Form, Job/Site Report, Spare Issuance Form</li><li>👥 Roles:Technician, Customer, MEM Manager, Storekeeper</li><li>💼 Accounting:Spares consumed are recorded as expense</li><li>🗂️ Source:PKF – MEM Complaint Processing SOP</li></ul>
+<h2 id="3-cooler-replacement">3. Cooler Replacement</h2>
+<ul><li>🔧 Steps:1. Workshop informs sales supervisor that cooler cannot be repaired.2. Area Sales Manager decides if new or old cooler to be issued.3. ERP request raised by Sales Supervisor or Storekeeper.4. Area Sales Manager signs the cooler request.5. MEM Manager approve issuance.6. Storekeeper generates Gate Pass (2 copies).7. Security checks serial number and stamps outward delivery.8. Technician delivers cooler, gets customer sign-off along with the returned cooler. 9. Security checks serial number and stamps inward delivery.10. Old cooler returned and ERP location updated to Workshop.</li><li>📑 Documents:ERP Request, Gate Pass, Cooler Request Form</li><li>👥 Roles:Sales Supervisor, Area Sales Manager, Sales Director, MEM Storekeeper, Technician, MEM Manager, Security</li><li>💼 Accounting:Marketing expense booked on issuance of new cooler</li><li>🗂️ Source:PKF – MEM Cooler Replacement SOP</li></ul>
+<h2 id="4-scrap-management">4. Scrap Management</h2>
+<ul><li>🔧 Steps:1. Technician inspects cooler and proposes scrap if beyond economic repair (BER) (&gt;40% cost).2. MEM Manager validates with second-level investigation.3. Transfer BER cooler in ERP from Workshop to Scrap Store. 5. Finance receives scrap proposal and obtains 3 vendor quotes.6. Finalize vendor and approve scrap sale by Finance Manager.7. Gate Pass generated for cooler movement.8. Scrap invoice booked and cooler written off.9. Finance verifies invoice against dispatch records.</li><li>📑 Documents:Inspection Report, Scrap Quotation, Transfer Note, Sales Invoice, JV Entry</li><li>👥 Roles:MEM Technician, MEM Manager, Storekeeper, Finance Manager</li><li>💼 Accounting:Scrap disposal booked through JV entry and inventory write-off</li><li>🗂️ Source:PKF – MEM Scrap Management SOP</li></ul>
+<h2 id="5-new-cooler-placement">5. New Cooler Placement</h2>
+<ul><li>🔧 Steps:1. Sales Supervisor onboards new customer and raises ERP request.2. Cooler Request Form filled and approved by Area Sales Manager alongside with volume of order.3. Sales Director reviews and approves, If he rejects, the process proceeds with the issuance of an old cooler. 4. MEM Manager performs technical evaluation.5. Storekeeper generates Gate Pass (2 copies).6. Security verifies serial and authorizes outward delivery.7. Customer signs Gate Pass. 7. MEM storekeeper change the cooler location updated in ERP and approves by MEM Manager.</li><li>📑 Documents:Cooler Request Form, ERP Request, Gate Pass</li><li>👥 Roles:Sales Supervisor, Area Sales Manager, Sales Director, MEM Manager, Storekeeper, Security</li><li>💼 Accounting:Cooler added to asset register, location tagged in ERP</li><li>🗂️ Source:PKF – MEM New Cooler Placement SOP</li></ul>
+<h2 id="6-purchase-requisition--spares--mem">6. Purchase Requisition – Spares &amp; MEM</h2>
+<ul><li>🔧 Steps:1. Store executive identifies need based on inventory level or marketing plan.2. Store executive Checks if item is on critical inventory list or below safety stock.3. If yes, creates PR directly in ERP. If not, gets MEM Manager's approval first.4. Procurement Manager reviews technical specs, rationale, supplier reliability and are priced in approved budget.5. Finance Manager checks budget position and fund availability.6. If within budget: PR approved. If not: justification needed.7. Approval loop completed and PR submitted for processing.</li><li>📑 Documents:Purchase Requisition, Critical Spare List, Budget Statement</li><li>👥 Roles:Store Executive, MEM Manager, Procurement Manager, Finance Manager</li><li>💼 Accounting:No entry at PR stage</li><li>🗂️ Source:PKF – MEM Purchase Requisition SOP</li></ul>
+<h2 id="7-vendor-quotation--spares--mem">7. Vendor Quotation – Spares &amp; MEM</h2>
+<ul><li>🔧 Steps:1. Procurement Executive checks for approved vendors.2. If vendor exists: send RFQ. If not: search external vendors.3. Receive minimum quotes (2Q (below 50K) – 3Q (Above 50K)).4. Perform techno &amp; commercial comparison.5. Get approvals from Dept Head → Procurement Manager → Finance → Managing Director.6. Finalize vendor and document approval.7. Move to PO creation.</li><li>📑 Documents:RFQ, Vendor Quotations, Quotation Comparison Sheet</li><li>👥 Roles:Procurement Executive, Procurement Manager, Finance, Managing Director</li><li>💼 Accounting:No accounting entry at quotation stage</li><li>🗂️ Source:PKF – MEM Vendor Quotation SOP</li></ul>
+<h2 id="8-purchase-order--spares--mem">8. Purchase Order – Spares &amp; MEM</h2>
+<ul><li>🔧 Steps:1. Procurement Executive creates PO from approved vendor quotation.2. Submit to Procurement Manager for authority matrix approval.3. Review by Department Head and Finance Manager for budget compliance.4. Ensure PO matches PR quantity. ERP PO only (no manual PO allowed).5. Set tolerance limits in ERP to restrict over-issue.6. Once approved, PO released to vendor.7. Mail approvals not accepted – must be approvals from ERB system.</li><li>📑 Documents:Purchase Order, Vendor Quotation, Approval Forms</li><li>👥 Roles:Procurement Executive, Procurement Manager, Department Head, Finance</li><li>💼 Accounting:No entry at PO stage</li><li>🗂️ Source:PKF – MEM Purchase Order SOP</li></ul>
+<h2 id="9-spare-issuance">9. Spare Issuance</h2>
+<ul><li>🔧 Steps:1. Technician initiates ERP request.2. MEM Manager approves request form.3. Storekeeper issues Spare Issuance Note.4. Gate Pass generated and printed in 2 copies.5. Security verifies part details and stamps Gate Pass.6. Technician receives spare and performs repair.7. Manual register entry maintained alongside ERP.</li><li>📑 Documents:Spare Issuance Note, Gate Pass, ERP Request Form</li><li>👥 Roles:Technician, Storekeeper, MEM Manager, Security</li><li>💼 Accounting:Consumption expense booked upon issuance</li><li>🗂️ Source:PKF – MEM Spare Issuance SOP</li></ul>
+<h2 id="10-post-mix-complaint-management">10. Post-Mix Complaint Management</h2>
+<ul><li>🔧 Steps:1. Complaint raised by customer through dedicated staff.2. Data entered in ERP and generates a Service Request Form and forwarded to WhatsApp group.3. Technician visits location, prepares Job Report.4. Equipment is repaired or replaced within 24 hours.5. Customer signs job report.6. Spare Issuance or Scrap Management process followed depending on result.7. Complaint closed and ERP updated.</li><li>📑 Documents:Service Request Form, Job Report</li><li>👥 Roles:Customer, Post-Mix Coordinator, MEM Manager, Technician</li><li>💼 Accounting:Spares consumed or cooler replaced = Marketing expense entry</li><li>🗂️ Source:PKF – MEM Post-Mix Complaint Management SOP</li></ul>
+<h2 id="11-preventive-maintenance">11. Preventive Maintenance</h2>
+<ul><li>🔧 Steps:</li><li>1. Monthly reported maintenance done in last month with details like (count of costumer visited, post-mix repaired, cooler repaired and the cost)1. MEM Manager prepares annual calendar for key customers (Post-Mix &amp; Cooler).2. Calendar shared with Technician Team at the start of year.3. Technician calls customer one week before scheduled visit for confirmation.4. Sales Coordinator arranges work permit if needed.5. Technician performs maintenance and documents it in Job Report.6. Customer signs off on maintenance.7. If repairs needed → Follow Complaint Process for Cooler or Post-Mix.8. All actions updated in ERP; Job Report filed.</li><li>📑 Documents:Maintenance Calendar, Job Report</li><li>👥 Roles:MEM Manager, Technician, Sales Coordinator, Customer</li><li>💼 Accounting:No accounting entry unless spare used or escalated repair required</li><li>🗂️ Source:PKF – MEM Scheduled Maintenance SOP</li></ul>
+<h2 id="12-stock-verification">12. Stock Verification</h2>
+<ul><li>🔧 Steps:1. MEM Storekeeper performs monthly physical count of all spares and equipment.2. Counts are compared with system inventory in ERP.3. Discrepancies noted: Approval by MEM Manager and Finance Manager.4. Adjustment posted in ERP after approval.5. Final verified report archived.6. Manual &amp; ERP records both updated.</li><li>📑 Documents:Stock Count Report, ERP Inventory Records</li><li>👥 Roles:Storekeeper, Store Supervisor, MEM Manager, Finance Manager</li><li>💼 Accounting:Inventory adjustment posted to P&amp;L if discrepancy exists</li><li>🗂️ Source:PKF – MEM Stock Verification SOP</li></ul>
+<h2 id="13-gate-pass--equipment-movement">13. Gate Pass &amp; Equipment Movement</h2>
+<ul><li>🔧 Steps:1. Once spare or cooler issuance approved, Storekeeper creates Gate Pass in 2 copies.2. Gate Pass includes details: Part/Cooler Serial No, Technician, Customer, Date.3. Security verifies Gate Pass: cross-checks quantity, item, and stamps it.4. Outgoing movement allowed only after stamped Gate Pass.5. One copy sent with Technician, one retained by MEM Dept.6. Upon return (if applicable), security logs inward movement using same Gate Pass.7. Location updated in ERP by Storekeeper or MEM Manager.</li><li>📑 Documents:Gate Pass Form, Issuance Note, ERP Transfer Record</li><li>👥 Roles:Storekeeper, Technician, Security, MEM Manager</li><li>💼 Accounting:No accounting entry; movement tracked for control and audit</li><li>🗂️ Source:PKF – MEM Gate Pass &amp; Equipment Movement SOP</li></ul>
+</div>
+</main>
+</div>
+<script>
+
+  (function(){
+    // Print
+    var printBtn = document.getElementById('printBtn');
+    if (printBtn) printBtn.addEventListener('click', function(){ window.print(); });
+
+    // Header click → Home (except on actionable elements)
+    var siteHeader = document.querySelector('header.site');
+    if(siteHeader){
+      siteHeader.addEventListener('click', function(e){
+        var t = e.target;
+        if(t.closest('a') || t.closest('button')) return; 
+        window.location.href = './index.html?v=99999';
+      });
+    }
+
+    // Header height -> CSS var (for anchor offset math)
+    function headerH(){ var h = document.querySelector('header.site'); return (h && h.offsetHeight) ? h.offsetHeight : 72; }
+    function applyHeaderVar(){ document.documentElement.style.setProperty('--header-h', headerH() + 'px'); }
+    window.addEventListener('load', applyHeaderVar);
+    window.addEventListener('resize', applyHeaderVar);
+
+    // Build TOC with nesting (h1 + h2 + h3)
+    var contentRoot = document.querySelector('.content-inner');
+    var headings = Array.from(contentRoot.querySelectorAll('h1, h2, h3'));
+    var tocEl = document.getElementById('toc');
+    var rootUl = document.createElement('ul');
+    var currentUl = rootUl;
+    var stack = [rootUl];
+    var lastLi = null;
+    function lvl(tag){ return tag === 'H1' ? 1 : (tag === 'H2' ? 2 : 3); }
+    var lastLevel = 1;
+    headings.forEach(function(h){
+      if(!h.id){ h.id = h.textContent.trim().toLowerCase().replace(/[^a-z0-9]+/g,'-'); }
+      var L = lvl(h.tagName);
+      while(L > lastLevel){
+        var ul = document.createElement('ul');
+        if (lastLi) { lastLi.appendChild(ul); } else { currentUl.appendChild(ul); }
+        stack.push(ul); currentUl = ul; lastLevel++;
+      }
+      while(L < lastLevel){
+        stack.pop(); currentUl = stack[stack.length-1] || rootUl; lastLevel--;
+      }
+      var li = document.createElement('li');
+      var a = document.createElement('a');
+      a.href = '#' + h.id; a.textContent = h.textContent;
+      li.appendChild(a); currentUl.appendChild(li);
+      lastLi = li;
+    });
+    tocEl.textContent = ''; tocEl.appendChild(rootUl);
+
+    // Cache tocLinks in same order as headings
+    var tocLinks = Array.from(tocEl.querySelectorAll('a'));
+
+    // Active state + ensure TOC item visible
+    function setActiveByIndex(idx){
+      tocLinks.forEach(function(l){ l.classList.remove('active'); });
+      var link = tocLinks[idx];
+      if(link){ link.classList.add('active'); link.scrollIntoView({block:'nearest', inline:'nearest'}); }
+    }
+
+    // Smooth scroll to a heading inside the content scroll container
+    function scrollToHeadingByIndex(idx){
+      var el = headings[idx];
+      if(!el) return;
+      var offset = headerH() + 8;
+      var targetTop = el.offsetTop - offset;
+      contentRoot.scrollTo({ top: targetTop, behavior: 'smooth' });
+      history.pushState(null,'','#'+el.id);
+    }
+
+    // Click handler: set active immediately, then smooth scroll. Pause auto-sync briefly.
+    var clickSyncLock = false;
+    tocLinks.forEach(function(a,idx){
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        clickSyncLock = true;
+        setActiveByIndex(idx);
+        scrollToHeadingByIndex(idx);
+        setTimeout(function(){ clickSyncLock = false; }, 600);
+      });
+    });
+
+    // Compute active index on scroll (deterministic): pick last heading whose top <= scrollTop + header
+    function computeActiveIndex(){
+      var st = contentRoot.scrollTop;
+      var offset = headerH() + 12;
+      var idx = 0;
+      for (var i = 0; i < headings.length; i++){
+        if (headings[i].offsetTop <= st + offset){ idx = i; } else { break; }
+      }
+      return idx;
+    }
+
+    function syncActive(){
+      if (clickSyncLock) return;
+      var idx = computeActiveIndex();
+      setActiveByIndex(idx);
+    }
+
+    contentRoot.addEventListener('scroll', function(){
+      if (contentRoot.__raf) cancelAnimationFrame(contentRoot.__raf);
+      contentRoot.__raf = requestAnimationFrame(syncActive);
+    });
+
+    // Initial highlight
+    setTimeout(syncActive, 0);
+
+    // 'Back to top' should scroll the content area
+    var topLink = document.querySelector('a.toplink');
+    if(topLink){
+      topLink.addEventListener('click', function(e){
+        e.preventDefault();
+        contentRoot.scrollTo({ top: 0, behavior: 'smooth' });
+        setActiveByIndex(0);
+      });
+    }
+  })();
+  
+</script>
+<link href="bot.css" rel="stylesheet"/>
+<script>window.RAGBOT_API_BASE = "http://127.0.0.1:8000";</script>
+<script defer="" src="bot.js"></script>
+<script src="highlight_fallback.js"></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+  if (window.TitoBot && typeof window.TitoBot.init === 'function') {
+    window.TitoBot.init({
+      apiBase: '',
+      askEndpoint: '/api/ask',
+      sourceBase: 'https://adrc-policies.pages.dev',
+      sitemapHint: 'https://adrc-policies.pages.dev/sitemap.xml',
+      defaultLang: 'auto'
+    });
+  }
+});</script></body>
+</html>
